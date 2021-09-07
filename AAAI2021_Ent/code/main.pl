@@ -4,7 +4,7 @@ Macintosh HD⁩/⁨Users⁩/lixue⁩/GoogleDrive⁩/01PHD⁩/01program⁩/eclips
 */
 
 :- use_module(library(lists)).
-:-[preprocess, concepChange, equalities, repairPlanGen, repairApply].
+:-[preprocess, concepChange, equalities, repairPlanGen, repairApply, entrenchment].
     % clear all assertions. So main has to be compiling before the input theory file.
 :-    maplist(retractall, [trueSet(_), falseSet(_), heuristics(_), protect(_), spec(_)]).
 
@@ -25,7 +25,6 @@ proofStatus:  0 -- default value.
 
 :-dynamic pause/0.
 :-spy(pause).
-pause.
 
 abc:-
     % Initialisation
@@ -33,11 +32,14 @@ abc:-
     % Initialision: the theory, the preferred structure, the signature, the protected items and Equality Class and Inequality Set.
     initTheory(Theory),    % clear previous data and initialise new ones.
     precheckPS,
+    theoryFileName(TheoryFile),
     % setup log
-    fileName('record', Fname),
+    (exists_directory('log') -> true; make_directory('log')),
+    
+    fileName('record', TheoryFile, Fname),
     open(Fname, write, StreamRec),
     
-    fileName('repNum', Fname2),
+    fileName('repNum', TheoryFile, Fname2),
     open(Fname2, write, StreamRepNum),
     assert(spec(repNum(StreamRepNum))),
     
@@ -53,7 +55,9 @@ abc:-
     open('repTimenNoH.txt', write, StreamRepTimeNH)),
     assert(spec(repTimeNH(StreamRepTimeNH))),
         
+    % record is written only when the debugMode is 1.
     maplist(assert, [spec(debugMode(1)), spec(logStream(StreamRec))]),
+    
     %(OverloadedPred \= [] -> concepChange(OverloadedPred,  AllSents, RepSents, CCRepairs, Signature, RSignature);        %Detect if there is conceptual changes: a predicate has multiple arities.
     %RepSents = AllSents, CCRepairs = []),
     
@@ -72,7 +76,7 @@ abc:-
     
     statistics(walltime, [E,_]),
     ExecutionTime is E-S,
-    
+    print('11111111111111111111111'),nl,
     writeLog([nl,write_term('--------------executation time 2---'),
                 nl,write_term('time takes'),nl, write_term(ExecutionTime),nl]),
     %ExecutionTime is ExecutionTime1 + ExecutionTime2,
@@ -157,24 +161,29 @@ detInsInc(TheoryState, FaultState):-
      writeLog([nl, write_term('---------SufGoals is------'), nl,write_term(Suffs),
      nl, write_term('---------InsufGoals is------'), nl,write_term(InSuffs), finishLog]),
 
-    % detect the incompatibilities
-      findall(UnwProof,
+    % detect the incompatibilities represented as a list of (Goal, Proofs), where -Goal is from F(PS).
+      findall((Goal, UnwProofs),
            (member([+[Pre| Args]], FalseSetE),
             % skip equalities/inequalities which have been tackled.
             notin(Pre, [\=, =]),
             Goal = [-[Pre| Args]],
-            % get all of a proof of Goal
-            slRL(Goal, Theory, EC, UnwProof, [], []),
-            UnwProof \= []),    % Detected incompatibility based on refutation.
+            % Get all proofs of the goal.
+            findall(UnwProof,
+                    (slRL(Goal, Theory, EC, UnwProof, [], []), UnwProof \= []),  
+                    UnwProofs),
+            UnwProofs \= []), % Detected incompatibility based on refutation.
            InComps),             % Find all incompatibilities.
 
     writeLog([nl, write_term('---------InComps are------'),nl, write_termAll(InComps), finishLog]),
     % detect the inconsistencies due to the violation of constrains
-    findall(UnwProof,
+    findall((Constrain, UnwProofs),
               (member(Constrain, Theory),        % get a constrain axiom from the theory.
                notin(+_, Constrain),
-               slRL(Constrain, Theory, EC, UnwProof, [], []),
-               UnwProof \= []),
+               % Get all proofs of the goal.
+               findall(UnwProof,
+                       (slRL(Constrain, Theory, EC, UnwProof, [], []), UnwProof \= []),
+                       UnwProofs),
+            UnwProofs \= []), 
           Violations),
       writeLog([nl, write_term('---------Violations are------'),nl, write_termAll(Violations), finishLog]),
     append(InComps, Violations, Unwanted),
@@ -223,16 +232,15 @@ repInsInc(TheoryState, Layer, (_, Insuf, Incomp), [fault, (Layer/N), TheoryState
 repInsInc(TheoryStateIn, Layer, FaultStateIn, TheoryRep):-
     spec(roundNum(R)),
     writeLog([nl, write_term('--------- Start repInsInc round: '), write_term(R),nl, finishLog]),
-    FaultStateIn = (SuffsIn, InsuffsIn, IncompsIn),
+    FaultStateIn = (SuffsIn, InsuffsIn, IncompsPair),
     TheoryStateIn = [_,_, _, TheoryIn, _, _],
     
-    /*
-    % repair insufficiencies first and then incompatibilities.
-    (InsuffsIn \= [] ->
-        appEach(InsuffsIn, [repairPlan, TheoryStateIn, SuffsIn], RepPlans), !;    % detect the remaining faults in the current theory in TheoryState.
-    InsuffsIn = [] -> 
-        appEach(IncompsIn, [repairPlan, TheoryStateIn, SuffsIn], RepPlans)),
-    */
+    % Collect all unwanted proofs and ignore their goals 
+    findall(UnwantProof, 
+            (member((_, UnwantedProofs), IncompsPair), member(UnwantProof, UnwantedProofs)),
+            IncompsIn),
+    
+   
     % member(Insuff, InsuffsIn),
     % repairPlan(Insuff, TheoryStateIn, SuffsIn, RepPlan1),
     appEach(InsuffsIn, [repairPlan, TheoryStateIn, SuffsIn], RepPlans1),
@@ -250,31 +258,62 @@ repInsInc(TheoryStateIn, Layer, FaultStateIn, TheoryRep):-
     length(RepStatesAll, LengthO),
     writeLog([nl, write_term('-- There are '), write_term(LengthO),
                   write_term(' repaired states: '),nl,write_termAll(RepStatesAll), nl, finishLog]),
-    % prune the redundancy.
+    
+    % get the maximum commutative set of repairs.
     mergeRs(RepStatesAll, RepStatesFine), 
     writeLog([nl, write_term('-- RepStatesFine '), write_term(RepStatesFine),nl, finishLog]),
-    %print('111111 RepStatesFine'),print(RepStatesFine),nl,nl,            
-    findall((FNum1, FNum2, RepState, FaultStateNew),
-                    (member(RepState, RepStatesFine),
-                      detInsInc(RepState, FaultStateNew),
-                      FaultStateNew = (_, InSuffNew, InCompNew),
-                      length(InSuffNew, FNum1),
-                      length(InCompNew, FNum2)),
+    %print('111111 RepStatesFine'),print(RepStatesFine),nl,nl,  
+
+    % calculate entrenchment scores.          
+    findall((NumR1, NumAxioms, SumEScore, RepTheoryState, FaultStateNew),
+                    (member(RepTheoryState, RepStatesFine),
+                      detInsInc(RepTheoryState, FaultStateNew),
+                      RepTheoryState = [[Rs1, _],_, _, TheoryRep, _, _],
+                      length(Rs1, NumR1),
+                      entrechmentA(TheoryRep, FaultStateNew, [], _, (0,0), SumEScore),
+                      length(TheoryRep, NumAxioms)),
              AllRepStates),
     length(AllRepStates, Length),
     writeLog([nl, write_term('-- All faulty states: '), write_term(Length),nl,
                 write_termAll(AllRepStates), finishLog]),
-
-     % pruning the sub-optimal.
-    pareOpt(AllRepStates, Optimals),
+   
+    % pruning the repairs which do not delete the least entrenched axioms/preconditions, or add the most entrenched ones. 
+    eePrune(AllRepStates, Optimals),
     length(Optimals, LO),
-    %print(Optimals),nl,nl,print(LO),nl,nl, 
-%(Optimals =[([[[expand([+[mother,vble(y),vble(z)],-[female,vble(y)],-[parent,vble(y),vble(z)]]),expand([+[parent,[f],[a]]])],[]],[[[a]],[[b]],[[c]],[[d]],[[f]],[[g]]],[],[[+[father,vble(x),vble(y)],-[male,vble(x)],-[parent,vble(x),vble(y)]],[+[female,[b]]],[+[female,[d]]],[+[male,[a]]],[+[male,[c]]],[+[male,[f]]],[+[male,[g]]],[+[mother,vble(y),vble(z)],-[female,vble(y)],-[parent,vble(y),vble(z)]],[+[parent,[a],[b]]],[+[parent,[a],[c]]],[+[parent,[d],[b]]],[+[parent,[f],[a]]]],[[+[father,[a],[b]]],[+[father,[a],[c]]],[+[mother,[d],[b]]],[+[father,[f],[a]]]],[[+[mother,[a],[b]]],[+[mother,[a],[c]]],[+[father,[d],[b]]],[+[father,[g],[a]]],[+[father,[g],[c]]]]],[([-[father,[a],[b]]],[[([-[father,[a],[b]]],[+[father,vble(x),vble(y)],-[male,vble(x)],-[parent,vble(x),vble(y)]],[[a]/vble(x),[b]/vble(y)],[-[male,[a]],-[parent,[a],[b]]],[0,0]),([-[male,[a]],-[parent,[a],[b]]],[+[male,[a]]],[],[-[parent,[a],[b]]],[0,0]),([-[parent,[a],[b]]],[+[parent,[a],[b]]],[],[],[0,0])]]),([-[father,[a],[c]]],[[([-[father,[a],[c]]],[+[father,vble(x),vble(y)],-[male,vble(x)],-[parent,vble(x),vble(y)]],[[a]/vble(x),[c]/vble(y)],[-[male,[a]],-[parent,[a],[c]]],[0,0]),([-[male,[a]],-[parent,[a],[c]]],[+[male,[a]]],[],[-[parent,[a],[c]]],[0,0]),([-[parent,[a],[c]]],[+[parent,[a],[c]]],[],[],[0,0])]]),([-[mother,[d],[b]]],[[([-[mother,[d],[b]]],[+[mother,vble(y),vble(z)],-[female,vble(y)],-[parent,vble(y),vble(z)]],[[b]/vble(z),[d]/vble(y)],[-[female,[d]],-[parent,[d],[b]]],[0,0]),([-[female,[d]],-[parent,[d],[b]]],[+[female,[d]]],[],[-[parent,[d],[b]]],[0,0]),([-[parent,[d],[b]]],[+[parent,[d],[b]]],[],[],[0,0])]]),([-[father,[f],[a]]],[[([-[father,[f],[a]]],[+[father,vble(x),vble(y)],-[male,vble(x)],-[parent,vble(x),vble(y)]],[[a]/vble(y),[f]/vble(x)],[-[male,[f]],-[parent,[f],[a]]],[0,0]),([-[male,[f]],-[parent,[f],[a]]],[+[male,[f]]],[],[-[parent,[f],[a]]],[0,0]),([-[parent,[f],[a]]],[+[parent,[f],[a]]],[],[],[0,0])]])],[],[]),([[[expand([+[mother,vble(y),vble(z)],-[female,vble(y)],-[parent,vble(y),vble(z)]]),expand([+[father,[f],[a]]])],[]],[[[a]],[[b]],[[c]],[[d]],[[f]],[[g]]],[],[[+[father,vble(x),vble(y)],-[male,vble(x)],-[parent,vble(x),vble(y)]],[+[father,[f],[a]]],[+[female,[b]]],[+[female,[d]]],[+[male,[a]]],[+[male,[c]]],[+[male,[f]]],[+[male,[g]]],[+[mother,vble(y),vble(z)],-[female,vble(y)],-[parent,vble(y),vble(z)]],[+[parent,[a],[b]]],[+[parent,[a],[c]]],[+[parent,[d],[b]]]],[[+[father,[a],[b]]],[+[father,[a],[c]]],[+[mother,[d],[b]]],[+[father,[f],[a]]]],[[+[mother,[a],[b]]],[+[mother,[a],[c]]],[+[father,[d],[b]]],[+[father,[g],[a]]],[+[father,[g],[c]]]]],[([-[father,[a],[b]]],[[([-[father,[a],[b]]],[+[father,vble(x),vble(y)],-[male,vble(x)],-[parent,vble(x),vble(y)]],[[a]/vble(x),[b]/vble(y)],[-[male,[a]],-[parent,[a],[b]]],[0,0]),([-[male,[a]],-[parent,[a],[b]]],[+[male,[a]]],[],[-[parent,[a],[b]]],[0,0]),([-[parent,[a],[b]]],[+[parent,[a],[b]]],[],[],[0,0])]]),([-[father,[a],[c]]],[[([-[father,[a],[c]]],[+[father,vble(x),vble(y)],-[male,vble(x)],-[parent,vble(x),vble(y)]],[[a]/vble(x),[c]/vble(y)],[-[male,[a]],-[parent,[a],[c]]],[0,0]),([-[male,[a]],-[parent,[a],[c]]],[+[male,[a]]],[],[-[parent,[a],[c]]],[0,0]),([-[parent,[a],[c]]],[+[parent,[a],[c]]],[],[],[0,0])]]),([-[mother,[d],[b]]],[[([-[mother,[d],[b]]],[+[mother,vble(y),vble(z)],-[female,vble(y)],-[parent,vble(y),vble(z)]],[[b]/vble(z),[d]/vble(y)],[-[female,[d]],-[parent,[d],[b]]],[0,0]),([-[female,[d]],-[parent,[d],[b]]],[+[female,[d]]],[],[-[parent,[d],[b]]],[0,0]),([-[parent,[d],[b]]],[+[parent,[d],[b]]],[],[],[0,0])]]),([-[father,[f],[a]]],[[([-[father,[f],[a]]],[+[father,[f],[a]]],[],[],[0,0])]])],[],[])],    pause;true),
     writeLog([    nl, write_term('--The number of Optimals: '), write_term(LO), nl, write_termAll(Optimals), finishLog]),
     % get one optimal repaired theory along with its remaining faults and applied repairs Rep.
     member((TheoryStateOp, FaultStateOp), Optimals),
     NewLayer is Layer+1,
     repInsInc(TheoryStateOp, NewLayer, FaultStateOp, TheoryRep).
+
+/**********************************************************************************************************************
+    eePrune(StatesFaultsAll, OptStates):
+            return a repaired theory w.r.t. one fault among the FaultStates by applying an Parento optimal repair.
+    Input:  StatesFaultsAll is a list: [(FNum1, FNum2, TheoryState, FaultState),...]
+    Output: OptStates is also a list of (TheoryState, FaultState) by pruning the sub-optimals.
+            For more information about TheoryState/FaultState, please see detInsInc.
+************************************************************************************************************************/
+eePrune([], []).
+% if the sub-optimal pruning is not applied, return the input.
+eePrune(StatesFaultsAll, TheoryStateOut):-
+    spec(heuris(H)),
+    member(noEE, H), 
+    findall((TheoryState, FaultState),
+             member((_, _, _, TheoryState, FaultState), StatesFaultsAll),
+            TheoryStateOut).
+
+eePrune(StatesFaultsAll, OptStates):-
+    %writeLog([nl, write_term('--------- Pruning the sub-optimals with Threshod: '), write_term(Theres), nl, finishLog]),
+    findall((TheoryState1, FaultState1),
+            (member((X, Y, (EE1, EE2), TheoryState1, FaultState1), StatesFaultsAll),
+             % Compare the same repair cost and with same theory length. For both axioms expansion or axioms deletion or rule modification, 
+             % the repaired theories with biggest entrenchment scores are the best
+             forall(member((X, Y, (EE1T, EE2T), _, _), StatesFaultsAll),
+                    (%writeLog([nl, write_term('Cost1 & Cost2 is ---------'),nl,write_term(Cost1), write_term(Cost2), finishLog]),
+                      EE1T < EE1;
+                      EE1T = EE1, EE2T=< EE2))),    % The repaired theory is not strictly dominated by any others.
+            OptStates).
+
 
 /**********************************************************************************************************************
     pareOpt(StatesFaultsAll, OptStates):
@@ -308,15 +347,6 @@ pareOpt(StatesFaultsAll, OptStates):-
                      Cost2 is NumR2 + NumF21 + NumF22),
                     (%writeLog([nl, write_term('Cost1 & Cost2 is ---------'),nl,write_term(Cost1), write_term(Cost2), finishLog]),
                       Cost2 >= Cost1))),    % The repaired theory is not strictly dominated by any others.
-            OptStates).
-
-% domination if f11*<f21 and f12 *< f22        
-pareOptBak(StatesFaultsAll, OptStates):-
-    writeLog([nl, write_term('--------- start pruning the sub-optimals ---------'),nl, finishLog]),
-    findall((TheoryState, FaultState),
-            (member((NumF11, NumF12, TheoryState, FaultState), StatesFaultsAll),
-             forall(member((NumF21, NumF22, _, _), StatesFaultsAll),
-                     \+strDominated([NumF21, NumF22], [NumF11, NumF12]))),    % The repaired theory is not strictly dominated by any others.
             OptStates).
 
 
