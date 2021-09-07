@@ -8,6 +8,15 @@ Date: 19.02.2020
 :-[util, utilRevise, repairApply].
 :-     maplist(dynamic, [trueSet/1, falseSet/1, heuristics/1, protect/1,spec/1]). 
 
+
+theoryFileName(TheoryFile):-
+    source_file(theoryFile,X), !,
+    split_string(X, "/","", Y),
+    last(Y, PLFile),
+    split_string(PLFile, ".", "" , [TheoryFile|_]),
+    assert(theoryFile(TheoryFile)).
+    
+theoryFileName("abc"). 
 /**********************************************************************************************************************
     initTheory(Theory): Read Theory from a collection of axiom assertions. (Expected format of the Theory.)
         Output:    Theory is all the sentences that in the input theory and the preferred structure.
@@ -82,9 +91,9 @@ precheckPS:-
     % get the conflicts between the preferred structure and the constrain axioms in the thoery.
     findall(('Constraint', Constrain),
             (spec(protList(ProtectedList)),
-               member(Constrain, ProtectedList),
+             member(Constrain, ProtectedList),
+             Constrain = [-_|_],
              notin(+_, Constrain),    % get a constraint axiom from the theory
-             Constrain=[-_|_],
              slRL(Constrain, Trues, [], [_|_], [], [])),    % Proof [_|_] exist which is not an empty list.
             Conflict),
     % C1: the propositions that occur in both the true set and the false set.
@@ -263,6 +272,7 @@ minimal(TheoryIn, EC, RsIn, Minimal, RsOut):-
     deleteAll(TheoryIn, Assertions, Rules),
     append(Assertions, Rules, TheorySorted),
     smaller(TheorySorted,  EC, RsIn, [], MinimalTem, RsOut),
+    writeLog([nl,write_term('************'), write_termAll(TheorySorted),nl,write_termAll(MinimalTem),nl,write_term(EC),nl, write_term(RsIn),nl]),
     resetIndepVble(MinimalTem, Minimal).
 
 /**********************************************************************************************************************

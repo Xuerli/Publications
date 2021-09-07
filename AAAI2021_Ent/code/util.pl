@@ -1,5 +1,5 @@
 
-%% negate a clause.
+%  working_directory(_,"/Users/lixue/GoogleDrive/01PHD/01program/eclipse-workspace/ABC_Clean/src/"). [main,theories/door].
 negateCl([],[]).
 negateCl([H|L], [H1| L1]):- negate(H, H1), negateCl(L, L1).
 
@@ -511,15 +511,7 @@ appProp(Prop, [Predicate| [N| ExtraArgs]], PropNew):-
 appProp(Prop, Predicate, PropNew):- !,
     Expression =..[Predicate, Prop, PropNew],
     call(Expression).
-/**********************************************************************************************
-    Predicates for write_terming
-***********************************************************************************************/
-vnl :- verbose(on),nl, !.
-vnl.
-vwrite_term(X) :- verbose(on), write_term(X), !.
-vwrite_term(_).
-vwrite_termAll(X) :- verbose(on),write_termAll(X), !.
-vwrite_termAll(_).
+
 
 % succeed if ArgsG and ArgsT can be unified by ignoring the tail of the longer argument list.
 diff(ArgsG, ArgsT, ArgsTail):-
@@ -617,7 +609,7 @@ argPairMis([Cons1], [Cons2], [], [([Cons1], [Cons2])]):-
 
 occur(_, List):- \+is_list(List), nl,print('ERROR: '), print(List), print(' is not a list'),nl, fail,!.        
 occur(X, List):- member(X, List), !.    % avoid redo member(_, List) where '_' is assigned values
-notin(_, List):- \+is_list(List), nl,print('ERROR: '), print(List), print(' it is not a list'),nl, fail,!.    
+notin(_, List):- \+is_list(List), nl,print('***1111111111ERROR: '), print(List), pause, print(' it is not a list'),nl.
 notin(X, List):- \+member(X, List), !.    
 /***********************************************************************************************
  compos1(Sub,SublistIn,SublistOut):

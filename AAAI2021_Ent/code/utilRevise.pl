@@ -393,7 +393,12 @@ transpose_(_, Fs, Lists0, Lists) :-
 
 list_first_rest([L|Ls], L, Ls).
 
-fileName(FileCore, Name):-
+
+fileName(FileCore, TheoryFile, Name):-
+   get_time(Stamp),
+    appAll(string_concat, ['.txt',Stamp,'_' , FileCore , '_' , TheoryFile, 'log/'],[''], Name, 1).
+    
+fileNameBack(FileCore, Name):-
     date(date(_,X,Y)),
     get_time(Stamp),
     stamp_date_time(Stamp, DateTime, local),
@@ -529,7 +534,8 @@ output(AllRepStates, ExecutionTime):-
     setof(ClS, Cl^(axiom(Cl), sort(Cl, ClS)), OrigTheory),
     length(OrigTheory, AxiomNum),
     assert(spec(axiomNu(AxiomNum))),
-    fileName('faultFree', Fname1),
+    theoryFile(TheoryFile),
+    fileName('faultFree', TheoryFile, Fname1),
     open(Fname1, write, Stream1),
     
     % output the execution time.
