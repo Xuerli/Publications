@@ -12,7 +12,7 @@ axiom([-brokenWing(\x),-bird(\x),+cannotFly(\x)]).
 axiom([-fly(\x),-cannotFly(\x)]).
 
 trueSet([fly(opus)]).
-falseSet([cannotFly(opus)]).
+falseSet([]).
 protect([]).
 heuristics([noEE]).
 theoryFile:- !.

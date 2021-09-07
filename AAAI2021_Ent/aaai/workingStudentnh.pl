@@ -2,17 +2,18 @@
 :-[main].
 
 
-axiom([+notworking(\x),-student(\x)]).
-axiom([-student(\x),+adult(\x)]).
+axiom([-student(\x),+notworking(\x)]).
+axiom([-undstudent(\x),+student(\x)]).
+axiom([-undstudent(\x),+adult(\x)]).
 axiom([-adult(\x),+working(\x)]).
-axiom([+student(lily)]).
+axiom([+undstudent(lily)]).
 axiom([-working(\x),-notworking(\x)]).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Preferred Structure:
 
-trueSet([student(lily), adult(lily), working(lily)]).
-falseSet([notworking(lily)]).
+trueSet([undstudent(lily),  working(lily)]).
+falseSet([]).
 %
 protect([]).
 heuristics([]).

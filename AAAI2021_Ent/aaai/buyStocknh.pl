@@ -9,12 +9,12 @@ axiom([-inFusion(\x,steel),-stong(steel),+notRiskyCompany(\x)]).
 axiom([+goodPrice(acme)]).
 axiom([+inFusion(acme,steel)]).
 axiom([+strong(steel)]).
-
+axiom([-buyStock(\x),-dontBuyStock(\x)]).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Preferred Structure:
 
 trueSet([buyStock(acme)]).
-falseSet([dontBuyStock(acme)]).
+falseSet([]).
 
 protect([eqq,arity(eqq)]).
 heuristics([]).
