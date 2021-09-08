@@ -14,7 +14,7 @@ axiom([-buyStock(\x),-dontBuyStock(\x)]).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Preferred Structure:
 
 trueSet([buyStock(acme)]).
-falseSet([]).
+falseSet([dontBuyStock(acme)]).
 
 protect([eqq,arity(eqq)]).
 heuristics([noEE]).
