@@ -50,14 +50,18 @@ abc:-
     open('repTimeHeu.txt', write, StreamRepTimeH)),
     assert(spec(repTimeH(StreamRepTimeH))),
 
+    (fileName('repairs', TheoryFile, FnameRep),
+    open(FnameRep, write, StreamRepairs)),
+    assert(spec(repTimeH(StreamRepairs))),
+    
     (exists_file('repTimenNoH.txt')->
      open('repTimenNoH.txt', append, StreamRepTimeNH);
     \+exists_file('repTimenNoH.txt')->
     open('repTimenNoH.txt', write, StreamRepTimeNH)),
     assert(spec(repTimeNH(StreamRepTimeNH))),
         
-    % record is written only when the debugMode is 1.
-    maplist(assert, [spec(debugMode(1)), spec(logStream(StreamRec))]),
+    % record is written only when the debugMode is NOT 0.
+    maplist(assert, [spec(debugMode(0)), spec(logStream(StreamRec))]),
     
     %(OverloadedPred \= [] -> concepChange(OverloadedPred,  AllSents, RepSents, CCRepairs, Signature, RSignature);        %Detect if there is conceptual changes: a predicate has multiple arities.
     %RepSents = AllSents, CCRepairs = []),
@@ -242,6 +246,7 @@ repInsInc(TheoryStateIn, Layer, FaultStateIn, TheoryRep):-
             IncompsIn),
     
     entrechmentA(TheoryIn, FaultStateIn, [], AxiomsEE, (0,0), (E1SumOrig, E2SumOrig)),
+    writeLog([nl, write_term('--------- Axioms EE: '), write_termAll(AxiomsEE),nl, finishLog]),
     % member(Insuff, InsuffsIn),
     % repairPlan(Insuff, TheoryStateIn, SuffsIn, RepPlan1),
     appEach(InsuffsIn, [repairPlan, TheoryStateIn, SuffsIn], RepPlans1),
@@ -257,12 +262,12 @@ repInsInc(TheoryStateIn, Layer, FaultStateIn, TheoryRep):-
     %print('000000'),print(RepStatesTem),nl,nl,print('RepStatesTem'),nl,nl,        
     sort(RepStatesTem, RepStatesAll),
     length(RepStatesAll, LengthO),
-    writeLog([nl, write_term('-- There are '), write_term(LengthO),
+    writeLogSep([nl, write_term('-- There are '), write_term(LengthO),
                   write_term(' repaired states: '),nl,write_termAll(RepStatesAll), nl, finishLog]),
     
     % get the maximum commutative set of repairs.
     mergeRs(RepStatesAll, RepStatesFine), 
-    writeLog([nl, write_term('-- RepStatesFine '), write_term(RepStatesFine),nl, finishLog]),
+    writeLogSep([nl, write_term('-- RepStatesFine '), write_term(RepStatesFine),nl, finishLog]),
     %print('111111 RepStatesFine'),print(RepStatesFine),nl,nl,  
 
     length(TheoryIn, OriTheoryLen),
@@ -286,13 +291,13 @@ repInsInc(TheoryStateIn, Layer, FaultStateIn, TheoryRep):-
                       length(TheoryRep, NumAxioms)),
              AllRepStates),
     length(AllRepStates, Length),
-    writeLog([nl, write_term('-- All faulty states: '), write_term(Length),nl,
+    writeLogSep([nl, write_term('-- All faulty states: '), write_term(Length),nl,
                 write_termAll(AllRepStates), finishLog]),
    
     % pruning the repairs which do not delete the least entrenched axioms/preconditions, or add the most entrenched ones. 
     eePrune(AllRepStates, Optimals),
     length(Optimals, LO),
-    writeLog([    nl, write_term('--The number of Optimals: '), write_term(LO), nl, write_termAll(Optimals), finishLog]),
+    writeLogSep([nl, write_term('--The number of Optimals: '), write_term(LO), nl, write_termAll(Optimals), finishLog]),
     % get one optimal repaired theory along with its remaining faults and applied repairs Rep.
     member((TheoryStateOp, FaultStateOp), Optimals),
     NewLayer is Layer+1,
@@ -321,10 +326,10 @@ eePrune(StatesFaultsAll, OptStates):-
             (member((X, _, (EE1, EE2), TheoryState1, FaultState1), StatesFaultsAll),
              % Compare the same repair cost and with same theory length. For both axioms expansion or axioms deletion or rule modification, 
              % the repaired theories with biggest entrenchment scores are the best
-             forall(member((X, _, (EE1T, EE2T), _, _), StatesFaultsAll),
+             forall(member((Y, _, (EE1T, EE2T), _, _), StatesFaultsAll),
                     (%writeLog([nl, write_term('Cost1 & Cost2 is ---------'),nl,write_term(Cost1), write_term(Cost2), finishLog]),
-                      EE1T-X > EE1-X;
-                      EE1T-X = EE1-X, EE2T >= EE2))),    % The repaired theory is not strictly dominated by any others.
+                      EE1T-Y > EE1-X;
+                      EE1T-Y = EE1-X, EE2T >= EE2))),    % The repaired theory is not strictly dominated by any others.
             OptStates).
 
 

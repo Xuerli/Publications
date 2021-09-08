@@ -646,6 +646,8 @@ write_termAll([C|Cs]) :-
 % write_term when in a debugging mode.
 pprint(X):- debugMode(1)-> call(X); true.
 
+
+writeLogSep(Z):- spec(repTimeH(StreamRepairs)), writeLog(StreamRepairs, Z). % When debugmode is 0, only writeLogSpe
 writeLog(_):- spec(debugMode(X)), X \=1, !.
 writeLog([]):-!.
 writeLog(List):- !, spec(logStream(Stream))-> writeLog(Stream, List).
@@ -662,4 +664,3 @@ writeLog(Stream, [write_termAll(List)|T]):-
 % write a list line by line
 writeAll(_, []):- !.
 writeAll(Stream1,[C|Cs]) :- write(Stream1, C), nl(Stream1), writeAll(Stream1, Cs).
-

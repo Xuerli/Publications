@@ -475,6 +475,7 @@ buildP((Goal, Evidences), TheoryState, Suffs, [insuff, (RepPlans, RuleR7), ClS])
             Proofs),
 
     getAdjCond(RuleR6, R6IncomSubs, [(Goal, Proofs)], [RuleR6| TheoryIn], EC, TrueSetE, FalseSetE, CandAll),
+    print(CandAll),nl,nl,
     (member(add_pre(Precondition, _), CandAll)-> sort([Precondition| RuleR6], RuleR7); 
      CandAll = []-> RuleR7 = RuleR6),
 
