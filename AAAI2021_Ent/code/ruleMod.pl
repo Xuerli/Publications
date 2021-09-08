@@ -99,7 +99,7 @@ getAdjCond(Rule, IncomSub, SuffGoals, Theory, EC, TrueSetE, FalseSetE, RepPlanS)
                 (member(-[Predicate| _], Clause);member(+[Predicate| _], Clause)),
                 notin(Predicate, AvoidPList)),
         PreCandsRaw),
-    sort(PreCandsRaw, PreCands),    % remove dupliates
+    sort(PreCandsRaw, PreCands),    % remove duplicates
     writeLog([nl, write_term(' PreCands are: '), write_term(PreCands),nl, finishLog]), 
     findall(RepPlan, 
                 (member(Pred, PreCands),
@@ -107,7 +107,8 @@ getAdjCond(Rule, IncomSub, SuffGoals, Theory, EC, TrueSetE, FalseSetE, RepPlanS)
                 setof(vble(X), member(vble(X),ArgR), HeadVbles),
                 RepPlan = add_pre(-[dummyPred|HeadVbles], Rule),
                 writeLog([nl, write_term(' Found unprovable precondition : '), write_term(RepPlan),nl, finishLog])),
-            RepPlanS),    
+            RepPlanSTem), 
+    sort(RepPlanSTem, RepPlanS),    % remove duplicates   
     writeLog([nl, write_term(' All found unprovable preconditions: '), write_term(RepPlanS),nl, finishLog]).
 
 % getAdjCond: adds unprovable precondition
