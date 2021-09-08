@@ -315,7 +315,7 @@ buildP((Goal, _), TheoryState, _, [insuff, (RepPlans, RuleNew), ClS]):-
                      spec(protList(ProtectedList)),
                      member(Constrain, ProtectedList)),
             ResCons),
-    % find all violations of the candidate rule CandRule w.r.t. protected constains in the thoery.
+    % find all violations of the candidate rule CandRule w.r.t. protected constaints in the thoery.
     findall([+Prop],
                 (member([+Prop], Cands3),
                  member(Constrain, ResCons),    % check based on a protected constrain axiom.

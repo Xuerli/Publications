@@ -19,7 +19,7 @@ Date: 07 July 2019
             ScoresIn: initial should be (0,0).
     Output:
             EntState: the entrenchment of each axioms.
-            EntState = [(Axiom1, e1, e2), ...] where e1 = s1- incom1, e2 = s2 - 
+            EntState = [[(e1, e2), Axiom1], ...] where e1 = s1- incom1, e2 = s2 - 
             TotalScores = (totalE1, totalE2). 
 ************************************************************************************************************************/
 entrechmentA([], _, EntState, EntState, TotalScores, TotalScores).

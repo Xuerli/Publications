@@ -132,8 +132,11 @@ convertForm([Clause1 | T], Ontology):- !,
           append([ClauseNew], ClauseTrest, Ontology),
         %  Ontology = [ClauseNew| Trest],
           convertForm(T, ClauseTrest).
-
-
+% sum up a list.
+sum([], 0).
+sum([H|T], N):-
+    sum(T, X),
+    N is X + H.
 
 % produces a list of integers from M up to N in reversed order.
 enum(M, M, [M]) :- !.
