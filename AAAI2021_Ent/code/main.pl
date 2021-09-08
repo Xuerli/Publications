@@ -25,6 +25,7 @@ proofStatus:  0 -- default value.
 
 :-dynamic pause/0.
 :-spy(pause).
+pause().
 
 abc:-
     % Initialisation
@@ -240,7 +241,7 @@ repInsInc(TheoryStateIn, Layer, FaultStateIn, TheoryRep):-
             (member((_, UnwantedProofs), IncompsPair), member(UnwantProof, UnwantedProofs)),
             IncompsIn),
     
-   
+    entrechmentA(TheoryIn, FaultStateIn, [], AxiomsEE, (0,0), (E1SumOrig, E2SumOrig)),
     % member(Insuff, InsuffsIn),
     % repairPlan(Insuff, TheoryStateIn, SuffsIn, RepPlan1),
     appEach(InsuffsIn, [repairPlan, TheoryStateIn, SuffsIn], RepPlans1),
@@ -264,13 +265,24 @@ repInsInc(TheoryStateIn, Layer, FaultStateIn, TheoryRep):-
     writeLog([nl, write_term('-- RepStatesFine '), write_term(RepStatesFine),nl, finishLog]),
     %print('111111 RepStatesFine'),print(RepStatesFine),nl,nl,  
 
+    length(TheoryIn, OriTheoryLen),
     % calculate entrenchment scores.          
-    findall((NumR1, NumAxioms, SumEScore, RepTheoryState, FaultStateNew),
+    findall((NumR1, NumAxioms, (E1SumDiff, E2SumDiff), RepTheoryState, FaultStateNew),
                     (member(RepTheoryState, RepStatesFine),
                       detInsInc(RepTheoryState, FaultStateNew),
                       RepTheoryState = [[Rs1, _],_, _, TheoryRep, _, _],
                       length(Rs1, NumR1),
-                      entrechmentA(TheoryRep, FaultStateNew, [], _, (0,0), SumEScore),
+                      length(TheoryRep, TheoryRepLen),
+                      (TheoryRepLen =< OriTheoryLen ->
+                       subtract(TheoryIn, TheoryRep, AxiomsRep), % get the list axioms that are changed/deleted.
+                       findall([E1, E2], (member(X, AxiomsRep), member([(E1, E2), X],AxiomsEE)), EList),
+                       transposeF(EList, [E1List, E2List]),
+                       sum_list(E1List, E1SumDiff),
+                       sum_list(E2List, E2SumDiff);
+                       TheoryRepLen > OriTheoryLen,
+                       entrechmentA(TheoryRep, FaultStateNew, [], _, (0,0), (E1SumRep, E2SumRep)),
+                       E1SumDiff is E1SumOrig - E1SumRep, 
+                       E2SumDiff is E2SumOrig - E2SumRep),
                       length(TheoryRep, NumAxioms)),
              AllRepStates),
     length(AllRepStates, Length),
@@ -305,13 +317,14 @@ eePrune(StatesFaultsAll, TheoryStateOut):-
 eePrune(StatesFaultsAll, OptStates):-
     %writeLog([nl, write_term('--------- Pruning the sub-optimals with Threshod: '), write_term(Theres), nl, finishLog]),
     findall((TheoryState1, FaultState1),
-            (member((X, Y, (EE1, EE2), TheoryState1, FaultState1), StatesFaultsAll),
+            % the smaller EE is, the better; the fewer Repair operations the better.
+            (member((X, _, (EE1, EE2), TheoryState1, FaultState1), StatesFaultsAll),
              % Compare the same repair cost and with same theory length. For both axioms expansion or axioms deletion or rule modification, 
              % the repaired theories with biggest entrenchment scores are the best
-             forall(member((X, Y, (EE1T, EE2T), _, _), StatesFaultsAll),
+             forall(member((X, _, (EE1T, EE2T), _, _), StatesFaultsAll),
                     (%writeLog([nl, write_term('Cost1 & Cost2 is ---------'),nl,write_term(Cost1), write_term(Cost2), finishLog]),
-                      EE1T < EE1;
-                      EE1T = EE1, EE2T=< EE2))),    % The repaired theory is not strictly dominated by any others.
+                      EE1T-X > EE1-X;
+                      EE1T-X = EE1-X, EE2T >= EE2))),    % The repaired theory is not strictly dominated by any others.
             OptStates).
 
 
