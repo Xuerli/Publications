@@ -94,170 +94,133 @@ This file contains the proofs of theorems in the main paper organised section by
 \label{intro}
 
 \noindent 
-There is no proofs for this section.
-\section{The ABC Repair Operations}
-\label{sec:operation}
-There is no proofs for this section.
+There is no theorems to prove in this section.
 
 \section{Conceptual change}
 \label{sec:conceptualChange}
- There is no proofs for this section.
-\section{Entrenchment Measuring}
+
+\section{The ABC Repair System}
+\label{sec:operation}
+There is no theorems to prove in this section.
+
+
+ There is no theorems to prove in this section.
+\section{Measuring Signature Entrenchment}
 \label{sec:ee:sig}
-%Properties!
-
+ 
 \begin{theorem}
 \label{therem:ref:theog}
 If there is no path from predicate $p$ to predicate $q$ in the theory's theory graph, then assertions of $p$ cannot contribute to any proof of an assertion of $q$.
 \end{theorem}
-\begin{theorem}
-\label{therem:ref:theog}
-If there is no path from predicate $p$ to predicate $q$ in the theory's theory graph, then assertions of $p$ cannot contribute to any proof of an assertion of $q$.
-\end{theorem}
+\begin{proof}
+In Theorem \ref{therem:ref:theog}, no path from predicate $p$ to predicate $q$ in the theory's theory graph means that there is no rule connection between $p$ and $q$. Therefore, assertions of $p$ and $q$ are independent from each other, so that assertions of $p$ cannot contribute to any proof of an assertion of $q$. 
+\end{proof}
 
-Theorem \ref{therem:ref:theog} decides whether adding a theorem of $p$ has an impact of building the proofs of $q$’s instances.
-
+Therefore, theorem \ref{therem:ref:theog} decides whether adding a theorem of $p$ has an impact of building the proofs of $q$’s instances.
 
 \subsection{Predicate Entrenchment}
-The properties of predicate entrenchment to prove are as follows.
-\begin{theorem}
-\label{spec:pe}
-Based on the  preferred distance, the important properties that predicate entrenchment $e(p)$ should have are as follows, where $p$, $p_{1}$ and $p_{2}$ are predicates, and $\mathbb{S}_{p}$ is the set of predicates which occur in $\ps$ while $\mathbb{S}_{t}$ is the set of predicates which occur in the theory but not in $\ps$.
+
+\begin{theorem}\label{spec:pe}
+Based on the  preferred distance, the important properties that predicate entrenchment $e(p)$ has are as follows, where $p$, $p_{1}$ and $p_{2}$ are predicates, and $\mathbb{S}_{p}$ is the set of predicates which occur in $\ps$ while $\mathbb{S}_{t}$ is the set of predicates which occur in the theory but not in $\ps$.
 \begin{enumerate}
-\item $\forall p \in (\mathbb{S}_{t} \bigcup \mathbb{S}_{p}),\ e(p)$ has exactly one value.\newline
+\item $\forall p \in (\mathbb{S}_{t} \cup \mathbb{S}_{p}),\ e(p)$ has exactly one value.\newline
 \textnormal{The entrenchment of a predicate should be just one value.}
-\item $ 0 \leq e(p) \leq 1$. \newline
-\textnormal{The range of an entrenchment should be [0,1], where 0 means that a predicate is not trusted at all and 1  represents that the predicate is most entrenched and fully trusted\footnote{In  Bayesian model and other probabilistic models \cite{gardenfors1988knowledge}, 1 is used as the value of the most entrenched. Although there was no explicit measurement of entrenchment, but only  certain properties that entrenchment should have in the previous literature, it is good to be coherent with their work, which is to employ 1 representing the most entrenched here.}.}
 
-\item $\forall p_{2} \in \mathbb{S}_{p},\  e(p_{2})=1\ \bigwedge \  \forall p_{1}\in \mathbb{S}_{t},\  0< e(p_{1}) < 1$.\newline
-\textnormal{Because $\ps$ is more trusted than the theory, a preferred predicate is most entrenched whose entrenchment is 1. Any predicate appearing only in the theory is believed in some sense, but less than a preferred predicate. Meanwhile, any predicate that occurs in the theory is considered to convey some information. Therefore, its entrenchment should be bigger than 0 but smaller than 1.  }
-%\item If $p_{1} \in \mathbb{S}_{p},\ p_{2} \not\in \mathbb{S}_{p}$, then  $e(p_{1}) > e(p_{2})$. \newline The predicate $p_{1}$ occurs in $\ps$, so that it should be more entrenched than those which do not occur in $\ps$.
 
-\item $\forall p_{1},p_{2}  \in \mathbb{S}_{t},\ e(p_{1}) > e(p_{2})$, iff $d_{p}(p_{1}) < d_{p}(p_{2})$.\newline
-\textnormal{When neither predicate occurs in $\ps$, $p_{1}$  is more entrenched than $p_{2}$  if and only if $p_{1}$ is closer to preferred predicates in terms of its preferred distance. The smaller $d_{p}(p_{1})$ is, the more impact on $\ps$ changing  $p_{1}$ will have. As preferred  predicates should not be changed or effected, by assigning $p_{1}$  a bigger entrenchment value, it is less likely to be modified. }
-\item If $p_{1} \in (\mathbb{S}_{t} \bigcup \mathbb{S}_{p})$, while $p_{2} \not\in (\mathbb{S}_{t} \bigcup \mathbb{S}_{p})$, then $ e(p_{1}) > e(p_{2})$.\newline
-\textnormal{When $p_{2}$ is a predicate which neither appears in the theory nor $\ps$, it is an \emph{unknown predicate}. Unknown predicate $p_{2}$ is considered to be less entrenched than the ones occur in the theory or $\ps$.}
+\begin{proof}
+
+Based on Equation (3), the preferred distance of a predicate has only one value, accordingly, the entrenchment score of a predicate has one fixed value because its calculation function is monotonous. In summary, property 1 in Theorem \ref{spec:pe} is held by our measurement.
+\end{proof}
+
+\item $ 0 < e(p) \leq 1$. \newline
+\textnormal{The range of an entrenchment should be [0,1], where 0 means that a predicate is not trusted at all and 1  represents that the predicate is most entrenched and fully trusted.}
+\begin{proof}
+Based on Equation (3) and (4), we can conclude that:
+\begin{equation*}
+    \forall pd(p_1) \neq \infty,\ 0\geq pd(p_1)\geq pd_{Max}
+\end{equation*}
+$\because \forall pd(p_1) \neq \infty,\ e(p_1) = 1- \frac{pd(p_1)}{pd_{Max}+1}$,\\
+$\therefore 1- \frac{pd_{Max}}{pd_{Max}+1}  \leq e(p_1) \leq1- \frac{0}{pd_{Max}+1}$\\
+Therefore, we can conclude that:
+\begin{equation}\label{equ:11}
+    0 < \frac{1}{pd_{Max}+1} \leq e(p_1)\leq 1,\ \forall pd(p_1) \neq \infty
+\end{equation}
+
+
+On the other hand, $\forall pd(p_2)= \infty$, we have $e(p_2) =\frac{1}{pd_{Max}+2}$.\\
+$\because 0 \leq pd_{Max} $\\
+$\therefore 2< pd_{Max}+2$. Thus, we have the follows.
+\begin{equation}\label{equ:22}
+0<e(p_2) \leq \frac{1}{2}
+\end{equation}
+\end{proof}
+\item $\forall p_{2} \in \mathbb{S}_{p},\  e(p_{2})=1\ \wedge \  \forall p_{1}\in \mathbb{S}_{t},\  0< e(p_{1}) < 1$.\newline
+\textnormal{Because $\ps$ is more trusted than the theory, a preferred predicate is most entrenched whose entrenchment is 1. Any predicate appearing only in the theory is believed to some extent, but less than a preferred predicate. Meanwhile, any predicate that occurs in the theory is considered to convey some information. Therefore, its entrenchment is bigger than 0 but smaller than 1.  }
+\begin{proof}
+ $\because \forall p_1 \in \mathbb{S}_t,\ pd(p_1) = 0$.\\
+$\therefore e(p_1) = 1- \frac{0}{pd_{Max}+1}  = 1$\\
+
+On the other hand, $\forall pd(p_2)\in \mathbb{S}_t,\ pd(p_2) > 0$, so $pd_{Max}> 0$, we have 
+\begin{equation*}\label{equ:predEntr1}
+    e(p_2) =
+    \begin{cases}
+    1- \frac{pd(p_2)}{pd_{Max}+1}<1- \frac{0}{pd_{Max}+1}<1,\  pd(p) \neq \infty\\
+    \frac{1}{pd_{Max}+2}<\frac{1}{2}<1\ pd(p_2) = \infty
+    \end{cases}
+\end{equation*} 
+\end{proof}
+
+\item $\forall p_{1},p_{2}  \in \mathbb{S}_{t},\ e(p_{1}) > e(p_{2})$, iff $pd(p_{1}) < pd(p_{2})$.\newline
+\textnormal{When neither predicate occurs in $\ps$, $p_{1}$  is more entrenched than $p_{2}$  if and only if $p_{1}$ is closer to preferred predicates in terms of its preferred distance. The smaller $pd(p_{1})$ is, the more impact on $\ps$ changing  $p_{1}$ will have. }
+\begin{proof}
+Consider different combinations between $p_1$ and $p_2$, we prove this property as follows.
+\begin{itemize}
+    \item  When $pd(p_1)\neq \infty, pd(p_2)\neq \infty$, if $e(p_1)>e(p2)$, then $1- \frac{pd(p_1)}{pd_{Max}+1}>1- \frac{pd(p_2)}{pd_{Max}+1}$.\\
+ $\therefore \frac{pd(p_1)}{pd_{Max}+1}< \frac{pd(p_2)}{pd_{Max}+1}$\\
+ $\therefore pd(p_1) < pd(p_2)$.
+ 
+ \item When $pd(p_1)\neq \infty, pd(p_2)= \infty$,  if $e(p_1)>e(p2)$, then $1- \frac{pd(p_1)}{pd_{Max}+1}>1- \frac{1}{pd_{Max}+1}$.\\
+ $\therefore pd(p_1) < 1$, Then it can be concluded that $pd(p_1) < 1<pd(p_2)= \infty$
+ \item The case that $pd(p_1)= \infty, pd(p_2)\neq \infty$ and $e(p_1)>e(p_2)$ does not exist.\\
+ $\because e(p_2)= 1- \frac{pd(p_1)}{pd_{Max}+1}=\frac{pd_{Max}+1 - pd(p_1)}{pd_{Max}+1}$, and $pd_{Max} \geq pd(p_1)$, then $pd_{Max}- pd(p_1)\geq 0$.\\
+ $\therefore  e(p_2)\geq \frac{1}{pd_{Max}+1}=e(p_1)$. Thus, $e(p_1)>e(p_2)$ cannot happen in this case. 
+ 
+ \item The case that $pd(p_1)= \infty, pd(p_2)= \infty$ and $e(p_1)>e(p_2)$ does not exist because $e(p_1)=e(p-2)$.
+\end{itemize}
+In conclusion, $e(p_1)>e(p_2)$ only happen when $pd(p_1)\neq\infty$. We have proved that:  $e(p_1)>e(p_2) \implies pd(p_1)<pd(p_2)$.
+
+
+
+On the other hand, if $pd(p_1)<pd(p_2)$, then neither of them is infinity. \newline
+$\because e(p_1) = 1- \frac{pd(p_1)}{pd_{Max}+1}$, and $e(p_2) = 1- \frac{pd(p_2)}{pd_{Max}+1}$.\\
+$\therefore e(p_1)-e(p_2) = \frac{pd(p_2)-pd(p_1)}{pd_{Max}+1}>0$\\
+In summary, $pd(p_1)<pd(p_2) \implies e(p_1)>e(p_2) $
+ 
+\end{proof}
 \end{enumerate}
 \end{theorem}
 
-According to the above desired properties, Definition \ref{def:pe} is proposed as a measurement of predicate entrenchment $e(p)$ of a predicate $p$.
 
-\begin{defn}[Predicate Entrenchment]\label{def:predEn}
-The entrenchment of a non-isolated predicate $p_{1}$ is given in terms of its preferred distance and the maximum preferred distance of all non-isolated predicates in the theory graph:
-
-\begin{equation}\label{equ:predEntr1}
-\begin{multlined}
-    e(p) =1- \frac{d_{p}(p)}{d_{pMax}+2} \\
- \text{where } d_{pMax} = \max_{\forall q \in \mathbb{S}_t}(d_{p}(q)),\  q \text{ is a non-isolated predicate}.
-\end{multlined}
-\end{equation} 
-On the other hand, the entrenchment of an isolated predicate $p_{2}$ is normalised as follows:
-\begin{equation}\label{equ:predEntr2}
-\begin{multlined}
-    e(p_{2}) =\frac{1}{d_{pMax}+2} \\
- \text{where } d_{pMax} = \max_{\forall q \in \mathbb{S}_t}(d_{p}(q)),\  q \text{ is a non-isolated predicate}.
-\end{multlined}
-\end{equation}
-If a predicate $p_{3}$ is an unknown predicate\footnote{The zero entrenchment is defined to reflect that the existence of a predicate in the theory means that the predicate is trusted to have informational value.}, which appears neither in the theory nor in $\ps$, then its entrenchment is initialised as 0.
-\begin{equation}\label{equ:predEntr3}
-    e(p_{3}) =0
-\end{equation}
-\end{defn}
-In the following paragraphs, we will prove that the defined measurement has the desired properties given in the above theorems.
-
-Based on Equation \ref{equ:predEntr2} and \ref{equ:predEntr3}, the entrenchment of an isolated predicate or an unknown predicate has one fixed value. Meanwhile, because the preferred distance of any non-isolated predicate has only one value, so that $d_{pMax}$ is a fixed value in a given theory. Consequently, the entrenchment of a non-isolated predicate has only one value too. In summary, property 1 is held by our measurement.
-
-The preferred distance of a non-isolated predicate $p_{1}$ satisfies:
-\begin{equation}\label{equ:p0}
-  0 \leq d_{p}(p_{1}) \leq d_{pMax}
-\end{equation}
-According to Equation \ref{equ:predEntr1} and  \ref{equ:p0},  the entrenchment of a non-isolated predicate $p_{1}$ is in the range $[\frac{2}{d_{pMax}+2}, 1]$: 
-\begin{equation}\label{equ:p1}
-    \frac{2}{d_{pMax}+2} \leq e(p_{1})\leq  1 \\
- %  \forall p_{2} \in \mathbb{S}_{t},\  e(p)=0.
-\end{equation}
-Based on Equation \ref{equ:p1}, \ref{equ:predEntr2} and \ref{equ:predEntr3}, we can derive the following relation among the entrenchments of predicates in all different types, which proves  property 2, the first half of  property 3, the special case of  property 4 and  property 5.
-\begin{equation}\label{equ:p2}
-    0= e(p_{3}) < \frac{1}{d_{pMax}+2}= e(p_{2}) < \frac{2}{d_{pMax}+2} \leq e(p_{1})\leq  1 \\
- %  \forall p_{2} \in \mathbb{S}_{t},\  e(p)=0.
-\end{equation}
-
- When $p$ is from $\ps$, then $d_{p}(p) = 0$. A preferred predicate $p$ is a non-isolated predicate, whose entrenchment can be calculated according to Equation \ref{equ:predEntr1}.
- 
- \begin{equation}\label{equ:p3}
-   If p \in \mathbb{S}_{p},\ then\  e(p) =1- \frac{d_{p}(p)}{d_{pMax}+2} = 1 - \frac{0}{d_{pMax}+2} =1
- \end{equation}
-Combining Equation \ref{equ:p2} and \ref{equ:p3}, it can be seen that the property 3 is  proved. 
-
-The difference of entrenchment between two non-isolated predicates $p_{11}$ and $p_{12}$ are given in the following equation.
- \begin{equation}\label{equ:p4}
-   e(p_{11}) - e(p_{12}) =1- \frac{d_{p}(p_{11})}{d_{pMax}+2} - (1- \frac{d_{p}(p_{12})}{d_{pMax}+2}) = \frac{d_{p}(p_{12}) - d_{p}(p_{11})}{d_{pMax}+2}
- \end{equation}
-
-Based on Equation \ref{equ:p0} and \ref{equ:p4}, property 4 can be proved:
- \begin{equation}\label{equ:p5}
- e(p_{11}) > e(p_{12}) \Leftrightarrow \frac{d_{p}(p_{12}) - d_{p}(p_{11})}{d_{pMax}+2} > 0 \Leftrightarrow d_{p}(p_{12}) > d_{p}(p_{11})
- \end{equation}
-
-In summary, the defined measurement of entrenchment has all the desired properties given by theorem (\ref{spec:pe}).
 
 
 \subsection{Argument Entrenchment}
 \label{sec:ee:args}
 
+\noindent 
+There is no theorems to prove in this section.
 
-\begin{defn}[The Entrenchment of an argument]
-Let $ \mathcal{E}_{a}(p, n, \theory)$ be the entrenchment of the nth argument of predicate $p$ in theory $\theory$:
-\begin{equation}\label{equ:ref:aren}
-    \mathcal{E}_{a}(p, n, \theory) =
-    \begin{cases}
-    |\mathcal{D}(p, n, \theory)|,\  p \ntriangleleft \mathbb{PS}\\
-    Max(\forall p',i, |\mathcal{D}(p', i, \theory)|)+|\mathcal{D}(p, n, \theory)|,\ p \triangleleft \mathbb{PS}, p' \ntriangleleft \mathbb{PS}
-    \end{cases}
-\end{equation}
-where $1\leq n\leq arity(p)$ and $p \triangleleft \mathbb{PS}$ represents that $\exists p(\vec{t}),\ p(\vec{t}) \in \pf{T} \bigvee p(\vec{t}) \in \pf{F}$, and the function $Max$ returns the maximum value.
-\end{defn}
+\section{Evaluation}
+\label{sec:eva}
+
+\noindent 
+There is no theorems to prove in this section.
 
 
-\begin{theorem}
-The argument entrenchment of one that occurs in $\ps$ is bigger than one that only occurs in the theory not in $\ps$.
- \begin{align}\label{eqa:the1}
-     \forall p \triangleleft \mathbb{PS}, q \ntriangleleft \mathbb{PS},\  \mathcal{E}_{a}(p, i, \theory) > \mathcal{E}_{a}(q, j, \theory)
- \end{align}
- where $1\leq i\leq arity(p)$ and $1\leq j\leq arity(q)$.
-\end{theorem}
+\section{Conclusion}
+\label{conclusion}
 
-\begin{proof} $\because\ q \ntriangleleft \mathbb{PS}$,\\ 
-$\therefore\ \mathcal{E}_{a}(q, n, \theory) = |\mathcal{D}(q, n, \theory)| \leq Max(\forall p',i, |\mathcal{D}(p', i, \theory)|)$, where $p'\ntriangleleft \mathbb{PS}$.
-
-
-$\because\  p \triangleleft \ps$ and there are only propositions in $\ps$,\\
-$\therefore\ \exists p(\vec{C}) \in \ps$. Thus, $\forall i, 1\leq i\leq arity(p), |\mathcal{D}(p, n, \theory)| \geq 1$. 
-
-$\because\ \mathcal{E}_{a}(p, j, \theory) = Max(\forall p',i, |\mathcal{D}(p', i, \theory)|)+|\mathcal{D}(p, n, \theory)|$,\\
-$\therefore \mathcal{E}_{a}(p', j, \theory) \geq Max(\forall p',i, |\mathcal{D}(p', i, \theory)|)+1 > \mathcal{E}_{a}(q, n, \theory)$.
-
-Thus, theorem (\ref{eqa:the1}) is proved.
-
-\end{proof}
-
-\begin{theorem}\label{the:ref:remarg}
-A logical theory $\theory$ can be simplified by omitting the $n$th argument of predicate $p$ if $p$ is not in $\ps$ and the entrenchment is one $\mathcal{E}_{a}(p, n)=1$. If that argument is a variable in a rule, then weaken the remaining occurrences of that variable with the unique constant in the argument domain. Let the simplified theory be $\theory'$ and $p$ be the predicate of the omitted argument, then all theorems remains.
-\begin{equation}
-    \forall \alpha, \theory \vdash \alpha, \theory' \vdash \alpha*
-\end{equation}
-where $\alpha = \alpha*$ if $\alpha$ is not a theorem with $p$, otherwise, $\alpha*$ is different from $\alpha$ by lacking of the omitted argument.
-\end{theorem}
-
-\begin{proof}
-If predicate $p$ is not involved in proofs of $\alpha$,  then there is no paths from $p$ to the predicates in $\alpha$ based on . $\alpha* = \alpha$ and $\theory \vdash_{\pi} \alpha$ and $\theory' \vdash_{\pi} \alpha*$, where $\theory\vdash_{\pi}\alpha$ means that $\pi$ is a proof of $\alpha$ in theory $\theory$.
-
-If predicate $p$ is involved in an assertion in proofs of $\alpha$,
-
-\end{proof}
-
-
+\noindent 
+There is no theorems to prove in this section.
 
 \end{document} 
-
 
