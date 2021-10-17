@@ -23,6 +23,7 @@ repairPlan((Goal, Evidences), TheoryState, Suffs, RepPlansOut):-
                 intersection(RepPlans, RsList, [])),
             RepPlansTem),
     sort(RepPlansTem, RepPlansOut),
+    print('bbbbbb RepPlansOut:'),nl, write_termAll(RepPlansOut),nl,
     statistics(walltime, [E1,_]),
 
     SFRTime is E1-S1,
@@ -79,7 +80,6 @@ repairPlan(ProofInp, TheoryState, Suffs, RepPlansOut):-
             ClP: a collection of the clauses which constitute the proof.
 ************************************************************************************************************************/
 %% Block the unwanted proof by adding a unprovable precondition.
-/* Comment for forcusing on signature changes
 blockP(Proof, TheoryState, SuffGoals, [incomp, ([RepPlan], ClT), ClS]):-
     spec(heuris(Heuristics)),
     % not all three heuristics are employed.
@@ -120,7 +120,7 @@ blockP(Proof, TheoryState, SuffGoals, [incomp, ([RepPlan], ClT), ClS]):-
     ClT = [Axiom].
 
 
-*/
+
 %% Block the unwanted proof by reformation
 blockP(Proof, TheoryState, SuffGoals, [incomp, ([RepPlan], [TargCl]), ClS]):-
     spec(heuris(Heuristics)),
@@ -229,7 +229,7 @@ blockP(Proof, TheoryState, SuffGoals, [incomp, ([RepPlan], [TargCl]), ClS]):-
 buildP([], _, _, _):-fail,!.
 buildP(([], []), _, _, _):-fail,!.
 
-% build proofs by reformation
+
 buildP((Goal, Evidences), TheoryState, SuffGoals, [insuff, (RepPlans, TargCls), ClS]):-
     spec(heuris(Heuristics)),
     writeLog([nl,write_term('--------Start unblocking 1 based on evidences  ------'),nl, finishLog]),
@@ -255,16 +255,11 @@ buildP((Goal, Evidences), TheoryState, SuffGoals, [insuff, (RepPlans, TargCls), 
     member((MiniRemG, Unresolvables, ProofCur), SortedRems),    % get one minimal group of the unresovable sub-goals.
     writeLog([nl,write_term('-- Unresolvables and ProofCur is :'),nl,write_term(Unresolvables),nl,write_term(ProofCur),nl,  finishLog]),
 
+    (notin(noPrecDele, Heuristics),    % unblocking by deleting unprovable preconditions
+        writeLog([nl,write_term('--Deleting unprovable preconditions:'),nl,write_term(Unresolvables),nl,  finishLog]),
+        delPreCond(Unresolvables, Evi, RepPlans1, TargCls),
+        RepPlans = [RepPlans1];
     notin(noReform, Heuristics),    % by reformation.
-    writeLog([nl,write_term('--Reformation: Unresolvables:'),nl,write_term(Unresolvables),nl,  finishLog]),
-    findall(Cl, member((_,Cl,_,_,_), Evi), ClUsed),
-    reformUnblock(Unresolvables, Evi, ClUsed, SuffGoals, TheoryState,  RepInfo),
-    transposeF(RepInfo, [RepPlans, TargClsList]),
-    setof(Cl, (member(List, TargClsList),
-                member(Cl, List)),
-          TargCls),
-/* Comment for forcusing on signature changes
-    (notin(noReform, Heuristics),    % by reformation.
         writeLog([nl,write_term('--Reformation: Unresolvables:'),nl,write_term(Unresolvables),nl,  finishLog]),
         findall(Cl, member((_,Cl,_,_,_), Evi), ClUsed),
         reformUnblock(Unresolvables, Evi, ClUsed, SuffGoals, TheoryState,  RepInfo),
@@ -272,19 +267,13 @@ buildP((Goal, Evidences), TheoryState, SuffGoals, [insuff, (RepPlans, TargCls), 
         setof(Cl, (member(List, TargClsList),
                     member(Cl, List)),
               TargCls);
-
-    notin(noPrecDele, Heuristics),    % unblocking by deleting unprovable preconditions
-    writeLog([nl,write_term('--Deleting unprovable preconditions:'),nl,write_term(Unresolvables),nl,  finishLog]),
-    delPreCond(Unresolvables, Evi, RepPlans1, TargCls),
-    RepPlans = [RepPlans1];
-
     intersection([noAxiomAdd, noAssAdd], Heuristics, []),    % by adding the goal as an axiom or a rule which derives the goal.
         setof([expand([+Prop]),    [+Prop]],
                     (member(-PropG, Unresolvables),
                     replace(vble(_), [dummy_vble_1], PropG, Prop)),
                 RepPairs),
         transposeF(RepPairs, [RepPlans, TargCls])),
-*/
+
     % get all of the clauses which constitute the target proof to unblock
     findall(Cl, (member((_,Cl,_,_,_), ProofCur), is_list(Cl)), ClE1),
     append(TargCls, ClE1, ClS1),
@@ -293,7 +282,7 @@ buildP((Goal, Evidences), TheoryState, SuffGoals, [insuff, (RepPlans, TargCls), 
     writeLog([nl,write_term('--Unblocking 1: RepPlanS:'),nl,write_term(RepPlans),nl, write_termAll(TargCls),nl, finishLog]).
 
 
-/* Comment for forcusing on signature changes
+
 %% Repair the insufficiency by adding a rule whose head is the goal.
 buildP((Goal, _), TheoryState, _, [insuff, (RepPlans, RuleNew), ClS]):-
     %% Repair the insufficiency by abduction.
@@ -369,11 +358,15 @@ buildP((Goal, _), TheoryState, _, [insuff, (RepPlans, RuleNew), ClS]):-
                 Proofs),
 
         getAdjCond(RuleTem, IncomSubs, [(Goal, Proofs)], [RuleTem| TheoryIn], EC, TrueSetE, FalseSetE, CandAll),
-        (member(add_pre(Precondition, _), CandAll)-> sort([Precondition| RuleTem], RuleNew);
-         CandAll = []-> RuleNew = RuleTem)),
+        (findall([expand(RuleNew)],
+                (member(add_pre(Precondition, _), CandAll),
+                 sort([Precondition| RuleTem], RuleNew)),
+                 RuleNews);
+         CandAll = []-> RuleNews = [[expand(RuleTem)]])),
 
-    RepPlans = [expand(RuleNew)],
+    member(RepPlans, RuleNews),
     % get all of the clauses which constitute the target proof to unblock
+
     findall(Cl, (slRL(Goal, [RuleNew|TheoryIn], EC, ProofUnblocked, [], []),
                 member((_,Cl,_,_,_), ProofUnblocked),
                 is_list(Cl)),     % do not record keyword 'unae'
@@ -503,5 +496,3 @@ buildP((Goal, Evidences), TheoryState, Suffs, [insuff, (RepPlans, RuleR7), ClS])
                 member((_,Cl,_,_,_), ProofUnblocked),
                 is_list(Cl)),
             ClS).
-
-*/
