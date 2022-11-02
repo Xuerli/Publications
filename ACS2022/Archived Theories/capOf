@@ -1,0 +1,274 @@
+date(2022,11,2)
+----------------------------------------------------------------------------------
+Theory size: 5
+Faults Number: 0,4
+Cost Limit is: 50
+RoundLimit is: 0
+Running time: 155 ms.
+Heuristics applied:[noRename,noAss2Rule,noPrecAdd,noVabWeaken]
+The protected item(s):[eqq,arity(eqq),[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]],[arity(eqq)],[eqq]]
+Total Solution number is: 16
+Remaining semi-repaired theories: 0
+----------------------------------------------------------------------------------
+The original theory : 
+[+cap_of(edinburgh,britain)].
+[+cap_of(kyoto,japan)].
+[+cap_of(london,britain)].
+[+cap_of(tokyo,japan)].
+[+eqq(\x,\z),-cap_of(\x,\y),-cap_of(\z,\y)].
+
+The true set:
+[]
+The false set: 
+eqq(edinburgh,london).
+eqq(tokyo,kyoto).
+eqq(london,edinburgh).
+eqq(kyoto,tokyo).
+
+All of 16 sorted repair plans are from: 
+[delete([+[cap_of,[edinburgh],[britain]]]),delete([+[cap_of,[kyoto],[japan]]])].
+[delete([+[cap_of,[edinburgh],[britain]]]),delete([+[cap_of,[tokyo],[japan]]])].
+[delete([+[cap_of,[kyoto],[japan]]]),delete([+[cap_of,[london],[britain]]])].
+[delete([+[cap_of,[london],[britain]]]),delete([+[cap_of,[tokyo],[japan]]])].
+[arityInc(cap_of,+[cap_of,[edinburgh],[britain]],[+[cap_of,[edinburgh],[britain]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]),delete([+[cap_of,[kyoto],[japan]]])].
+[arityInc(cap_of,+[cap_of,[edinburgh],[britain]],[+[cap_of,[edinburgh],[britain]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]),delete([+[cap_of,[kyoto],[japan],[dummy_Normal1]]])].
+[arityInc(cap_of,+[cap_of,[edinburgh],[britain]],[+[cap_of,[edinburgh],[britain]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]),delete([+[cap_of,[tokyo],[japan]]])].
+[arityInc(cap_of,+[cap_of,[edinburgh],[britain]],[+[cap_of,[edinburgh],[britain]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]),delete([+[cap_of,[tokyo],[japan],[dummy_Normal1]]])].
+[arityInc(cap_of,+[cap_of,[edinburgh],[britain]],[+[cap_of,[edinburgh],[britain]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]),delete([+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y),[dummy_Normal1]],-[cap_of,vble(z),vble(y),[dummy_Normal1]]])].
+[arityInc(cap_of,+[cap_of,[kyoto],[japan]],[+[cap_of,[kyoto],[japan]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]),delete([+[cap_of,[edinburgh],[britain]]])].
+[arityInc(cap_of,+[cap_of,[kyoto],[japan]],[+[cap_of,[kyoto],[japan]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]),delete([+[cap_of,[edinburgh],[britain],[dummy_Normal1]]])].
+[arityInc(cap_of,+[cap_of,[kyoto],[japan]],[+[cap_of,[kyoto],[japan]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]),delete([+[cap_of,[london],[britain]]])].
+[arityInc(cap_of,+[cap_of,[kyoto],[japan]],[+[cap_of,[kyoto],[japan]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]),delete([+[cap_of,[london],[britain],[dummy_Normal1]]])].
+[arityInc(cap_of,+[cap_of,[kyoto],[japan]],[+[cap_of,[kyoto],[japan]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]),delete([+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y),[dummy_Normal1]],-[cap_of,vble(z),vble(y),[dummy_Normal1]]])].
+[arityInc(cap_of,+[cap_of,[london],[britain]],[+[cap_of,[london],[britain]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]),delete([+[cap_of,[kyoto],[japan]]])].
+[arityInc(cap_of,+[cap_of,[london],[britain]],[+[cap_of,[london],[britain]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]),delete([+[cap_of,[kyoto],[japan],[dummy_Normal1]]])].
+[arityInc(cap_of,+[cap_of,[london],[britain]],[+[cap_of,[london],[britain]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]),delete([+[cap_of,[tokyo],[japan]]])].
+[arityInc(cap_of,+[cap_of,[london],[britain]],[+[cap_of,[london],[britain]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]),delete([+[cap_of,[tokyo],[japan],[dummy_Normal1]]])].
+[arityInc(cap_of,+[cap_of,[london],[britain]],[+[cap_of,[london],[britain]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]),delete([+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y),[dummy_Normal1]],-[cap_of,vble(z),vble(y),[dummy_Normal1]]])].
+[arityInc(cap_of,+[cap_of,[tokyo],[japan]],[+[cap_of,[tokyo],[japan]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]),delete([+[cap_of,[edinburgh],[britain]]])].
+[arityInc(cap_of,+[cap_of,[tokyo],[japan]],[+[cap_of,[tokyo],[japan]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]),delete([+[cap_of,[edinburgh],[britain],[dummy_Normal1]]])].
+[arityInc(cap_of,+[cap_of,[tokyo],[japan]],[+[cap_of,[tokyo],[japan]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]),delete([+[cap_of,[london],[britain]]])].
+[arityInc(cap_of,+[cap_of,[tokyo],[japan]],[+[cap_of,[tokyo],[japan]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]),delete([+[cap_of,[london],[britain],[dummy_Normal1]]])].
+[arityInc(cap_of,+[cap_of,[tokyo],[japan]],[+[cap_of,[tokyo],[japan]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]),delete([+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y),[dummy_Normal1]],-[cap_of,vble(z),vble(y),[dummy_Normal1]]])].
+
+------------------ Solution No. 1 as below------------------
+Repair plans found at Round 2/5 :
+arityInc(cap_of,+[cap_of,[tokyo],[japan]],[+[cap_of,[tokyo],[japan]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]).
+delete([+eqq(\x,\z),-cap_of(\x,\y,dummy_Normal1),-cap_of(\z,\y,dummy_Normal1)]).
+
+
+Repaired Theory: 
+[+cap_of(tokyo,japan,dummy_Abnormal1)].
+[+cap_of(london,britain,dummy_Normal1)].
+[+cap_of(kyoto,japan,dummy_Normal1)].
+[+cap_of(edinburgh,britain,dummy_Normal1)].
+
+------------------ Solution No. 2 as below------------------
+Repair plans found at Round 2/4 :
+arityInc(cap_of,+[cap_of,[london],[britain]],[+[cap_of,[london],[britain]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]).
+delete([+eqq(\x,\z),-cap_of(\x,\y,dummy_Normal1),-cap_of(\z,\y,dummy_Normal1)]).
+
+
+Repaired Theory: 
+[+cap_of(tokyo,japan,dummy_Normal1)].
+[+cap_of(london,britain,dummy_Abnormal1)].
+[+cap_of(kyoto,japan,dummy_Normal1)].
+[+cap_of(edinburgh,britain,dummy_Normal1)].
+
+------------------ Solution No. 3 as below------------------
+Repair plans found at Round 2/3 :
+arityInc(cap_of,+[cap_of,[kyoto],[japan]],[+[cap_of,[kyoto],[japan]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]).
+delete([+eqq(\x,\z),-cap_of(\x,\y,dummy_Normal1),-cap_of(\z,\y,dummy_Normal1)]).
+
+
+Repaired Theory: 
+[+cap_of(tokyo,japan,dummy_Normal1)].
+[+cap_of(london,britain,dummy_Normal1)].
+[+cap_of(kyoto,japan,dummy_Abnormal1)].
+[+cap_of(edinburgh,britain,dummy_Normal1)].
+
+------------------ Solution No. 4 as below------------------
+Repair plans found at Round 2/2 :
+arityInc(cap_of,+[cap_of,[edinburgh],[britain]],[+[cap_of,[edinburgh],[britain]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]).
+delete([+eqq(\x,\z),-cap_of(\x,\y,dummy_Normal1),-cap_of(\z,\y,dummy_Normal1)]).
+
+
+Repaired Theory: 
+[+cap_of(tokyo,japan,dummy_Normal1)].
+[+cap_of(london,britain,dummy_Normal1)].
+[+cap_of(kyoto,japan,dummy_Normal1)].
+[+cap_of(edinburgh,britain,dummy_Abnormal1)].
+
+------------------ Solution No. 5 as below------------------
+Repair plans found at Round 1/1 :
+delete([+cap_of(london,britain)]).
+delete([+cap_of(tokyo,japan)]).
+
+
+Repaired Theory: 
+[+eqq(\x,\z),-cap_of(\x,\y),-cap_of(\z,\y)].
+[+cap_of(kyoto,japan)].
+[+cap_of(edinburgh,britain)].
+
+------------------ Solution No. 6 as below------------------
+Repair plans found at Round 1/1 :
+delete([+cap_of(edinburgh,britain)]).
+delete([+cap_of(tokyo,japan)]).
+
+
+Repaired Theory: 
+[+eqq(\x,\z),-cap_of(\x,\y),-cap_of(\z,\y)].
+[+cap_of(london,britain)].
+[+cap_of(kyoto,japan)].
+
+------------------ Solution No. 7 as below------------------
+Repair plans found at Round 1/1 :
+delete([+cap_of(kyoto,japan)]).
+delete([+cap_of(london,britain)]).
+
+
+Repaired Theory: 
+[+eqq(\x,\z),-cap_of(\x,\y),-cap_of(\z,\y)].
+[+cap_of(tokyo,japan)].
+[+cap_of(edinburgh,britain)].
+
+------------------ Solution No. 8 as below------------------
+Repair plans found at Round 1/1 :
+delete([+cap_of(edinburgh,britain)]).
+delete([+cap_of(kyoto,japan)]).
+
+
+Repaired Theory: 
+[+eqq(\x,\z),-cap_of(\x,\y),-cap_of(\z,\y)].
+[+cap_of(tokyo,japan)].
+[+cap_of(london,britain)].
+
+------------------ Solution No. 9 as below------------------
+Repair plans found at Round 2/4 :
+arityInc(cap_of,+[cap_of,[london],[britain]],[+[cap_of,[london],[britain]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]).
+delete([+cap_of(tokyo,japan,dummy_Normal1)]).
+
+Repair plans found at Round 1/4 :
+arityInc(cap_of,+[cap_of,[london],[britain]],[+[cap_of,[london],[britain]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]).
+delete([+cap_of(tokyo,japan)]).
+
+
+Repaired Theory: 
+[+eqq(\x,\z),-cap_of(\x,\y,dummy_Normal1),-cap_of(\z,\y,dummy_Normal1)].
+[+cap_of(london,britain,dummy_Abnormal1)].
+[+cap_of(kyoto,japan,dummy_Normal1)].
+[+cap_of(edinburgh,britain,dummy_Normal1)].
+
+------------------ Solution No. 10 as below------------------
+Repair plans found at Round 2/2 :
+arityInc(cap_of,+[cap_of,[edinburgh],[britain]],[+[cap_of,[edinburgh],[britain]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]).
+delete([+cap_of(tokyo,japan,dummy_Normal1)]).
+
+Repair plans found at Round 1/2 :
+arityInc(cap_of,+[cap_of,[edinburgh],[britain]],[+[cap_of,[edinburgh],[britain]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]).
+delete([+cap_of(tokyo,japan)]).
+
+
+Repaired Theory: 
+[+eqq(\x,\z),-cap_of(\x,\y,dummy_Normal1),-cap_of(\z,\y,dummy_Normal1)].
+[+cap_of(london,britain,dummy_Normal1)].
+[+cap_of(kyoto,japan,dummy_Normal1)].
+[+cap_of(edinburgh,britain,dummy_Abnormal1)].
+
+------------------ Solution No. 11 as below------------------
+Repair plans found at Round 2/5 :
+arityInc(cap_of,+[cap_of,[tokyo],[japan]],[+[cap_of,[tokyo],[japan]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]).
+delete([+cap_of(london,britain,dummy_Normal1)]).
+
+Repair plans found at Round 1/5 :
+arityInc(cap_of,+[cap_of,[tokyo],[japan]],[+[cap_of,[tokyo],[japan]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]).
+delete([+cap_of(london,britain)]).
+
+
+Repaired Theory: 
+[+eqq(\x,\z),-cap_of(\x,\y,dummy_Normal1),-cap_of(\z,\y,dummy_Normal1)].
+[+cap_of(tokyo,japan,dummy_Abnormal1)].
+[+cap_of(kyoto,japan,dummy_Normal1)].
+[+cap_of(edinburgh,britain,dummy_Normal1)].
+
+------------------ Solution No. 12 as below------------------
+Repair plans found at Round 2/5 :
+arityInc(cap_of,+[cap_of,[tokyo],[japan]],[+[cap_of,[tokyo],[japan]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]).
+delete([+cap_of(edinburgh,britain,dummy_Normal1)]).
+
+Repair plans found at Round 1/5 :
+arityInc(cap_of,+[cap_of,[tokyo],[japan]],[+[cap_of,[tokyo],[japan]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]).
+delete([+cap_of(edinburgh,britain)]).
+
+
+Repaired Theory: 
+[+eqq(\x,\z),-cap_of(\x,\y,dummy_Normal1),-cap_of(\z,\y,dummy_Normal1)].
+[+cap_of(tokyo,japan,dummy_Abnormal1)].
+[+cap_of(london,britain,dummy_Normal1)].
+[+cap_of(kyoto,japan,dummy_Normal1)].
+
+------------------ Solution No. 13 as below------------------
+Repair plans found at Round 2/3 :
+arityInc(cap_of,+[cap_of,[kyoto],[japan]],[+[cap_of,[kyoto],[japan]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]).
+delete([+cap_of(london,britain,dummy_Normal1)]).
+
+Repair plans found at Round 1/3 :
+arityInc(cap_of,+[cap_of,[kyoto],[japan]],[+[cap_of,[kyoto],[japan]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]).
+delete([+cap_of(london,britain)]).
+
+
+Repaired Theory: 
+[+eqq(\x,\z),-cap_of(\x,\y,dummy_Normal1),-cap_of(\z,\y,dummy_Normal1)].
+[+cap_of(tokyo,japan,dummy_Normal1)].
+[+cap_of(kyoto,japan,dummy_Abnormal1)].
+[+cap_of(edinburgh,britain,dummy_Normal1)].
+
+------------------ Solution No. 14 as below------------------
+Repair plans found at Round 2/4 :
+arityInc(cap_of,+[cap_of,[london],[britain]],[+[cap_of,[london],[britain]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]).
+delete([+cap_of(kyoto,japan,dummy_Normal1)]).
+
+Repair plans found at Round 1/4 :
+arityInc(cap_of,+[cap_of,[london],[britain]],[+[cap_of,[london],[britain]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]).
+delete([+cap_of(kyoto,japan)]).
+
+
+Repaired Theory: 
+[+eqq(\x,\z),-cap_of(\x,\y,dummy_Normal1),-cap_of(\z,\y,dummy_Normal1)].
+[+cap_of(tokyo,japan,dummy_Normal1)].
+[+cap_of(london,britain,dummy_Abnormal1)].
+[+cap_of(edinburgh,britain,dummy_Normal1)].
+
+------------------ Solution No. 15 as below------------------
+Repair plans found at Round 2/2 :
+arityInc(cap_of,+[cap_of,[edinburgh],[britain]],[+[cap_of,[edinburgh],[britain]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]).
+delete([+cap_of(kyoto,japan,dummy_Normal1)]).
+
+Repair plans found at Round 1/2 :
+arityInc(cap_of,+[cap_of,[edinburgh],[britain]],[+[cap_of,[edinburgh],[britain]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]).
+delete([+cap_of(kyoto,japan)]).
+
+
+Repaired Theory: 
+[+eqq(\x,\z),-cap_of(\x,\y,dummy_Normal1),-cap_of(\z,\y,dummy_Normal1)].
+[+cap_of(tokyo,japan,dummy_Normal1)].
+[+cap_of(london,britain,dummy_Normal1)].
+[+cap_of(edinburgh,britain,dummy_Abnormal1)].
+
+------------------ Solution No. 16 as below------------------
+Repair plans found at Round 2/3 :
+arityInc(cap_of,+[cap_of,[kyoto],[japan]],[+[cap_of,[kyoto],[japan]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]).
+delete([+cap_of(edinburgh,britain,dummy_Normal1)]).
+
+Repair plans found at Round 1/3 :
+arityInc(cap_of,+[cap_of,[kyoto],[japan]],[+[cap_of,[kyoto],[japan]]],-[cap_of,vble(x),vble(y)],[+[eqq,vble(x),vble(z)],-[cap_of,vble(x),vble(y)],-[cap_of,vble(z),vble(y)]]).
+delete([+cap_of(edinburgh,britain)]).
+
+
+Repaired Theory: 
+[+eqq(\x,\z),-cap_of(\x,\y,dummy_Normal1),-cap_of(\z,\y,dummy_Normal1)].
+[+cap_of(tokyo,japan,dummy_Normal1)].
+[+cap_of(london,britain,dummy_Normal1)].
+[+cap_of(kyoto,japan,dummy_Abnormal1)].
+
+Solutions are found at rounds:[1/1,1/2,1/3,1/4,1/5,2/2,2/3,2/4,2/5]
