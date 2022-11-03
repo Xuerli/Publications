@@ -1,0 +1,111 @@
+date(2022,11,3)
+----------------------------------------------------------------------------------
+Theory size: 6
+Faults Number: 0,1
+Cost Limit is: 50
+RoundLimit is: 0
+Running time: 20 ms.
+Heuristics applied:[]
+The protected item(s):[[arity(undstudent)],[arity(working)],[undstudent],[working]]
+Total Solution number is: 6
+Remaining semi-repaired theories: 0
+----------------------------------------------------------------------------------
+The original theory : 
+[+adult(\x),-undstudent(\x)].
+[+notworking(\x),-student(\x)].
+[+student(\x),-undstudent(\x)].
+[+undstudent(lily)].
+[+working(\x),-adult(\x)].
+[-notworking(\x),-working(\x)].
+
+The true set:
+undstudent(lily).
+working(lily).
+
+The false set: 
+[]
+All of 6 sorted repair plans are from: 
+[delete([+[notworking,vble(x)],-[student,vble(x)]])].
+[delete([+[student,vble(x)],-[undstudent,vble(x)]])].
+[add_pre(-[dummyPred,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])].
+[add_pre(-[dummyPred,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]])].
+[arityInc(notworking,+[notworking,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]],-[notworking,vble(x)],[-[notworking,vble(x)],-[working,vble(x)]])].
+[arityInc(student,+[student,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]],-[student,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])].
+
+------------------ Solution No. 1 as below (BRT)------------------
+Repair plans found at Round 1/1 :
+add_pre(-dummyPred(\x),[+notworking(\x),-student(\x)]).
+
+
+Repaired Theory: 
+[+adult(\x),-undstudent(\x)].
+[+notworking(\x),-dummyPred(\x),-student(\x)].
+[+student(\x),-undstudent(\x)].
+[+undstudent(lily)].
+[+working(\x),-adult(\x)].
+[-notworking(\x),-working(\x)].
+
+------------------ Solution No. 2 as below------------------
+Repair plans found at Round 1/1 :
+add_pre(-dummyPred(\x),[+student(\x),-undstudent(\x)]).
+
+
+Repaired Theory: 
+[+adult(\x),-undstudent(\x)].
+[+notworking(\x),-student(\x)].
+[+student(\x),-dummyPred(\x),-undstudent(\x)].
+[+undstudent(lily)].
+[+working(\x),-adult(\x)].
+[-notworking(\x),-working(\x)].
+
+------------------ Solution No. 3 as below------------------
+Repair plans found at Round 1/1 :
+delete([+student(\x),-undstudent(\x)]).
+
+
+Repaired Theory: 
+[+adult(\x),-undstudent(\x)].
+[+notworking(\x),-student(\x)].
+[+undstudent(lily)].
+[+working(\x),-adult(\x)].
+[-notworking(\x),-working(\x)].
+
+------------------ Solution No. 4 (BRT)as below------------------
+Repair plans found at Round 1/1 :
+arityInc(student,+[student,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]],-[student,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]]).
+
+
+Repaired Theory: 
+[+adult(\x),-undstudent(\x)].
+[+notworking(\x),-student(\x,dummy_Normal1)].
+[+student(\x,dummy_Abnormal1),-undstudent(\x)].
+[+undstudent(lily)].
+[+working(\x),-adult(\x)].
+[-notworking(\x),-working(\x)].
+
+------------------ Solution No. 5 as below------------------
+Repair plans found at Round 1/1 :
+arityInc(notworking,+[notworking,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]],-[notworking,vble(x)],[-[notworking,vble(x)],-[working,vble(x)]]).
+
+
+Repaired Theory: 
+[+adult(\x),-undstudent(\x)].
+[+notworking(\x,dummy_Abnormal1),-student(\x)].
+[+student(\x),-undstudent(\x)].
+[+undstudent(lily)].
+[+working(\x),-adult(\x)].
+[-notworking(\x,dummy_Normal1),-working(\x)].
+
+------------------ Solution No. 6 as below------------------
+Repair plans found at Round 1/1 :
+delete([+notworking(\x),-student(\x)]).
+
+
+Repaired Theory: 
+[+adult(\x),-undstudent(\x)].
+[+student(\x),-undstudent(\x)].
+[+undstudent(lily)].
+[+working(\x),-adult(\x)].
+[-notworking(\x),-working(\x)].
+
+Solutions are found at rounds:[1/1]
