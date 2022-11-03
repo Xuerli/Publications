@@ -1,0 +1,55 @@
+date(2022,11,3)
+----------------------------------------------------------------------------------
+Theory size: 5
+Faults Number: 1,1
+Cost Limit is: 50
+RoundLimit is: 0
+Running time: 32 ms.
+Heuristics applied:[]
+The protected item(s):[[arity(notDivorced)],[arity(notDivorced)],[notDivorced],[notDivorced]]
+Total Solution number is: 2
+Remaining semi-repaired theories: 0
+----------------------------------------------------------------------------------
+The original theory : 
+[+hadHusband(leticia)].
+[+hasHusband(flor)].
+[+marriedWoman(\x),-hadHusband(\x)].
+[+notDivorced(\x),-marriedWoman(\x)].
+[-divorced(\x),-notDivorced(\x)].
+
+The true set:
+notDivorced(flor).
+
+The false set: 
+notDivorced(leticia).
+
+All of 2 sorted repair plans are from: 
+[rename([([leticia],[flor],[+[hadHusband,[leticia]]])])].
+[rename(-hadHusband,hasHusband,[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]])].
+
+------------------ Solution No. 1 as below------------------
+Repair plans found at Round 1/1 :
+rename([([leticia],[flor],[+[hadHusband,[leticia]]])]).
+
+
+Repaired Theory: 
+[+hadHusband(flor)].
+[+hasHusband(flor)].
+[+marriedWoman(\x),-hadHusband(\x)].
+[+notDivorced(\x),-marriedWoman(\x)].
+[-divorced(\x),-notDivorced(\x)].
+
+------------------ Solution No. 2 as below------------------
+(BRT)
+Repair plans found at Round 1/1 :
+rename(-hadHusband,hasHusband,[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]]).
+
+
+Repaired Theory: 
+[+hadHusband(leticia)].
+[+hasHusband(flor)].
+[+marriedWoman(\x),-hasHusband(\x)].
+[+notDivorced(\x),-marriedWoman(\x)].
+[-divorced(\x),-notDivorced(\x)].
+
+Solutions are found at rounds:[1/1]
