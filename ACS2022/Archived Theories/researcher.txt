@@ -1,0 +1,120 @@
+date(2022,11,3)
+----------------------------------------------------------------------------------
+Theory size: 4
+Faults Number: 0,1
+Cost Limit is: 50
+RoundLimit is: 0
+Running time: 11 ms.
+Heuristics applied:[]
+The protected item(s):[[arity(activeReasercher)],[arity(employee)],[activeReasercher],[employee]]
+Total Solution number is: 8
+Remaining semi-repaired theories: 0
+----------------------------------------------------------------------------------
+The original theory : 
+[+activeReasercher(ann)].
+[+author(\x),-writes(\x,papers)].
+[+employee(\x),-author(\x)].
+[+writes(\x,papers),-activeReasercher(\x)].
+
+The true set:
+activeReasercher(ann).
+
+The false set: 
+employee(ann).
+
+All of 8 sorted repair plans are from: 
+[delete([+[author,vble(x)],-[writes,vble(x),[papers]]])].
+[delete([+[employee,vble(x)],-[author,vble(x)]])].
+[delete([+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])].
+[add_pre(-[dummyPred,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]])].
+[add_pre(-[dummyPred,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])].
+[add_pre(-[dummyPred,vble(x)],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])].
+[arityInc(author,+[author,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]],-[author,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])].
+[arityInc(writes,+[writes,vble(x),[papers]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],-[writes,vble(x),[papers]],[+[author,vble(x)],-[writes,vble(x),[papers]]])].
+
+------------------ Solution No. 1 as below------------------
+Repair plans found at Round 1/1 :
+add_pre(-dummyPred(\x),[+author(\x),-writes(\x,papers)]).
+
+
+Repaired Theory: 
+[+activeReasercher(ann)].
+[+author(\x),-dummyPred(\x),-writes(\x,papers)].
+[+employee(\x),-author(\x)].
+[+writes(\x,papers),-activeReasercher(\x)].
+
+------------------ Solution No. 2 as below------------------
+Repair plans found at Round 1/1 :
+delete([+writes(\x,papers),-activeReasercher(\x)]).
+
+
+Repaired Theory: 
+[+activeReasercher(ann)].
+[+author(\x),-writes(\x,papers)].
+[+employee(\x),-author(\x)].
+
+------------------ Solution No. 3 as below------------------
+Repair plans found at Round 1/1 :
+add_pre(-dummyPred(\x),[+writes(\x,papers),-activeReasercher(\x)]).
+
+
+Repaired Theory: 
+[+activeReasercher(ann)].
+[+author(\x),-writes(\x,papers)].
+[+employee(\x),-author(\x)].
+[+writes(\x,papers),-activeReasercher(\x),-dummyPred(\x)].
+
+------------------ Solution No. 4 as below------------------
+Repair plans found at Round 1/1 :
+add_pre(-dummyPred(\x),[+employee(\x),-author(\x)]).
+
+
+Repaired Theory: 
+[+activeReasercher(ann)].
+[+author(\x),-writes(\x,papers)].
+[+employee(\x),-author(\x),-dummyPred(\x)].
+[+writes(\x,papers),-activeReasercher(\x)].
+
+------------------ Solution No. 5 as below------------------
+Repair plans found at Round 1/1 :
+delete([+employee(\x),-author(\x)]).
+
+
+Repaired Theory: 
+[+activeReasercher(ann)].
+[+author(\x),-writes(\x,papers)].
+[+writes(\x,papers),-activeReasercher(\x)].
+
+------------------ Solution No. 6 as below------------------
+Repair plans found at Round 1/1 :
+arityInc(writes,+[writes,vble(x),[papers]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],-[writes,vble(x),[papers]],[+[author,vble(x)],-[writes,vble(x),[papers]]]).
+
+
+Repaired Theory: 
+[+activeReasercher(ann)].
+[+author(\x),-writes(\x,papers,dummy_Normal1)].
+[+employee(\x),-author(\x)].
+[+writes(\x,papers,dummy_Abnormal1),-activeReasercher(\x)].
+
+------------------ Solution No. 7 as below------------------
+Repair plans found at Round 1/1 :
+arityInc(author,+[author,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]],-[author,vble(x)],[+[employee,vble(x)],-[author,vble(x)]]).
+
+
+Repaired Theory: 
+[+activeReasercher(ann)].
+[+author(\x,dummy_Abnormal1),-writes(\x,papers)].
+[+employee(\x),-author(\x,dummy_Normal1)].
+[+writes(\x,papers),-activeReasercher(\x)].
+
+------------------ Solution No. 8 as below------------------
+Repair plans found at Round 1/1 :
+delete([+author(\x),-writes(\x,papers)]).
+
+
+Repaired Theory: 
+[+activeReasercher(ann)].
+[+employee(\x),-author(\x)].
+[+writes(\x,papers),-activeReasercher(\x)].
+
+Solutions are found at rounds:[1/1]
