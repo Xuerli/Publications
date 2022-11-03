@@ -4,7 +4,7 @@ Theory size: 4
 Faults Number: 1,0
 Cost Limit is: 50
 RoundLimit is: 0
-Running time: 191 ms.
+Running time: 18 ms.
 Heuristics applied:[minicost]
 The protected item(s):[-parent(\x,\y,step),-parent(\x,\y,birth),[arity(families)],[families]]
 Total Solution number is: 4
@@ -29,7 +29,7 @@ All of 4 sorted repair plans are from:
 [analogy([+[families,vble(x),vble(y)],-[parent,vble(x),vble(y),[birth]]],[+[families,vble(z),vble(x)],-[parent,vble(z),vble(y),[birth]],-[\=,vble(y),vble(x)]])].
 
 ------------------ Solution No. 1 as below------------------
-Repair plans found at Round 1/14 :
+Repair plans found at Round 1/1 :
 extC2V([([birth],vble(z),[+[families,vble(x),vble(y)],-[parent,vble(x),vble(y),[birth]]])]).
 
 
@@ -40,7 +40,7 @@ Repaired Theory:
 [-parent(\x,\y,birth),-parent(\x,\y,step)].
 
 ------------------ Solution No. 2 as below------------------
-Repair plans found at Round 1/14 :
+Repair plans found at Round 1/1 :
 analogy([+families(\x,\y),-parent(\x,\y,birth)],[+families(\z,\x),-parent(\z,\y,birth),- (\y\= \x)]).
 
 
@@ -64,7 +64,7 @@ Repaired Theory:
 [-parent(\x,\y,birth),-parent(\x,\y,step)].
 
 ------------------ Solution No. 4 as below------------------
-Repair plans found at Round 1/14 :
+Repair plans found at Round 1/1 :
 rename([([step],[birth],[+[parent,[a],[c],[step]]])]).
 
 
@@ -74,4 +74,4 @@ Repaired Theory:
 [+parent(a,c,birth)].
 [-parent(\x,\y,birth),-parent(\x,\y,step)].
 
-Solutions are found at rounds:[1/1,1/14]
+Solutions are found at rounds:[1/1]
