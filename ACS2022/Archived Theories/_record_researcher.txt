@@ -1,0 +1,547 @@
+
+---------Start detInsInc, Input theory is:------
+
+[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]]
+[+[activeReasercher,[ann]]]
+[+[author,vble(x)],-[writes,vble(x),[papers]]]
+[+[employee,vble(x)],-[author,vble(x)]]
+[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]
+
+
+---------SufGoals is------
+[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+[([-[employee,[ann]]],[+[employee,vble(x)],-[author,vble(x)]],[[ann]/vble(x)],[-[author,[ann]]],[0,0]),([-[author,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[[ann]/vble(x)],[-[writes,[ann],[papers]]],[0,0]),([-[writes,[ann],[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],[[ann]/vble(x)],[-[activeReasercher,[ann]]],[0,0]),([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]
+
+---------Violations are------
+
+--------- Start repInsInc round: 1
+
+-------- Start blockProof1: -------- 
+[-[employee,[ann]]],[+[employee,vble(x)],-[author,vble(x)]],[[ann]/vble(x)],[-[author,[ann]]],[0,0]
+[-[author,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[[ann]/vble(x)],[-[writes,[ann],[papers]]],[0,0]
+[-[writes,[ann],[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],[[ann]/vble(x)],[-[activeReasercher,[ann]]],[0,0]
+[-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0]
+
+TheoryIn is: [[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]]
+
+[+[activeReasercher,[ann]]]
+[+[author,vble(x)],-[writes,vble(x),[papers]]]
+[+[employee,vble(x)],-[author,vble(x)]]
+[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]
+
+Original Axiom is: [+[employee,vble(x)],-[author,vble(x)]]
+
+-------- getAdjCond for  Rule: [+[employee,vble(x)],-[author,vble(x)]]
+
+ PreCands are: [activeReasercher,writes]
+
+-------- start to find unprovable precondition candidates based on: activeReasercher
+-- The theorems of Predicate -activeReasercher-- are:
+[([+[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])]
+Found TSAll for: activeReasercher
+[[+[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[+[activeReasercher,vble(x)]]]
+
+ upArg ArgsV is 
+[[ann]]
+
+******** Warning: No adjustment precondition candidates found
+
+-------- start to find unprovable precondition candidates based on: writes
+-- The theorems of Predicate -writes-- are:
+[([+[writes,[ann],[papers]]],[[([-[activeReasercher,vble(x)],+[writes,vble(x),[papers]]],[+[activeReasercher,[ann]]],[],[+[writes,[ann],[papers]]],[0,0])]])]
+Found TSAll for: writes
+[[+[writes,[ann],[papers]]],[+[writes,vble(x),[papers]]]]
+
+ upArg ArgsV is 
+[[ann],[papers]]
+
+******** Warning: No adjustment precondition candidates found
+
+ Found unprovable precondition : add_pre(-[dummyPred,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])
+
+ All found unprovable preconditions: [add_pre(-[dummyPred,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])]
+
+Original Axiom is: [+[author,vble(x)],-[writes,vble(x),[papers]]]
+
+-------- getAdjCond for  Rule: [+[author,vble(x)],-[writes,vble(x),[papers]]]
+
+ PreCands are: [activeReasercher,employee]
+
+-------- start to find unprovable precondition candidates based on: activeReasercher
+-- The theorems of Predicate -activeReasercher-- are:
+[([+[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])]
+Found TSAll for: activeReasercher
+[[+[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[+[activeReasercher,vble(x)]]]
+
+ upArg ArgsV is 
+[[ann]]
+
+******** Warning: No adjustment precondition candidates found
+
+-------- start to find unprovable precondition candidates based on: employee
+-- The theorems of Predicate -employee-- are:
+[]
+Found TSAll for: employee
+[]
+
+ upArg ArgsV is 
+[]
+
+******** Warning: No adjustment precondition candidates found
+
+ Found unprovable precondition : add_pre(-[dummyPred,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]])
+
+ All found unprovable preconditions: [add_pre(-[dummyPred,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]])]
+
+Original Axiom is: [+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]
+
+-------- getAdjCond for  Rule: [+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]
+
+ PreCands are: [author,employee]
+
+-------- start to find unprovable precondition candidates based on: author
+-- The theorems of Predicate -author-- are:
+[]
+Found TSAll for: author
+[[+[author,vble(x)]]]
+
+******** Warning: No adjustment precondition candidates found
+
+-------- start to find unprovable precondition candidates based on: employee
+-- The theorems of Predicate -employee-- are:
+[]
+Found TSAll for: employee
+[]
+
+ upArg ArgsV is 
+[]
+
+******** Warning: No adjustment precondition candidates found
+
+ Found unprovable precondition : add_pre(-[dummyPred,vble(x)],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])
+
+ All found unprovable preconditions: [add_pre(-[dummyPred,vble(x)],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])]
+
+Original Axiom is: [+[activeReasercher,[ann]]]
+
+-------- start asser2rule to find unprovable precondition
+
+-- SuffGoals=[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])]
+
+-- Theory=[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]]
+
+
+[+[activeReasercher,[ann]]]
+[+[author,vble(x)],-[writes,vble(x),[papers]]]
+[+[employee,vble(x)],-[author,vble(x)]]
+[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]
+
+
+-------- Start blockProof2: reformation -------- 
+-------- Proof is:
+[([-[employee,[ann]]],[+[employee,vble(x)],-[author,vble(x)]],[[ann]/vble(x)],[-[author,[ann]]],[0,0]),([-[author,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[[ann]/vble(x)],[-[writes,[ann],[papers]]],[0,0]),([-[writes,[ann],[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],[[ann]/vble(x)],[-[activeReasercher,[ann]]],[0,0]),([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]
+
+
+-------- SuffGoals is:
+[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])]
+
+
+--Blocking Repair Plan11 InpClause:
+[+[author,vble(x)],-[writes,vble(x),[papers]]]
+
+arityInc(author,+[author,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]],-[author,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])
+
+--Blocking Repair Plan11 InpClause:
+[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]
+
+arityInc(writes,+[writes,vble(x),[papers]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],-[writes,vble(x),[papers]],[+[author,vble(x)],-[writes,vble(x),[papers]]])
+
+8 repair plans for blockP:[([-[employee,[ann]]],[+[employee,vble(x)],-[author,vble(x)]],[[ann]/vble(x)],[-[author,[ann]]],[0,0]),([-[author,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[[ann]/vble(x)],[-[writes,[ann],[papers]]],[0,0]),([-[writes,[ann],[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],[[ann]/vble(x)],[-[activeReasercher,[ann]]],[0,0]),([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]
+
+
+[incomp,([delete([+[author,vble(x)],-[writes,vble(x),[papers]]])],[[+[author,vble(x)],-[writes,vble(x),[papers]]]]),[[+[employee,vble(x)],-[author,vble(x)]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],[+[activeReasercher,[ann]]]]]
+[incomp,([delete([+[employee,vble(x)],-[author,vble(x)]])],[[+[employee,vble(x)],-[author,vble(x)]]]),[[+[employee,vble(x)],-[author,vble(x)]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],[+[activeReasercher,[ann]]]]]
+[incomp,([delete([+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])],[[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]]),[[+[employee,vble(x)],-[author,vble(x)]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],[+[activeReasercher,[ann]]]]]
+[incomp,([add_pre(-[dummyPred,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]])],[[+[author,vble(x)],-[writes,vble(x),[papers]]]]),[[+[employee,vble(x)],-[author,vble(x)]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],[+[activeReasercher,[ann]]]]]
+[incomp,([add_pre(-[dummyPred,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])],[[+[employee,vble(x)],-[author,vble(x)]]]),[[+[employee,vble(x)],-[author,vble(x)]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],[+[activeReasercher,[ann]]]]]
+[incomp,([add_pre(-[dummyPred,vble(x)],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])],[[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]]),[[+[employee,vble(x)],-[author,vble(x)]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],[+[activeReasercher,[ann]]]]]
+[incomp,([arityInc(author,+[author,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]],-[author,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])],[[+[author,vble(x)],-[writes,vble(x),[papers]]]]),[[+[employee,vble(x)],-[author,vble(x)]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],[+[activeReasercher,[ann]]]]]
+[incomp,([arityInc(writes,+[writes,vble(x),[papers]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],-[writes,vble(x),[papers]],[+[author,vble(x)],-[writes,vble(x),[papers]]])],[[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]]),[[+[employee,vble(x)],-[author,vble(x)]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],[+[activeReasercher,[ann]]]]]
+
+
+1 fault's new repair plans found: [[[incomp,([delete([+[author,vble(x)],-[writes,vble(x),[papers]]])],[[+[author,vble(x)],-[writes,vble(x),[papers]]]]),[[+[employee,vble(x)],-[author,vble(x)]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],[+[activeReasercher,[ann]]]]],[incomp,([delete([+[employee,vble(x)],-[author,vble(x)]])],[[+[employee,vble(x)],-[author,vble(x)]]]),[[+[employee,vble(x)],-[author,vble(x)]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],[+[activeReasercher,[ann]]]]],[incomp,([delete([+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])],[[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]]),[[+[employee,vble(x)],-[author,vble(x)]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],[+[activeReasercher,[ann]]]]],[incomp,([add_pre(-[dummyPred,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]])],[[+[author,vble(x)],-[writes,vble(x),[papers]]]]),[[+[employee,vble(x)],-[author,vble(x)]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],[+[activeReasercher,[ann]]]]],[incomp,([add_pre(-[dummyPred,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])],[[+[employee,vble(x)],-[author,vble(x)]]]),[[+[employee,vble(x)],-[author,vble(x)]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],[+[activeReasercher,[ann]]]]],[incomp,([add_pre(-[dummyPred,vble(x)],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])],[[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]]),[[+[employee,vble(x)],-[author,vble(x)]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],[+[activeReasercher,[ann]]]]],[incomp,([arityInc(author,+[author,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]],-[author,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])],[[+[author,vble(x)],-[writes,vble(x),[papers]]]]),[[+[employee,vble(x)],-[author,vble(x)]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],[+[activeReasercher,[ann]]]]],[incomp,([arityInc(writes,+[writes,vble(x),[papers]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],-[writes,vble(x),[papers]],[+[author,vble(x)],-[writes,vble(x),[papers]]])],[[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]]),[[+[employee,vble(x)],-[author,vble(x)]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],[+[activeReasercher,[ann]]]]]]]
+
+
+[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]]
+
+All collections of repair plans are: 
+[delete([+[author,vble(x)],-[writes,vble(x),[papers]]])]
+[delete([+[employee,vble(x)],-[author,vble(x)]])]
+[delete([+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])]
+[add_pre(-[dummyPred,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]])]
+[add_pre(-[dummyPred,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])]
+[add_pre(-[dummyPred,vble(x)],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])]
+[arityInc(author,+[author,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]],-[author,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])]
+[arityInc(writes,+[writes,vble(x),[papers]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],-[writes,vble(x),[papers]],[+[author,vble(x)],-[writes,vble(x),[papers]]])]
+
+
+-------- Start to apply repair plans:
+delete([+[author,vble(x)],-[writes,vble(x),[papers]]])
+
+
+******** RepPlan: delete([+[author,vble(x)],-[writes,vble(x),[papers]]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+delete([+[employee,vble(x)],-[author,vble(x)]])
+
+
+******** RepPlan: delete([+[employee,vble(x)],-[author,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+delete([+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])
+
+
+******** RepPlan: delete([+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+add_pre(-[dummyPred,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]])
+
+
+******** RepPlan: add_pre(-[dummyPred,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+add_pre(-[dummyPred,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])
+
+
+******** RepPlan: add_pre(-[dummyPred,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+add_pre(-[dummyPred,vble(x)],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])
+
+
+******** RepPlan: add_pre(-[dummyPred,vble(x)],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+arityInc(author,+[author,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]],-[author,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])
+
+
+-------- Start apply arityInc-------- 
+arityInc(author,+[author,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]])
+******** RepPlan: arityInc(author,+[author,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]],-[author,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+arityInc(writes,+[writes,vble(x),[papers]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],-[writes,vble(x),[papers]],[+[author,vble(x)],-[writes,vble(x),[papers]]])
+
+
+-------- Start apply arityInc-------- 
+arityInc(writes,+[writes,vble(x),[papers]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])
+******** RepPlan: arityInc(writes,+[writes,vble(x),[papers]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],-[writes,vble(x),[papers]],[+[author,vble(x)],-[writes,vble(x),[papers]]])
+
+-------- Finish applying repair plans.
+
+-- There are 8 repaired states: 
+[[[delete([+[author,vble(x)],-[writes,vble(x),[papers]]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]
+[[[delete([+[employee,vble(x)],-[author,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]
+[[[delete([+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]
+[[[add_pre(-[dummyPred,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[dummyPred,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]
+[[[add_pre(-[dummyPred,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)],-[dummyPred,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]
+[[[add_pre(-[dummyPred,vble(x)],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)],-[dummyPred,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]
+[[[arityInc(author,+[author,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]],-[author,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])],[delete([+[author,vble(x),[dummy_Abnormal1]],-[writes,vble(x),[papers]]]),deleArg(author,2)]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x),[dummy_Abnormal1]],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x),[dummy_Normal1]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]
+[[[arityInc(writes,+[writes,vble(x),[papers]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],-[writes,vble(x),[papers]],[+[author,vble(x)],-[writes,vble(x),[papers]]])],[delete([+[writes,vble(x),[papers],[dummy_Abnormal1]],-[activeReasercher,vble(x)]]),deleArg(writes,3)]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers],[dummy_Normal1]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers],[dummy_Abnormal1]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]
+
+
+-- RepStatesFine [[[[arityInc(writes,+[writes,vble(x),[papers]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],-[writes,vble(x),[papers]],[+[author,vble(x)],-[writes,vble(x),[papers]]])],[delete([+[writes,vble(x),[papers],[dummy_Abnormal1]],-[activeReasercher,vble(x)]]),deleArg(writes,3)]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers],[dummy_Normal1]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers],[dummy_Abnormal1]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[[[arityInc(author,+[author,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]],-[author,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])],[delete([+[author,vble(x),[dummy_Abnormal1]],-[writes,vble(x),[papers]]]),deleArg(author,2)]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x),[dummy_Abnormal1]],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x),[dummy_Normal1]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[[[add_pre(-[dummyPred,vble(x)],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)],-[dummyPred,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[[[add_pre(-[dummyPred,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)],-[dummyPred,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[[[add_pre(-[dummyPred,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[dummyPred,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[[[delete([+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[[[delete([+[employee,vble(x)],-[author,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[[[delete([+[author,vble(x)],-[writes,vble(x),[papers]]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]]
+
+---------Start detInsInc, Input theory is:------
+
+[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers],[dummy_Normal1]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers],[dummy_Abnormal1]],-[activeReasercher,vble(x)]]]
+[+[activeReasercher,[ann]]]
+[+[author,vble(x)],-[writes,vble(x),[papers],[dummy_Normal1]]]
+[+[employee,vble(x)],-[author,vble(x)]]
+[+[writes,vble(x),[papers],[dummy_Abnormal1]],-[activeReasercher,vble(x)]]
+
+
+---------SufGoals is------
+[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[activeReasercher,[ann]]],[+[author,vble(x),[dummy_Abnormal1]],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x),[dummy_Normal1]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]]
+[+[activeReasercher,[ann]]]
+[+[author,vble(x),[dummy_Abnormal1]],-[writes,vble(x),[papers]]]
+[+[employee,vble(x)],-[author,vble(x),[dummy_Normal1]]]
+[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]
+
+
+---------SufGoals is------
+[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)],-[dummyPred,vble(x)]]]
+[+[activeReasercher,[ann]]]
+[+[author,vble(x)],-[writes,vble(x),[papers]]]
+[+[employee,vble(x)],-[author,vble(x)]]
+[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)],-[dummyPred,vble(x)]]
+
+
+---------SufGoals is------
+[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)],-[dummyPred,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]]
+[+[activeReasercher,[ann]]]
+[+[author,vble(x)],-[writes,vble(x),[papers]]]
+[+[employee,vble(x)],-[author,vble(x)],-[dummyPred,vble(x)]]
+[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]
+
+
+---------SufGoals is------
+[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[dummyPred,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]]
+[+[activeReasercher,[ann]]]
+[+[author,vble(x)],-[dummyPred,vble(x)],-[writes,vble(x),[papers]]]
+[+[employee,vble(x)],-[author,vble(x)]]
+[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]
+
+
+---------SufGoals is------
+[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]]]
+[+[activeReasercher,[ann]]]
+[+[author,vble(x)],-[writes,vble(x),[papers]]]
+[+[employee,vble(x)],-[author,vble(x)]]
+
+
+---------SufGoals is------
+[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]]
+[+[activeReasercher,[ann]]]
+[+[author,vble(x)],-[writes,vble(x),[papers]]]
+[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]
+
+
+---------SufGoals is------
+[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[activeReasercher,[ann]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]]
+[+[activeReasercher,[ann]]]
+[+[employee,vble(x)],-[author,vble(x)]]
+[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]
+
+
+---------SufGoals is------
+[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+
+---------Violations are------
+
+-- All faulty states: 8
+0,0,[[[arityInc(writes,+[writes,vble(x),[papers]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],-[writes,vble(x),[papers]],[+[author,vble(x)],-[writes,vble(x),[papers]]])],[delete([+[writes,vble(x),[papers],[dummy_Abnormal1]],-[activeReasercher,vble(x)]]),deleArg(writes,3)]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers],[dummy_Normal1]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers],[dummy_Abnormal1]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+0,0,[[[arityInc(author,+[author,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]],-[author,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])],[delete([+[author,vble(x),[dummy_Abnormal1]],-[writes,vble(x),[papers]]]),deleArg(author,2)]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x),[dummy_Abnormal1]],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x),[dummy_Normal1]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+0,0,[[[add_pre(-[dummyPred,vble(x)],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)],-[dummyPred,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+0,0,[[[add_pre(-[dummyPred,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)],-[dummyPred,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+0,0,[[[add_pre(-[dummyPred,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[dummyPred,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+0,0,[[[delete([+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+0,0,[[[delete([+[employee,vble(x)],-[author,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+0,0,[[[delete([+[author,vble(x)],-[writes,vble(x),[papers]]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+
+An Optimal repaired theory with cost:1 and the fault state: [([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+[[[arityInc(writes,+[writes,vble(x),[papers]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],-[writes,vble(x),[papers]],[+[author,vble(x)],-[writes,vble(x),[papers]]])],[delete([+[writes,vble(x),[papers],[dummy_Abnormal1]],-[activeReasercher,vble(x)]]),deleArg(writes,3)]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers],[dummy_Normal1]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers],[dummy_Abnormal1]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]
+An Optimal repaired theory with cost:1 and the fault state: [([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+[[[arityInc(author,+[author,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]],-[author,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])],[delete([+[author,vble(x),[dummy_Abnormal1]],-[writes,vble(x),[papers]]]),deleArg(author,2)]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x),[dummy_Abnormal1]],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x),[dummy_Normal1]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]
+An Optimal repaired theory with cost:1 and the fault state: [([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+[[[add_pre(-[dummyPred,vble(x)],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)],-[dummyPred,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]
+An Optimal repaired theory with cost:1 and the fault state: [([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+[[[add_pre(-[dummyPred,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)],-[dummyPred,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]
+An Optimal repaired theory with cost:1 and the fault state: [([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+[[[add_pre(-[dummyPred,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[dummyPred,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]
+An Optimal repaired theory with cost:1 and the fault state: [([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+[[[delete([+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]
+An Optimal repaired theory with cost:1 and the fault state: [([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+[[[delete([+[employee,vble(x)],-[author,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]
+An Optimal repaired theory with cost:1 and the fault state: [([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+[[[delete([+[author,vble(x)],-[writes,vble(x),[papers]]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]
+--The number of Optimals: 8
+[[[arityInc(writes,+[writes,vble(x),[papers]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],-[writes,vble(x),[papers]],[+[author,vble(x)],-[writes,vble(x),[papers]]])],[delete([+[writes,vble(x),[papers],[dummy_Abnormal1]],-[activeReasercher,vble(x)]]),deleArg(writes,3)]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers],[dummy_Normal1]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers],[dummy_Abnormal1]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+[[[arityInc(author,+[author,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]],-[author,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])],[delete([+[author,vble(x),[dummy_Abnormal1]],-[writes,vble(x),[papers]]]),deleArg(author,2)]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x),[dummy_Abnormal1]],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x),[dummy_Normal1]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+[[[add_pre(-[dummyPred,vble(x)],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)],-[dummyPred,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+[[[add_pre(-[dummyPred,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)],-[dummyPred,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+[[[add_pre(-[dummyPred,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[dummyPred,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+[[[delete([+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+[[[delete([+[employee,vble(x)],-[author,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+[[[delete([+[author,vble(x)],-[writes,vble(x),[papers]]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+
+The vitality of the repaired theory is :[[(0,0),[+[writes,vble(x),[papers],[dummy_Abnormal1]],-[activeReasercher,vble(x)]]],[(0,0),[+[employee,vble(x)],-[author,vble(x)]]],[(0,0),[+[author,vble(x)],-[writes,vble(x),[papers],[dummy_Normal1]]]],[(1,0),[+[activeReasercher,[ann]]]]]
+ Vitality TotalScores are: 1,0
+
+The vitality of the repaired theory is :[[(0,0),[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[(0,0),[+[employee,vble(x)],-[author,vble(x),[dummy_Normal1]]]],[(0,0),[+[author,vble(x),[dummy_Abnormal1]],-[writes,vble(x),[papers]]]],[(1,0),[+[activeReasercher,[ann]]]]]
+ Vitality TotalScores are: 1,0
+
+The vitality of the repaired theory is :[[(0,0),[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)],-[dummyPred,vble(x)]]],[(0,0),[+[employee,vble(x)],-[author,vble(x)]]],[(0,0),[+[author,vble(x)],-[writes,vble(x),[papers]]]],[(1,0),[+[activeReasercher,[ann]]]]]
+ Vitality TotalScores are: 1,0
+
+The vitality of the repaired theory is :[[(0,0),[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[(0,0),[+[employee,vble(x)],-[author,vble(x)],-[dummyPred,vble(x)]]],[(0,0),[+[author,vble(x)],-[writes,vble(x),[papers]]]],[(1,0),[+[activeReasercher,[ann]]]]]
+ Vitality TotalScores are: 1,0
+
+The vitality of the repaired theory is :[[(0,0),[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[(0,0),[+[employee,vble(x)],-[author,vble(x)]]],[(0,0),[+[author,vble(x)],-[dummyPred,vble(x)],-[writes,vble(x),[papers]]]],[(1,0),[+[activeReasercher,[ann]]]]]
+ Vitality TotalScores are: 1,0
+
+The vitality of the repaired theory is :[[(0,0),[+[employee,vble(x)],-[author,vble(x)]]],[(0,0),[+[author,vble(x)],-[writes,vble(x),[papers]]]],[(1,0),[+[activeReasercher,[ann]]]]]
+ Vitality TotalScores are: 1,0
+
+The vitality of the repaired theory is :[[(0,0),[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[(0,0),[+[author,vble(x)],-[writes,vble(x),[papers]]]],[(1,0),[+[activeReasercher,[ann]]]]]
+ Vitality TotalScores are: 1,0
+
+The vitality of the repaired theory is :[[(0,0),[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[(0,0),[+[employee,vble(x)],-[author,vble(x)]]],[(1,0),[+[activeReasercher,[ann]]]]]
+ Vitality TotalScores are: 1,0
+
+--The number of Vitality Optimals: 8
+[[[delete([+[author,vble(x)],-[writes,vble(x),[papers]]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+[[[delete([+[employee,vble(x)],-[author,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+[[[delete([+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+[[[add_pre(-[dummyPred,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[dummyPred,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+[[[add_pre(-[dummyPred,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)],-[dummyPred,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+[[[add_pre(-[dummyPred,vble(x)],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)],-[dummyPred,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+[[[arityInc(author,+[author,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]],-[author,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])],[delete([+[author,vble(x),[dummy_Abnormal1]],-[writes,vble(x),[papers]]]),deleArg(author,2)]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x),[dummy_Abnormal1]],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x),[dummy_Normal1]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+[[[arityInc(writes,+[writes,vble(x),[papers]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],-[writes,vble(x),[papers]],[+[author,vble(x)],-[writes,vble(x),[papers]]])],[delete([+[writes,vble(x),[papers],[dummy_Abnormal1]],-[activeReasercher,vble(x)]]),deleArg(writes,3)]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers],[dummy_Normal1]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers],[dummy_Abnormal1]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]],[([-[activeReasercher,[ann]]],[[([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]])],[],[]
+
+--The solution in 1 not in 2 include: 0
+
+
+--The solution in 2 not in 1 include: 0
+
+
+******** A solution is reached. *******
+
+******** A solution is reached. *******
+
+******** A solution is reached. *******
+
+******** A solution is reached. *******
+
+******** A solution is reached. *******
+
+******** A solution is reached. *******
+
+******** A solution is reached. *******
+
+******** A solution is reached. *******
+
+--------------AllRepStates: [fault-free,1/1,[[[delete([+[author,vble(x)],-[writes,vble(x),[papers]]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]]
+[fault-free,1/1,[[[delete([+[employee,vble(x)],-[author,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]]
+[fault-free,1/1,[[[delete([+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]]
+[fault-free,1/1,[[[add_pre(-[dummyPred,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[dummyPred,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]]
+[fault-free,1/1,[[[add_pre(-[dummyPred,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)],-[dummyPred,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]]
+[fault-free,1/1,[[[add_pre(-[dummyPred,vble(x)],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)],-[dummyPred,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]]
+[fault-free,1/1,[[[arityInc(author,+[author,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]],-[author,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])],[delete([+[author,vble(x),[dummy_Abnormal1]],-[writes,vble(x),[papers]]]),deleArg(author,2)]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x),[dummy_Abnormal1]],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x),[dummy_Normal1]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]]
+[fault-free,1/1,[[[arityInc(writes,+[writes,vble(x),[papers]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],-[writes,vble(x),[papers]],[+[author,vble(x)],-[writes,vble(x),[papers]]])],[delete([+[writes,vble(x),[papers],[dummy_Abnormal1]],-[activeReasercher,vble(x)]]),deleArg(writes,3)]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers],[dummy_Normal1]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers],[dummy_Abnormal1]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]]
+
+
+--------------executation time 2---
+time takes
+11
+
+------------- AllRepStates -------------
+[fault-free,1/1,[[[delete([+[author,vble(x)],-[writes,vble(x),[papers]]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]]
+[fault-free,1/1,[[[delete([+[employee,vble(x)],-[author,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]]
+[fault-free,1/1,[[[delete([+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]]
+[fault-free,1/1,[[[add_pre(-[dummyPred,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[dummyPred,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]]
+[fault-free,1/1,[[[add_pre(-[dummyPred,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)],-[dummyPred,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]]
+[fault-free,1/1,[[[add_pre(-[dummyPred,vble(x)],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)],-[dummyPred,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]]
+[fault-free,1/1,[[[arityInc(author,+[author,vble(x)],[+[author,vble(x)],-[writes,vble(x),[papers]]],-[author,vble(x)],[+[employee,vble(x)],-[author,vble(x)]])],[delete([+[author,vble(x),[dummy_Abnormal1]],-[writes,vble(x),[papers]]]),deleArg(author,2)]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x),[dummy_Abnormal1]],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x),[dummy_Normal1]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]]
+[fault-free,1/1,[[[arityInc(writes,+[writes,vble(x),[papers]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],-[writes,vble(x),[papers]],[+[author,vble(x)],-[writes,vble(x),[papers]]])],[delete([+[writes,vble(x),[papers],[dummy_Abnormal1]],-[activeReasercher,vble(x)]]),deleArg(writes,3)]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers],[dummy_Normal1]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers],[dummy_Abnormal1]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]]
+
+
+
+
+------------- TASS -------------
+FullyNumRaw is: 8
+FullyNum is: 8
+
+
+[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[dummyPred,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]]
+[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]]]
+[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)],-[dummyPred,vble(x)]]]
+[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x)],-[dummyPred,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]]
+[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]]
+[[+[activeReasercher,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers],[dummy_Normal1]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers],[dummy_Abnormal1]],-[activeReasercher,vble(x)]]]
+[[+[activeReasercher,[ann]]],[+[author,vble(x),[dummy_Abnormal1]],-[writes,vble(x),[papers]]],[+[employee,vble(x)],-[author,vble(x),[dummy_Normal1]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]]
+[[+[activeReasercher,[ann]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]]
+
+
+
+------------- TBSS -------------
+SemiNumRaw is: 0
+SemiNum is: 0
+
+
+
+
+
