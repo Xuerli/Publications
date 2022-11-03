@@ -1,0 +1,51 @@
+date(2022,11,3)
+----------------------------------------------------------------------------------
+Theory size: 6
+Faults Number: 3,0
+Cost Limit is: 50
+RoundLimit is: 0
+Running time: 162 ms.
+Heuristics applied:[]
+The protected item(s):[[arity(father)],[arity(father)],[arity(mother)],[arity(mother)],[father],[father],[mother],[mother]]
+Total Solution number is: 1
+Remaining semi-repaired theories: 0
+----------------------------------------------------------------------------------
+The original theory : 
+[+female(c)].
+[+female(d)].
+[+male(a)].
+[+parent(a,b)].
+[+parent(a,c)].
+[+parent(d,b)].
+
+The true set:
+father(a,b).
+father(a,c).
+mother(d,b).
+
+The false set: 
+mother(a,b).
+mother(a,c).
+father(d,b).
+
+All of 1 sorted repair plans are from: 
+[expand([+[father,vble(z),vble(y)],-[male,vble(z)],-[parent,vble(z),vble(y)]]),expand([+[mother,vble(y),vble(z)],-[female,vble(y)],-[parent,vble(y),vble(z)]])].
+
+------------------ Solution No. 1 as below------------------
+(BRT)
+Repair plans found at Round 1/1 :
+expand([+father(\z,\y),-male(\z),-parent(\z,\y)]).
+expand([+mother(\y,\z),-female(\y),-parent(\y,\z)]).
+
+
+Repaired Theory: 
+[+father(\z,\y),-male(\z),-parent(\z,\y)].
+[+female(c)].
+[+female(d)].
+[+male(a)].
+[+mother(\y,\z),-female(\y),-parent(\y,\z)].
+[+parent(a,b)].
+[+parent(a,c)].
+[+parent(d,b)].
+
+Solutions are found at rounds:[1/1]
