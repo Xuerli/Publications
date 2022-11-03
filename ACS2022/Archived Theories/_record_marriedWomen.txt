@@ -1,0 +1,1287 @@
+
+---------Start detInsInc, Input theory is:------
+
+[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+[+[hadHusband,[leticia]]]
+[+[hasHusband,[flor]]]
+[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]
+[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]
+[-[divorced,vble(x)],-[notDivorced,vble(x)]]
+
+
+---------SufGoals is------
+[]
+---------InsufGoals is------
+[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[flor]/vble(x)],[-[hadHusband,[flor]]],[1,0])]])]
+---------InComps are------
+[-[notDivorced,[leticia]]],[[([-[notDivorced,[leticia]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[leticia]/vble(x)],[-[marriedWoman,[leticia]]],[0,0]),([-[marriedWoman,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[leticia]/vble(x)],[-[hadHusband,[leticia]]],[0,0]),([-[hadHusband,[leticia]]],[+[hadHusband,[leticia]]],[],[],[0,0])]]
+
+---------Violations are------
+
+--------- Start repInsInc round: 1
+
+--------Start unblocking 1 based on evidences  ------
+
+-- Unresolvables and ProofCur is :
+[-[hadHusband,[flor]]]
+[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[flor]/vble(x)],[-[hadHusband,[flor]]],[1,0])]
+
+--Deleting unprovable preconditions:
+[-[hadHusband,[flor]]]
+
+--Reformation: Unresolvables:
+[-[hadHusband,[flor]]]
+
+Reformation: targeted evidence
+[hadHusband,[flor]]
+--------Reformation Candidates------
+[([+[hadHusband,[leticia]]],[+[hadHusband,[leticia]]],[([flor],[leticia])],1,[[([flor],[leticia])]],[([+[hadHusband,[leticia]]],[],[],[+[hadHusband,[leticia]]],[0,0])])]
+---------------Axiom is 1  [+[hadHusband,[leticia]]]
+---------------Mismatches is 1  [([flor],[leticia])]
+--renameArgs: Mismatches:
+[([flor],[leticia])]
+[[arity(notDivorced)],[arity(notDivorced)],[notDivorced],[notDivorced]]
+
+--renameArgs: RepPlanS:
+rename([([leticia],[flor],[+[hadHusband,[leticia]]])])
+
+--renameArgs: TargCls:
+[[+[hadHusband,[leticia]]]]
+
+--Unblocking 1: RepPlanS:
+[rename([([leticia],[flor],[+[hadHusband,[leticia]]])])]
+[+[hadHusband,[leticia]]]
+
+
+--renameArgs: Mismatches:
+[([flor],[leticia])]
+[[arity(notDivorced)],[arity(notDivorced)],[notDivorced],[notDivorced]]
+
+--------Reformation Candidates------
+[([+[hasHusband,[flor]]],[+[hasHusband,[flor]]],(predicate,[]),0,[],[([+[hasHusband,[flor]]],[],[],[+[hasHusband,[flor]]],[0,0])])]
+---------------Axiom is 1  [+[hasHusband,[flor]]]
+---------------Mismatches is 1  predicate,[]
+--Unblocking 1: RepPlanS:
+[merge(hasHusband,hadHusband,[[flor]],equ)]
+[+[hasHusband,[flor]]]
+
+
+--Unblocking 1: RepPlanS:
+[rename(+hasHusband,hadHusband,[+[hasHusband,[flor]]],[+[hadHusband,[flor]]])]
+[+[hasHusband,[flor]]]
+
+
+--Unblocking 1: RepPlanS:
+[merge(hadHusband,hasHusband,[[flor]],equ)]
+[+[hadHusband,[leticia]]]
+[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]
+
+
+--Unblocking 1: RepPlanS:
+[rename(-hadHusband,hasHusband,[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]])]
+[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]
+
+
+--Unblocking 1: RepPlanS:
+[expand([+[hadHusband,[flor]]])]
+[+[hadHusband,[flor]]]
+
+
+-- Unresolvables and ProofCur is :
+[-[marriedWoman,[flor]]]
+[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[flor]/vble(x)],[-[hadHusband,[flor]]],[1,0])]
+
+--Deleting unprovable preconditions:
+[-[marriedWoman,[flor]]]
+
+--Reformation: Unresolvables:
+[-[marriedWoman,[flor]]]
+
+Reformation: targeted evidence
+[marriedWoman,[flor]]
+--------Reformation Candidates------
+[([+[hasHusband,[flor]]],[+[hasHusband,[flor]]],(predicate,[]),0,[],[([+[hasHusband,[flor]]],[],[],[+[hasHusband,[flor]]],[0,0])])]
+---------------Axiom is 1  [+[hasHusband,[flor]]]
+---------------Mismatches is 1  predicate,[]
+--Unblocking 1: RepPlanS:
+[merge(hasHusband,marriedWoman,[[flor]],equ)]
+[+[hasHusband,[flor]]]
+
+
+--Unblocking 1: RepPlanS:
+[rename(+hasHusband,marriedWoman,[+[hasHusband,[flor]]],[+[marriedWoman,[flor]]])]
+[+[hasHusband,[flor]]]
+
+
+--Unblocking 1: RepPlanS:
+[merge(marriedWoman,hasHusband,[[flor]],equ)]
+[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]
+[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]
+
+
+--Unblocking 1: RepPlanS:
+[rename(-marriedWoman,hasHusband,[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]])]
+[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]
+
+
+--Unblocking 1: RepPlanS:
+[expand([+[marriedWoman,[flor]]])]
+[+[marriedWoman,[flor]]]
+
+
+-- Unresolvables and ProofCur is :
+[-[notDivorced,[flor]]]
+[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[flor]/vble(x)],[-[hadHusband,[flor]]],[1,0])]
+
+--Deleting unprovable preconditions:
+[-[notDivorced,[flor]]]
+
+--Reformation: Unresolvables:
+[-[notDivorced,[flor]]]
+
+Reformation: targeted evidence
+[notDivorced,[flor]]
+--------Reformation Candidates------
+[([+[hasHusband,[flor]]],[+[hasHusband,[flor]]],(predicate,[]),0,[],[([+[hasHusband,[flor]]],[],[],[+[hasHusband,[flor]]],[0,0])])]
+---------------Axiom is 1  [+[hasHusband,[flor]]]
+---------------Mismatches is 1  predicate,[]
+--Unblocking 1: RepPlanS:
+[merge(hasHusband,notDivorced,[[flor]],equ)]
+[+[hasHusband,[flor]]]
+
+
+--Unblocking 1: RepPlanS:
+[rename(+hasHusband,notDivorced,[+[hasHusband,[flor]]],[+[notDivorced,[flor]]])]
+[+[hasHusband,[flor]]]
+
+
+--Unblocking 1: RepPlanS:
+[expand([+[notDivorced,[flor]]])]
+[+[notDivorced,[flor]]]
+
+
+--------Start unblocking 2 by adding a rule ------
+
+--Unblocking 2: RepPlanS/CLE
+[expand([+[notDivorced,vble(z)],-[hasHusband,vble(z)]])]
+[+[notDivorced,vble(z)],-[hasHusband,vble(z)]]
+[+[hasHusband,[flor]]]
+
+
+--Unblocking 2: RepPlanS/CLE
+[expand([+[notDivorced,vble(z)],-[hasHusband,vble(z)]])]
+[+[notDivorced,vble(z)],-[hasHusband,vble(z)]]
+[+[hasHusband,[flor]]]
+
+
+--------Start unblocking 3: by Analogical Abduction for ------
+[-[notDivorced,[flor]]]
+
+******** No rules are useful, Analogy fails.
+
+-- The single unresolvable subgoal. is :
+[[-[hadHusband,[flor]]],[-[marriedWoman,[flor]]],[-[notDivorced,[flor]]]]
+
+15repair plans  for buildP:[[-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[flor]/vble(x)],[-[hadHusband,[flor]]],[1,0])]]]
+
+
+[insuff,([expand([+[hadHusband,[flor]]])],[[+[hadHusband,[flor]]]]),[[+[hadHusband,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]]
+[insuff,([expand([+[marriedWoman,[flor]]])],[[+[marriedWoman,[flor]]]]),[[+[marriedWoman,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]]
+[insuff,([expand([+[notDivorced,vble(z)],-[hasHusband,vble(z)]])],[+[notDivorced,vble(z)],-[hasHusband,vble(z)]]),[[+[notDivorced,vble(z)],-[hasHusband,vble(z)]],[+[hasHusband,[flor]]]]]
+[insuff,([expand([+[notDivorced,[flor]]])],[[+[notDivorced,[flor]]]]),[[+[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]]
+[insuff,([rename([([leticia],[flor],[+[hadHusband,[leticia]]])])],[[+[hadHusband,[leticia]]]]),[[+[hadHusband,[leticia]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]]
+[insuff,([merge(hadHusband,hasHusband,[[flor]],equ)],[[+[hadHusband,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]),[[+[hadHusband,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]]
+[insuff,([merge(hasHusband,hadHusband,[[flor]],equ)],[[+[hasHusband,[flor]]]]),[[+[hasHusband,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]]
+[insuff,([merge(hasHusband,marriedWoman,[[flor]],equ)],[[+[hasHusband,[flor]]]]),[[+[hasHusband,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]]
+[insuff,([merge(hasHusband,notDivorced,[[flor]],equ)],[[+[hasHusband,[flor]]]]),[[+[hasHusband,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]]
+[insuff,([merge(marriedWoman,hasHusband,[[flor]],equ)],[[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]]),[[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]]
+[insuff,([rename(+hasHusband,hadHusband,[+[hasHusband,[flor]]],[+[hadHusband,[flor]]])],[[+[hasHusband,[flor]]]]),[[+[hasHusband,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]]
+[insuff,([rename(+hasHusband,marriedWoman,[+[hasHusband,[flor]]],[+[marriedWoman,[flor]]])],[[+[hasHusband,[flor]]]]),[[+[hasHusband,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]]
+[insuff,([rename(+hasHusband,notDivorced,[+[hasHusband,[flor]]],[+[notDivorced,[flor]]])],[[+[hasHusband,[flor]]]]),[[+[hasHusband,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]]
+[insuff,([rename(-hadHusband,hasHusband,[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]])],[[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]),[[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]]
+[insuff,([rename(-marriedWoman,hasHusband,[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]])],[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]]),[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]]
+
+
+-------- Start blockProof1: -------- 
+[-[notDivorced,[leticia]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[leticia]/vble(x)],[-[marriedWoman,[leticia]]],[0,0]
+[-[marriedWoman,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[leticia]/vble(x)],[-[hadHusband,[leticia]]],[0,0]
+[-[hadHusband,[leticia]]],[+[hadHusband,[leticia]]],[],[],[0,0]
+
+TheoryIn is: [[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+
+[+[hadHusband,[leticia]]]
+[+[hasHusband,[flor]]]
+[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]
+[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]
+[-[divorced,vble(x)],-[notDivorced,vble(x)]]
+
+Original Axiom is: [+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]
+
+-------- getAdjCond for  Rule: [+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]
+
+ PreCands are: [hadHusband,hasHusband]
+
+-------- start to find unprovable precondition candidates based on: hadHusband
+-- The theorems of Predicate -hadHusband-- are:
+[([+[hadHusband,[leticia]]],[[([-[hadHusband,[leticia]]],[+[hadHusband,[leticia]]],[],[],[0,0])]])]
+Found TSAll for: hadHusband
+[[+[hadHusband,[leticia]]],[+[hadHusband,vble(x)]]]
+
+ upArg ArgsV is 
+[[leticia]]
+
+******** Warning: No adjustment precondition candidates found
+
+-------- start to find unprovable precondition candidates based on: hasHusband
+-- The theorems of Predicate -hasHusband-- are:
+[([+[hasHusband,[flor]]],[[([-[hasHusband,[flor]]],[+[hasHusband,[flor]]],[],[],[0,0])]])]
+Found TSAll for: hasHusband
+[[+[hasHusband,[flor]]]]
+
+ upArg ArgsV is 
+[vble(x)]
+
+-------- The adjustment precondition candidates:
+0,[hasHusband,vble(x)]
+
+ Found unprovable precondition : add_pre(-[dummyPred,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])
+
+ All found unprovable preconditions: [add_pre(-[dummyPred,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]),add_pre(-[hasHusband,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])]
+
+Original Axiom is: [+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]
+
+-------- getAdjCond for  Rule: [+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]
+
+ PreCands are: [divorced,hasHusband,notDivorced]
+
+-------- start to find unprovable precondition candidates based on: divorced
+-- The theorems of Predicate -divorced-- are:
+[]
+Found TSAll for: divorced
+[[+[divorced,vble(x)]]]
+
+******** Warning: No adjustment precondition candidates found
+
+-------- start to find unprovable precondition candidates based on: hasHusband
+-- The theorems of Predicate -hasHusband-- are:
+[([+[hasHusband,[flor]]],[[([-[hasHusband,[flor]]],[+[hasHusband,[flor]]],[],[],[0,0])]])]
+Found TSAll for: hasHusband
+[[+[hasHusband,[flor]]]]
+
+ upArg ArgsV is 
+[vble(x)]
+
+-------- The adjustment precondition candidates:
+0,[hasHusband,vble(x)]
+
+-------- start to find unprovable precondition candidates based on: notDivorced
+-- The theorems of Predicate -notDivorced-- are:
+[]
+Found TSAll for: notDivorced
+[[+[notDivorced,[flor]]],[+[notDivorced,vble(x)]]]
+
+ upArg ArgsV is 
+[vble(x)]
+
+-------- The adjustment precondition candidates:
+0,[notDivorced,vble(x)]
+0,[notDivorced,vble(x)]
+
+ Found unprovable precondition : add_pre(-[dummyPred,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])
+
+ All found unprovable preconditions: [add_pre(-[dummyPred,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]),add_pre(-[hasHusband,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]),add_pre(-[notDivorced,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])]
+
+Original Axiom is: [+[hadHusband,[leticia]]]
+
+-------- start asser2rule to find unprovable precondition
+
+-- SuffGoals=[]
+
+-- Theory=[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+
+
+[+[hadHusband,[leticia]]]
+[+[hasHusband,[flor]]]
+[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]
+[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]
+[-[divorced,vble(x)],-[notDivorced,vble(x)]]
+
+-- The theorems of Predicate -hadHusband-- are:
+[]
+-------- Start blockProof2: reformation -------- 
+-------- Proof is:
+[([-[notDivorced,[leticia]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[leticia]/vble(x)],[-[marriedWoman,[leticia]]],[0,0]),([-[marriedWoman,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[leticia]/vble(x)],[-[hadHusband,[leticia]]],[0,0]),([-[hadHusband,[leticia]]],[+[hadHusband,[leticia]]],[],[],[0,0])]
+
+
+-------- SuffGoals is:
+[]
+
+
+--Blocking Repair Plan11 InpClause:
+[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]
+
+arityInc(marriedWoman,+[marriedWoman,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],-[marriedWoman,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])
+
+--Blocking Repair Plan11 InpClause:
+[+[hadHusband,[leticia]]]
+
+arityInc(hadHusband,+[hadHusband,[leticia]],[+[hadHusband,[leticia]]],-[hadHusband,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])
+
+--Blocking Repair Plan11 InpClause:
+[+[hadHusband,[leticia]]]
+
+rename([leticia],+[hadHusband,[leticia]],[+[hadHusband,[leticia]]])
+
+11 repair plans for blockP:[([-[notDivorced,[leticia]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[leticia]/vble(x)],[-[marriedWoman,[leticia]]],[0,0]),([-[marriedWoman,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[leticia]/vble(x)],[-[hadHusband,[leticia]]],[0,0]),([-[hadHusband,[leticia]]],[+[hadHusband,[leticia]]],[],[],[0,0])]
+
+
+[incomp,([delete([+[hadHusband,[leticia]]])],[[+[hadHusband,[leticia]]]]),[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[hadHusband,[leticia]]]]]
+[incomp,([delete([+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])],[[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]),[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[hadHusband,[leticia]]]]]
+[incomp,([delete([+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])],[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]]),[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[hadHusband,[leticia]]]]]
+[incomp,([add_pre(-[dummyPred,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])],[[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]),[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[hadHusband,[leticia]]]]]
+[incomp,([add_pre(-[dummyPred,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])],[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]]),[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[hadHusband,[leticia]]]]]
+[incomp,([add_pre(-[hasHusband,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])],[[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]),[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[hadHusband,[leticia]]]]]
+[incomp,([add_pre(-[hasHusband,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])],[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]]),[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[hadHusband,[leticia]]]]]
+[incomp,([add_pre(-[notDivorced,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])],[[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]),[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[hadHusband,[leticia]]]]]
+[incomp,([rename([leticia],+[hadHusband,[leticia]],[+[hadHusband,[leticia]]])],[[+[hadHusband,[leticia]]]]),[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[hadHusband,[leticia]]]]]
+[incomp,([arityInc(hadHusband,+[hadHusband,[leticia]],[+[hadHusband,[leticia]]],-[hadHusband,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])],[[+[hadHusband,[leticia]]]]),[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[hadHusband,[leticia]]]]]
+[incomp,([arityInc(marriedWoman,+[marriedWoman,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],-[marriedWoman,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])],[[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]),[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[hadHusband,[leticia]]]]]
+
+
+2 fault's new repair plans found: [[[insuff,([expand([+[hadHusband,[flor]]])],[[+[hadHusband,[flor]]]]),[[+[hadHusband,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]],[insuff,([expand([+[marriedWoman,[flor]]])],[[+[marriedWoman,[flor]]]]),[[+[marriedWoman,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]],[insuff,([expand([+[notDivorced,vble(z)],-[hasHusband,vble(z)]])],[+[notDivorced,vble(z)],-[hasHusband,vble(z)]]),[[+[notDivorced,vble(z)],-[hasHusband,vble(z)]],[+[hasHusband,[flor]]]]],[insuff,([expand([+[notDivorced,[flor]]])],[[+[notDivorced,[flor]]]]),[[+[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]],[insuff,([rename([([leticia],[flor],[+[hadHusband,[leticia]]])])],[[+[hadHusband,[leticia]]]]),[[+[hadHusband,[leticia]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]],[insuff,([merge(hadHusband,hasHusband,[[flor]],equ)],[[+[hadHusband,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]),[[+[hadHusband,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]],[insuff,([merge(hasHusband,hadHusband,[[flor]],equ)],[[+[hasHusband,[flor]]]]),[[+[hasHusband,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]],[insuff,([merge(hasHusband,marriedWoman,[[flor]],equ)],[[+[hasHusband,[flor]]]]),[[+[hasHusband,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]],[insuff,([merge(hasHusband,notDivorced,[[flor]],equ)],[[+[hasHusband,[flor]]]]),[[+[hasHusband,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]],[insuff,([merge(marriedWoman,hasHusband,[[flor]],equ)],[[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]]),[[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]],[insuff,([rename(+hasHusband,hadHusband,[+[hasHusband,[flor]]],[+[hadHusband,[flor]]])],[[+[hasHusband,[flor]]]]),[[+[hasHusband,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]],[insuff,([rename(+hasHusband,marriedWoman,[+[hasHusband,[flor]]],[+[marriedWoman,[flor]]])],[[+[hasHusband,[flor]]]]),[[+[hasHusband,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]],[insuff,([rename(+hasHusband,notDivorced,[+[hasHusband,[flor]]],[+[notDivorced,[flor]]])],[[+[hasHusband,[flor]]]]),[[+[hasHusband,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]],[insuff,([rename(-hadHusband,hasHusband,[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]])],[[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]),[[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]],[insuff,([rename(-marriedWoman,hasHusband,[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]])],[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]]),[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]]],[[incomp,([delete([+[hadHusband,[leticia]]])],[[+[hadHusband,[leticia]]]]),[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[hadHusband,[leticia]]]]],[incomp,([delete([+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])],[[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]),[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[hadHusband,[leticia]]]]],[incomp,([delete([+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])],[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]]),[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[hadHusband,[leticia]]]]],[incomp,([add_pre(-[dummyPred,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])],[[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]),[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[hadHusband,[leticia]]]]],[incomp,([add_pre(-[dummyPred,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])],[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]]),[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[hadHusband,[leticia]]]]],[incomp,([add_pre(-[hasHusband,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])],[[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]),[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[hadHusband,[leticia]]]]],[incomp,([add_pre(-[hasHusband,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])],[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]]),[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[hadHusband,[leticia]]]]],[incomp,([add_pre(-[notDivorced,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])],[[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]),[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[hadHusband,[leticia]]]]],[incomp,([rename([leticia],+[hadHusband,[leticia]],[+[hadHusband,[leticia]]])],[[+[hadHusband,[leticia]]]]),[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[hadHusband,[leticia]]]]],[incomp,([arityInc(hadHusband,+[hadHusband,[leticia]],[+[hadHusband,[leticia]]],-[hadHusband,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])],[[+[hadHusband,[leticia]]]]),[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[hadHusband,[leticia]]]]],[incomp,([arityInc(marriedWoman,+[marriedWoman,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],-[marriedWoman,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])],[[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]]),[[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[hadHusband,[leticia]]]]]]]
+
+
+[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+--Conflicts of incomp vs insuff:[[notDivorced]]
+
+--Conflicts of incomp vs insuff:[[notDivorced]]
+
+--Conflicts of incomp vs insuff:[[notDivorced]]
+
+--Conflicts of incomp vs insuff:[[notDivorced]]
+
+--Conflicts of incomp vs insuff:[[notDivorced]]
+
+--Conflicts of incomp vs insuff:[[notDivorced]]
+
+--Conflicts of incomp vs insuff:[[notDivorced]]
+
+--Conflicts of incomp vs insuff:[[notDivorced]]
+
+--Conflicts of incomp vs insuff:[[notDivorced]]
+
+--Conflicts of incomp vs insuff:[[notDivorced]]
+
+--Conflicts of incomp vs insuff:[[notDivorced]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+--Conflicts of incomp vs insuff:[[hadHusband,marriedWoman,notDivorced]]
+
+All collections of repair plans are: 
+[delete([+[hadHusband,[leticia]]])]
+[delete([+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])]
+[delete([+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])]
+[expand([+[hadHusband,[flor]]])]
+[expand([+[marriedWoman,[flor]]])]
+[expand([+[notDivorced,vble(z)],-[hasHusband,vble(z)]])]
+[expand([+[notDivorced,[flor]]])]
+[rename([([leticia],[flor],[+[hadHusband,[leticia]]])])]
+[add_pre(-[dummyPred,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])]
+[add_pre(-[dummyPred,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])]
+[add_pre(-[hasHusband,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])]
+[add_pre(-[hasHusband,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])]
+[add_pre(-[notDivorced,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])]
+[rename([leticia],+[hadHusband,[leticia]],[+[hadHusband,[leticia]]])]
+[merge(hadHusband,hasHusband,[[flor]],equ)]
+[merge(hasHusband,hadHusband,[[flor]],equ)]
+[merge(hasHusband,marriedWoman,[[flor]],equ)]
+[merge(hasHusband,notDivorced,[[flor]],equ)]
+[merge(marriedWoman,hasHusband,[[flor]],equ)]
+[rename(+hasHusband,hadHusband,[+[hasHusband,[flor]]],[+[hadHusband,[flor]]])]
+[rename(+hasHusband,marriedWoman,[+[hasHusband,[flor]]],[+[marriedWoman,[flor]]])]
+[rename(+hasHusband,notDivorced,[+[hasHusband,[flor]]],[+[notDivorced,[flor]]])]
+[rename(-hadHusband,hasHusband,[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]])]
+[rename(-marriedWoman,hasHusband,[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]])]
+[arityInc(hadHusband,+[hadHusband,[leticia]],[+[hadHusband,[leticia]]],-[hadHusband,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])]
+[arityInc(marriedWoman,+[marriedWoman,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],-[marriedWoman,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])]
+
+
+-------- Start to apply repair plans:
+delete([+[hadHusband,[leticia]]])
+
+
+******** RepPlan: delete([+[hadHusband,[leticia]]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+delete([+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])
+
+
+******** RepPlan: delete([+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+delete([+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])
+
+
+******** RepPlan: delete([+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+expand([+[hadHusband,[flor]]])
+
+
+******** RepPlan: expand([+[hadHusband,[flor]]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+expand([+[marriedWoman,[flor]]])
+
+
+******** RepPlan: expand([+[marriedWoman,[flor]]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+expand([+[notDivorced,vble(z)],-[hasHusband,vble(z)]])
+
+
+******** RepPlan: expand([+[notDivorced,vble(z)],-[hasHusband,vble(z)]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+expand([+[notDivorced,[flor]]])
+
+
+******** RepPlan: expand([+[notDivorced,[flor]]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+rename([([leticia],[flor],[+[hadHusband,[leticia]]])])
+
+
+******** RepPlan: rename([([leticia],[flor],[+[hadHusband,[leticia]]])])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+add_pre(-[dummyPred,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])
+
+
+******** RepPlan: add_pre(-[dummyPred,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+add_pre(-[dummyPred,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])
+
+
+******** RepPlan: add_pre(-[dummyPred,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+add_pre(-[hasHusband,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])
+
+
+******** RepPlan: add_pre(-[hasHusband,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+add_pre(-[hasHusband,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])
+
+
+******** RepPlan: add_pre(-[hasHusband,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+add_pre(-[notDivorced,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])
+
+
+******** RepPlan: add_pre(-[notDivorced,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+rename([leticia],+[hadHusband,[leticia]],[+[hadHusband,[leticia]]])
+
+
+******** Finish renaming.
+
+******** RepPlan: rename([leticia],+[hadHusband,[leticia]],[+[hadHusband,[leticia]]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+merge(hadHusband,hasHusband,[[flor]],equ)
+
+
+******** RepPlan: merge(hadHusband,hasHusband,[[flor]],equ)
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+merge(hasHusband,hadHusband,[[flor]],equ)
+
+
+******** RepPlan: merge(hasHusband,hadHusband,[[flor]],equ)
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+merge(hasHusband,marriedWoman,[[flor]],equ)
+
+
+******** RepPlan: merge(hasHusband,marriedWoman,[[flor]],equ)
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+merge(hasHusband,notDivorced,[[flor]],equ)
+
+
+******** RepPlan: merge(hasHusband,notDivorced,[[flor]],equ)
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+merge(marriedWoman,hasHusband,[[flor]],equ)
+
+
+******** RepPlan: merge(marriedWoman,hasHusband,[[flor]],equ)
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+rename(+hasHusband,hadHusband,[+[hasHusband,[flor]]],[+[hadHusband,[flor]]])
+
+
+******** RepPlan: rename(+hasHusband,hadHusband,[+[hasHusband,[flor]]],[+[hadHusband,[flor]]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+rename(+hasHusband,marriedWoman,[+[hasHusband,[flor]]],[+[marriedWoman,[flor]]])
+
+
+******** RepPlan: rename(+hasHusband,marriedWoman,[+[hasHusband,[flor]]],[+[marriedWoman,[flor]]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+rename(+hasHusband,notDivorced,[+[hasHusband,[flor]]],[+[notDivorced,[flor]]])
+
+
+******** RepPlan: rename(+hasHusband,notDivorced,[+[hasHusband,[flor]]],[+[notDivorced,[flor]]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+rename(-hadHusband,hasHusband,[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]])
+
+
+******** RepPlan: rename(-hadHusband,hasHusband,[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+rename(-marriedWoman,hasHusband,[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]])
+
+
+******** RepPlan: rename(-marriedWoman,hasHusband,[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+arityInc(hadHusband,+[hadHusband,[leticia]],[+[hadHusband,[leticia]]],-[hadHusband,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])
+
+
+-------- Start apply arityInc-------- 
+arityInc(hadHusband,+[hadHusband,[leticia]],[+[hadHusband,[leticia]]])
+******** RepPlan: arityInc(hadHusband,+[hadHusband,[leticia]],[+[hadHusband,[leticia]]],-[hadHusband,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+arityInc(marriedWoman,+[marriedWoman,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],-[marriedWoman,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])
+
+
+-------- Start apply arityInc-------- 
+arityInc(marriedWoman,+[marriedWoman,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])
+******** RepPlan: arityInc(marriedWoman,+[marriedWoman,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],-[marriedWoman,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-- There are 26 repaired states: 
+[[[delete([+[hadHusband,[leticia]]])],[]],[[[flor]],[[leticia]]],[],[[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+[[[delete([+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+[[[delete([+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+[[[expand([+[hadHusband,[flor]]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[flor]]],[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+[[[expand([+[marriedWoman,[flor]]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[marriedWoman,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+[[[expand([+[notDivorced,vble(z)],-[hasHusband,vble(z)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,vble(z)],-[hasHusband,vble(z)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+[[[expand([+[notDivorced,[flor]]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,[flor]]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+[[[rename([([leticia],[flor],[+[hadHusband,[leticia]]])])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[flor]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+[[[add_pre(-[dummyPred,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[dummyPred,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+[[[add_pre(-[dummyPred,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[dummyPred,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+[[[add_pre(-[hasHusband,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)],-[hasHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+[[[add_pre(-[hasHusband,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+[[[add_pre(-[notDivorced,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)],-[notDivorced,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+[[[rename([leticia],+[hadHusband,[leticia]],[+[hadHusband,[leticia]]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[dummy_leticia_1]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+[[[merge(hadHusband,hasHusband,[[flor]],equ)],[]],[[[flor]],[[leticia]]],[],[[+[hasHusband,[flor]]],[+[hasHusband,[leticia]]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+[[[merge(hasHusband,hadHusband,[[flor]],equ)],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[flor]]],[+[hadHusband,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+[[[merge(hasHusband,marriedWoman,[[flor]],equ)],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[marriedWoman,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+[[[merge(hasHusband,notDivorced,[[flor]],equ)],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,[flor]]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+[[[merge(marriedWoman,hasHusband,[[flor]],equ)],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,vble(x)],-[hadHusband,vble(x)]],[+[hasHusband,[flor]]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+[[[rename(+hasHusband,hadHusband,[+[hasHusband,[flor]]],[+[hadHusband,[flor]]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[flor]]],[+[hadHusband,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+[[[rename(+hasHusband,marriedWoman,[+[hasHusband,[flor]]],[+[marriedWoman,[flor]]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[marriedWoman,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+[[[rename(+hasHusband,notDivorced,[+[hasHusband,[flor]]],[+[notDivorced,[flor]]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,[flor]]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+[[[rename(-hadHusband,hasHusband,[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+[[[rename(-marriedWoman,hasHusband,[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+[[[arityInc(hadHusband,+[hadHusband,[leticia]],[+[hadHusband,[leticia]]],-[hadHusband,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])],[delete([+[hadHusband,[leticia],[dummy_Abnormal1]]]),deleArg(hadHusband,2)]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia],[dummy_Abnormal1]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x),[dummy_Normal1]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+[[[arityInc(marriedWoman,+[marriedWoman,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],-[marriedWoman,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])],[delete([+[marriedWoman,vble(x),[dummy_Abnormal1]],-[hadHusband,vble(x)]]),deleArg(marriedWoman,2)]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x),[dummy_Abnormal1]],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x),[dummy_Normal1]]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+
+
+-- RepStatesFine [[[[arityInc(marriedWoman,+[marriedWoman,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],-[marriedWoman,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])],[delete([+[marriedWoman,vble(x),[dummy_Abnormal1]],-[hadHusband,vble(x)]]),deleArg(marriedWoman,2)]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x),[dummy_Abnormal1]],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x),[dummy_Normal1]]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[[[arityInc(hadHusband,+[hadHusband,[leticia]],[+[hadHusband,[leticia]]],-[hadHusband,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])],[delete([+[hadHusband,[leticia],[dummy_Abnormal1]]]),deleArg(hadHusband,2)]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia],[dummy_Abnormal1]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x),[dummy_Normal1]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[[[rename(-marriedWoman,hasHusband,[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[[[rename(-hadHusband,hasHusband,[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[[[merge(marriedWoman,hasHusband,[[flor]],equ)],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,vble(x)],-[hadHusband,vble(x)]],[+[hasHusband,[flor]]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[[[merge(hasHusband,notDivorced,[[flor]],equ)],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,[flor]]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[[[merge(hasHusband,marriedWoman,[[flor]],equ)],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[marriedWoman,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[[[merge(hasHusband,hadHusband,[[flor]],equ)],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[flor]]],[+[hadHusband,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[[[merge(hadHusband,hasHusband,[[flor]],equ)],[]],[[[flor]],[[leticia]]],[],[[+[hasHusband,[flor]]],[+[hasHusband,[leticia]]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[[[rename([leticia],+[hadHusband,[leticia]],[+[hadHusband,[leticia]]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[dummy_leticia_1]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[[[add_pre(-[notDivorced,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)],-[notDivorced,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[[[add_pre(-[hasHusband,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[[[add_pre(-[hasHusband,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)],-[hasHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[[[add_pre(-[dummyPred,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[dummyPred,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[[[add_pre(-[dummyPred,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[dummyPred,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[[[rename([([leticia],[flor],[+[hadHusband,[leticia]]])])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[flor]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[[[expand([+[notDivorced,[flor]]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,[flor]]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[[[expand([+[notDivorced,vble(z)],-[hasHusband,vble(z)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,vble(z)],-[hasHusband,vble(z)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[[[expand([+[marriedWoman,[flor]]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[marriedWoman,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[[[expand([+[hadHusband,[flor]]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[flor]]],[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[[[delete([+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[[[delete([+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[[[delete([+[hadHusband,[leticia]]])],[]],[[[flor]],[[leticia]]],[],[[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]]
+
+---------Start detInsInc, Input theory is:------
+
+[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x),[dummy_Abnormal1]],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x),[dummy_Normal1]]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+[+[hadHusband,[leticia]]]
+[+[hasHusband,[flor]]]
+[+[marriedWoman,vble(x),[dummy_Abnormal1]],-[hadHusband,vble(x)]]
+[+[notDivorced,vble(x)],-[marriedWoman,vble(x),[dummy_Normal1]]]
+[-[divorced,vble(x)],-[notDivorced,vble(x)]]
+
+
+---------SufGoals is------
+[]
+---------InsufGoals is------
+[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x),[dummy_Normal1]]],[[flor]/vble(x)],[-[marriedWoman,[flor],[dummy_Normal1]]],[1,0])]])]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[hadHusband,[leticia],[dummy_Abnormal1]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x),[dummy_Normal1]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+[+[hadHusband,[leticia],[dummy_Abnormal1]]]
+[+[hasHusband,[flor]]]
+[+[marriedWoman,vble(x)],-[hadHusband,vble(x),[dummy_Normal1]]]
+[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]
+[-[divorced,vble(x)],-[notDivorced,vble(x)]]
+
+
+---------SufGoals is------
+[]
+---------InsufGoals is------
+[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x),[dummy_Normal1]]],[[flor]/vble(x)],[-[hadHusband,[flor],[dummy_Normal1]]],[1,0])]])]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+[+[hadHusband,[leticia]]]
+[+[hasHusband,[flor]]]
+[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]
+[+[notDivorced,vble(x)],-[hasHusband,vble(x)]]
+[-[divorced,vble(x)],-[notDivorced,vble(x)]]
+
+
+---------SufGoals is------
+[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]],[[flor]/vble(x)],[-[hasHusband,[flor]]],[0,0]),([-[hasHusband,[flor]]],[+[hasHusband,[flor]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+[+[hadHusband,[leticia]]]
+[+[hasHusband,[flor]]]
+[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]]
+[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]
+[-[divorced,vble(x)],-[notDivorced,vble(x)]]
+
+
+---------SufGoals is------
+[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]],[[flor]/vble(x)],[-[hasHusband,[flor]]],[0,0]),([-[hasHusband,[flor]]],[+[hasHusband,[flor]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[hadHusband,[leticia]]],[+[hasHusband,vble(x)],-[hadHusband,vble(x)]],[+[hasHusband,[flor]]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+[+[hadHusband,[leticia]]]
+[+[hasHusband,vble(x)],-[hadHusband,vble(x)]]
+[+[hasHusband,[flor]]]
+[+[notDivorced,vble(x)],-[hasHusband,vble(x)]]
+[-[divorced,vble(x)],-[notDivorced,vble(x)]]
+
+
+---------SufGoals is------
+[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]],[[flor]/vble(x)],[-[hasHusband,[flor]]],[0,0]),([-[hasHusband,[flor]]],[+[hasHusband,[flor]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+[-[notDivorced,[leticia]]],[[([-[notDivorced,[leticia]]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]],[[leticia]/vble(x)],[-[hasHusband,[leticia]]],[0,0]),([-[hasHusband,[leticia]]],[+[hasHusband,vble(x)],-[hadHusband,vble(x)]],[[leticia]/vble(x)],[-[hadHusband,[leticia]]],[0,0]),([-[hadHusband,[leticia]]],[+[hadHusband,[leticia]]],[],[],[0,0])]]
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[hadHusband,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,[flor]]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+[+[hadHusband,[leticia]]]
+[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]
+[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]
+[+[notDivorced,[flor]]]
+[-[divorced,vble(x)],-[notDivorced,vble(x)]]
+
+
+---------SufGoals is------
+[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,[flor]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+[-[notDivorced,[leticia]]],[[([-[notDivorced,[leticia]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[leticia]/vble(x)],[-[marriedWoman,[leticia]]],[0,0]),([-[marriedWoman,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[leticia]/vble(x)],[-[hadHusband,[leticia]]],[0,0]),([-[hadHusband,[leticia]]],[+[hadHusband,[leticia]]],[],[],[0,0])]]
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[hadHusband,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[marriedWoman,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+[+[hadHusband,[leticia]]]
+[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]
+[+[marriedWoman,[flor]]]
+[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]
+[-[divorced,vble(x)],-[notDivorced,vble(x)]]
+
+
+---------SufGoals is------
+[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,[flor]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+[-[notDivorced,[leticia]]],[[([-[notDivorced,[leticia]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[leticia]/vble(x)],[-[marriedWoman,[leticia]]],[0,0]),([-[marriedWoman,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[leticia]/vble(x)],[-[hadHusband,[leticia]]],[0,0]),([-[hadHusband,[leticia]]],[+[hadHusband,[leticia]]],[],[],[0,0])]]
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[hadHusband,[flor]]],[+[hadHusband,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+[+[hadHusband,[flor]]]
+[+[hadHusband,[leticia]]]
+[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]
+[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]
+[-[divorced,vble(x)],-[notDivorced,vble(x)]]
+
+
+---------SufGoals is------
+[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[flor]/vble(x)],[-[hadHusband,[flor]]],[0,0]),([-[hadHusband,[flor]]],[+[hadHusband,[flor]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+[-[notDivorced,[leticia]]],[[([-[notDivorced,[leticia]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[leticia]/vble(x)],[-[marriedWoman,[leticia]]],[0,0]),([-[marriedWoman,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[leticia]/vble(x)],[-[hadHusband,[leticia]]],[0,0]),([-[hadHusband,[leticia]]],[+[hadHusband,[leticia]]],[],[],[0,0])]]
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[hasHusband,[flor]]],[+[hasHusband,[leticia]]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+[+[hasHusband,[flor]]]
+[+[hasHusband,[leticia]]]
+[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]]
+[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]
+[-[divorced,vble(x)],-[notDivorced,vble(x)]]
+
+
+---------SufGoals is------
+[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]],[[flor]/vble(x)],[-[hasHusband,[flor]]],[0,0]),([-[hasHusband,[flor]]],[+[hasHusband,[flor]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+[-[notDivorced,[leticia]]],[[([-[notDivorced,[leticia]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[leticia]/vble(x)],[-[marriedWoman,[leticia]]],[0,0]),([-[marriedWoman,[leticia]]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]],[[leticia]/vble(x)],[-[hasHusband,[leticia]]],[0,0]),([-[hasHusband,[leticia]]],[+[hasHusband,[leticia]]],[],[],[0,0])]]
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[hadHusband,[dummy_leticia_1]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+[+[hadHusband,[dummy_leticia_1]]]
+[+[hasHusband,[flor]]]
+[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]
+[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]
+[-[divorced,vble(x)],-[notDivorced,vble(x)]]
+
+
+---------SufGoals is------
+[]
+---------InsufGoals is------
+[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[flor]/vble(x)],[-[hadHusband,[flor]]],[1,0])]])]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)],-[notDivorced,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+[+[hadHusband,[leticia]]]
+[+[hasHusband,[flor]]]
+[+[marriedWoman,vble(x)],-[hadHusband,vble(x)],-[notDivorced,vble(x)]]
+[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]
+[-[divorced,vble(x)],-[notDivorced,vble(x)]]
+
+
+---------SufGoals is------
+[]
+---------InsufGoals is------
+[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)],-[notDivorced,vble(x)]],[[flor]/vble(x)],[-[hadHusband,[flor]],-[notDivorced,[flor]]],[2,0])]])]
+******** Error: Loop resolution ********
+Current goal is: 
+[-[marriedWoman,[leticia]]]
+The derivation steps are: 
+[([-[notDivorced,[leticia]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[leticia]/vble(x)],[-[marriedWoman,[leticia]]],[0,0]),([-[marriedWoman,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)],-[notDivorced,vble(x)]],[[leticia]/vble(x)],[-[hadHusband,[leticia]],-[notDivorced,[leticia]]],[1,0]),([-[hadHusband,[leticia]],-[notDivorced,[leticia]]],[+[hadHusband,[leticia]]],[],[-[notDivorced,[leticia]]],[0,0])]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+[+[hadHusband,[leticia]]]
+[+[hasHusband,[flor]]]
+[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]
+[+[notDivorced,vble(x)],-[hasHusband,vble(x)],-[marriedWoman,vble(x)]]
+[-[divorced,vble(x)],-[notDivorced,vble(x)]]
+
+
+---------SufGoals is------
+[]
+---------InsufGoals is------
+[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[hasHusband,[flor]],-[marriedWoman,[flor]]],[0,0]),([-[hasHusband,[flor]],-[marriedWoman,[flor]]],[+[hasHusband,[flor]]],[],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[flor]/vble(x)],[-[hadHusband,[flor]]],[1,0])],[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[hasHusband,[flor]],-[marriedWoman,[flor]]],[2,0])]])]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)],-[hasHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+[+[hadHusband,[leticia]]]
+[+[hasHusband,[flor]]]
+[+[marriedWoman,vble(x)],-[hadHusband,vble(x)],-[hasHusband,vble(x)]]
+[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]
+[-[divorced,vble(x)],-[notDivorced,vble(x)]]
+
+
+---------SufGoals is------
+[]
+---------InsufGoals is------
+[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)],-[hasHusband,vble(x)]],[[flor]/vble(x)],[-[hadHusband,[flor]],-[hasHusband,[flor]]],[2,0])]])]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[dummyPred,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+[+[hadHusband,[leticia]]]
+[+[hasHusband,[flor]]]
+[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]
+[+[notDivorced,vble(x)],-[dummyPred,vble(x)],-[marriedWoman,vble(x)]]
+[-[divorced,vble(x)],-[notDivorced,vble(x)]]
+
+
+---------SufGoals is------
+[]
+---------InsufGoals is------
+[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[dummyPred,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[dummyPred,[flor]],-[marriedWoman,[flor]]],[2,0])]])]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[dummyPred,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+[+[hadHusband,[leticia]]]
+[+[hasHusband,[flor]]]
+[+[marriedWoman,vble(x)],-[dummyPred,vble(x)],-[hadHusband,vble(x)]]
+[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]
+[-[divorced,vble(x)],-[notDivorced,vble(x)]]
+
+
+---------SufGoals is------
+[]
+---------InsufGoals is------
+[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[dummyPred,vble(x)],-[hadHusband,vble(x)]],[[flor]/vble(x)],[-[dummyPred,[flor]],-[hadHusband,[flor]]],[2,0])]])]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[hadHusband,[flor]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+[+[hadHusband,[flor]]]
+[+[hasHusband,[flor]]]
+[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]
+[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]
+[-[divorced,vble(x)],-[notDivorced,vble(x)]]
+
+
+---------SufGoals is------
+[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[flor]/vble(x)],[-[hadHusband,[flor]]],[0,0]),([-[hadHusband,[flor]]],[+[hadHusband,[flor]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,[flor]]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+[+[hadHusband,[leticia]]]
+[+[hasHusband,[flor]]]
+[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]
+[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]
+[+[notDivorced,[flor]]]
+[-[divorced,vble(x)],-[notDivorced,vble(x)]]
+
+
+---------SufGoals is------
+[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,[flor]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+[-[notDivorced,[leticia]]],[[([-[notDivorced,[leticia]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[leticia]/vble(x)],[-[marriedWoman,[leticia]]],[0,0]),([-[marriedWoman,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[leticia]/vble(x)],[-[hadHusband,[leticia]]],[0,0]),([-[hadHusband,[leticia]]],[+[hadHusband,[leticia]]],[],[],[0,0])]]
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,vble(z)],-[hasHusband,vble(z)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+[+[hadHusband,[leticia]]]
+[+[hasHusband,[flor]]]
+[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]
+[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]
+[+[notDivorced,vble(z)],-[hasHusband,vble(z)]]
+[-[divorced,vble(x)],-[notDivorced,vble(x)]]
+
+
+---------SufGoals is------
+[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(z)],-[hasHusband,vble(z)]],[[flor]/vble(z)],[-[hasHusband,[flor]]],[0,0]),([-[hasHusband,[flor]]],[+[hasHusband,[flor]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+[-[notDivorced,[leticia]]],[[([-[notDivorced,[leticia]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[leticia]/vble(x)],[-[marriedWoman,[leticia]]],[0,0]),([-[marriedWoman,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[leticia]/vble(x)],[-[hadHusband,[leticia]]],[0,0]),([-[hadHusband,[leticia]]],[+[hadHusband,[leticia]]],[],[],[0,0])]]
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[marriedWoman,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+[+[hadHusband,[leticia]]]
+[+[hasHusband,[flor]]]
+[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]
+[+[marriedWoman,[flor]]]
+[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]
+[-[divorced,vble(x)],-[notDivorced,vble(x)]]
+
+
+---------SufGoals is------
+[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,[flor]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+[-[notDivorced,[leticia]]],[[([-[notDivorced,[leticia]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[leticia]/vble(x)],[-[marriedWoman,[leticia]]],[0,0]),([-[marriedWoman,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[leticia]/vble(x)],[-[hadHusband,[leticia]]],[0,0]),([-[hadHusband,[leticia]]],[+[hadHusband,[leticia]]],[],[],[0,0])]]
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[hadHusband,[flor]]],[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+[+[hadHusband,[flor]]]
+[+[hadHusband,[leticia]]]
+[+[hasHusband,[flor]]]
+[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]
+[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]
+[-[divorced,vble(x)],-[notDivorced,vble(x)]]
+
+
+---------SufGoals is------
+[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[flor]/vble(x)],[-[hadHusband,[flor]]],[0,0]),([-[hadHusband,[flor]]],[+[hadHusband,[flor]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+[-[notDivorced,[leticia]]],[[([-[notDivorced,[leticia]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[leticia]/vble(x)],[-[marriedWoman,[leticia]]],[0,0]),([-[marriedWoman,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[leticia]/vble(x)],[-[hadHusband,[leticia]]],[0,0]),([-[hadHusband,[leticia]]],[+[hadHusband,[leticia]]],[],[],[0,0])]]
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+[+[hadHusband,[leticia]]]
+[+[hasHusband,[flor]]]
+[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]
+[-[divorced,vble(x)],-[notDivorced,vble(x)]]
+
+
+---------SufGoals is------
+[]
+---------InsufGoals is------
+[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[],[],[-[notDivorced,[flor]]],[0,0])]])]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+[+[hadHusband,[leticia]]]
+[+[hasHusband,[flor]]]
+[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]
+[-[divorced,vble(x)],-[notDivorced,vble(x)]]
+
+
+---------SufGoals is------
+[]
+---------InsufGoals is------
+[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[1,0])]])]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+[+[hasHusband,[flor]]]
+[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]
+[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]
+[-[divorced,vble(x)],-[notDivorced,vble(x)]]
+
+
+---------SufGoals is------
+[]
+---------InsufGoals is------
+[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[flor]/vble(x)],[-[hadHusband,[flor]]],[1,0])]])]
+---------InComps are------
+
+---------Violations are------
+
+-- All faulty states: 23
+1,0,[[[arityInc(marriedWoman,+[marriedWoman,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],-[marriedWoman,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])],[delete([+[marriedWoman,vble(x),[dummy_Abnormal1]],-[hadHusband,vble(x)]]),deleArg(marriedWoman,2)]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x),[dummy_Abnormal1]],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x),[dummy_Normal1]]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x),[dummy_Normal1]]],[[flor]/vble(x)],[-[marriedWoman,[flor],[dummy_Normal1]]],[1,0])]])],[]
+1,0,[[[arityInc(hadHusband,+[hadHusband,[leticia]],[+[hadHusband,[leticia]]],-[hadHusband,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])],[delete([+[hadHusband,[leticia],[dummy_Abnormal1]]]),deleArg(hadHusband,2)]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia],[dummy_Abnormal1]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x),[dummy_Normal1]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x),[dummy_Normal1]]],[[flor]/vble(x)],[-[hadHusband,[flor],[dummy_Normal1]]],[1,0])]])],[]
+0,0,[[[rename(-marriedWoman,hasHusband,[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]],[[flor]/vble(x)],[-[hasHusband,[flor]]],[0,0]),([-[hasHusband,[flor]]],[+[hasHusband,[flor]]],[],[],[0,0])]])],[],[]
+0,0,[[[rename(-hadHusband,hasHusband,[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]],[[flor]/vble(x)],[-[hasHusband,[flor]]],[0,0]),([-[hasHusband,[flor]]],[+[hasHusband,[flor]]],[],[],[0,0])]])],[],[]
+0,1,[[[merge(marriedWoman,hasHusband,[[flor]],equ)],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,vble(x)],-[hadHusband,vble(x)]],[+[hasHusband,[flor]]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]],[[flor]/vble(x)],[-[hasHusband,[flor]]],[0,0]),([-[hasHusband,[flor]]],[+[hasHusband,[flor]]],[],[],[0,0])]])],[],[([-[notDivorced,[leticia]]],[[([-[notDivorced,[leticia]]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]],[[leticia]/vble(x)],[-[hasHusband,[leticia]]],[0,0]),([-[hasHusband,[leticia]]],[+[hasHusband,vble(x)],-[hadHusband,vble(x)]],[[leticia]/vble(x)],[-[hadHusband,[leticia]]],[0,0]),([-[hadHusband,[leticia]]],[+[hadHusband,[leticia]]],[],[],[0,0])]])]
+0,1,[[[merge(hasHusband,notDivorced,[[flor]],equ)],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,[flor]]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,[flor]]],[],[],[0,0])]])],[],[([-[notDivorced,[leticia]]],[[([-[notDivorced,[leticia]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[leticia]/vble(x)],[-[marriedWoman,[leticia]]],[0,0]),([-[marriedWoman,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[leticia]/vble(x)],[-[hadHusband,[leticia]]],[0,0]),([-[hadHusband,[leticia]]],[+[hadHusband,[leticia]]],[],[],[0,0])]])]
+0,1,[[[merge(hasHusband,marriedWoman,[[flor]],equ)],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[marriedWoman,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,[flor]]],[],[],[0,0])]])],[],[([-[notDivorced,[leticia]]],[[([-[notDivorced,[leticia]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[leticia]/vble(x)],[-[marriedWoman,[leticia]]],[0,0]),([-[marriedWoman,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[leticia]/vble(x)],[-[hadHusband,[leticia]]],[0,0]),([-[hadHusband,[leticia]]],[+[hadHusband,[leticia]]],[],[],[0,0])]])]
+0,1,[[[merge(hasHusband,hadHusband,[[flor]],equ)],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[flor]]],[+[hadHusband,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[flor]/vble(x)],[-[hadHusband,[flor]]],[0,0]),([-[hadHusband,[flor]]],[+[hadHusband,[flor]]],[],[],[0,0])]])],[],[([-[notDivorced,[leticia]]],[[([-[notDivorced,[leticia]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[leticia]/vble(x)],[-[marriedWoman,[leticia]]],[0,0]),([-[marriedWoman,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[leticia]/vble(x)],[-[hadHusband,[leticia]]],[0,0]),([-[hadHusband,[leticia]]],[+[hadHusband,[leticia]]],[],[],[0,0])]])]
+0,1,[[[merge(hadHusband,hasHusband,[[flor]],equ)],[]],[[[flor]],[[leticia]]],[],[[+[hasHusband,[flor]]],[+[hasHusband,[leticia]]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]],[[flor]/vble(x)],[-[hasHusband,[flor]]],[0,0]),([-[hasHusband,[flor]]],[+[hasHusband,[flor]]],[],[],[0,0])]])],[],[([-[notDivorced,[leticia]]],[[([-[notDivorced,[leticia]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[leticia]/vble(x)],[-[marriedWoman,[leticia]]],[0,0]),([-[marriedWoman,[leticia]]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]],[[leticia]/vble(x)],[-[hasHusband,[leticia]]],[0,0]),([-[hasHusband,[leticia]]],[+[hasHusband,[leticia]]],[],[],[0,0])]])]
+1,0,[[[rename([leticia],+[hadHusband,[leticia]],[+[hadHusband,[leticia]]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[dummy_leticia_1]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[flor]/vble(x)],[-[hadHusband,[flor]]],[1,0])]])],[]
+1,0,[[[add_pre(-[notDivorced,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)],-[notDivorced,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)],-[notDivorced,vble(x)]],[[flor]/vble(x)],[-[hadHusband,[flor]],-[notDivorced,[flor]]],[2,0])]])],[]
+1,0,[[[add_pre(-[hasHusband,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[hasHusband,[flor]],-[marriedWoman,[flor]]],[0,0]),([-[hasHusband,[flor]],-[marriedWoman,[flor]]],[+[hasHusband,[flor]]],[],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[flor]/vble(x)],[-[hadHusband,[flor]]],[1,0])],[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[hasHusband,[flor]],-[marriedWoman,[flor]]],[2,0])]])],[]
+1,0,[[[add_pre(-[hasHusband,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)],-[hasHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)],-[hasHusband,vble(x)]],[[flor]/vble(x)],[-[hadHusband,[flor]],-[hasHusband,[flor]]],[2,0])]])],[]
+1,0,[[[add_pre(-[dummyPred,vble(x)],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[dummyPred,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[dummyPred,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[dummyPred,[flor]],-[marriedWoman,[flor]]],[2,0])]])],[]
+1,0,[[[add_pre(-[dummyPred,vble(x)],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[dummyPred,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[dummyPred,vble(x)],-[hadHusband,vble(x)]],[[flor]/vble(x)],[-[dummyPred,[flor]],-[hadHusband,[flor]]],[2,0])]])],[]
+0,0,[[[rename([([leticia],[flor],[+[hadHusband,[leticia]]])])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[flor]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[flor]/vble(x)],[-[hadHusband,[flor]]],[0,0]),([-[hadHusband,[flor]]],[+[hadHusband,[flor]]],[],[],[0,0])]])],[],[]
+0,1,[[[expand([+[notDivorced,[flor]]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,[flor]]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,[flor]]],[],[],[0,0])]])],[],[([-[notDivorced,[leticia]]],[[([-[notDivorced,[leticia]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[leticia]/vble(x)],[-[marriedWoman,[leticia]]],[0,0]),([-[marriedWoman,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[leticia]/vble(x)],[-[hadHusband,[leticia]]],[0,0]),([-[hadHusband,[leticia]]],[+[hadHusband,[leticia]]],[],[],[0,0])]])]
+0,1,[[[expand([+[notDivorced,vble(z)],-[hasHusband,vble(z)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,vble(z)],-[hasHusband,vble(z)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(z)],-[hasHusband,vble(z)]],[[flor]/vble(z)],[-[hasHusband,[flor]]],[0,0]),([-[hasHusband,[flor]]],[+[hasHusband,[flor]]],[],[],[0,0])]])],[],[([-[notDivorced,[leticia]]],[[([-[notDivorced,[leticia]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[leticia]/vble(x)],[-[marriedWoman,[leticia]]],[0,0]),([-[marriedWoman,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[leticia]/vble(x)],[-[hadHusband,[leticia]]],[0,0]),([-[hadHusband,[leticia]]],[+[hadHusband,[leticia]]],[],[],[0,0])]])]
+0,1,[[[expand([+[marriedWoman,[flor]]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[marriedWoman,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,[flor]]],[],[],[0,0])]])],[],[([-[notDivorced,[leticia]]],[[([-[notDivorced,[leticia]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[leticia]/vble(x)],[-[marriedWoman,[leticia]]],[0,0]),([-[marriedWoman,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[leticia]/vble(x)],[-[hadHusband,[leticia]]],[0,0]),([-[hadHusband,[leticia]]],[+[hadHusband,[leticia]]],[],[],[0,0])]])]
+0,1,[[[expand([+[hadHusband,[flor]]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[flor]]],[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[flor]/vble(x)],[-[hadHusband,[flor]]],[0,0]),([-[hadHusband,[flor]]],[+[hadHusband,[flor]]],[],[],[0,0])]])],[],[([-[notDivorced,[leticia]]],[[([-[notDivorced,[leticia]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[leticia]/vble(x)],[-[marriedWoman,[leticia]]],[0,0]),([-[marriedWoman,[leticia]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[leticia]/vble(x)],[-[hadHusband,[leticia]]],[0,0]),([-[hadHusband,[leticia]]],[+[hadHusband,[leticia]]],[],[],[0,0])]])]
+1,0,[[[delete([+[notDivorced,vble(x)],-[marriedWoman,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[],[],[-[notDivorced,[flor]]],[0,0])]])],[]
+1,0,[[[delete([+[marriedWoman,vble(x)],-[hadHusband,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[1,0])]])],[]
+1,0,[[[delete([+[hadHusband,[leticia]]])],[]],[[[flor]],[[leticia]]],[],[[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[flor]/vble(x)],[-[hadHusband,[flor]]],[1,0])]])],[]
+
+An Optimal repaired theory with cost:1 and the fault state: [([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]],[[flor]/vble(x)],[-[hasHusband,[flor]]],[0,0]),([-[hasHusband,[flor]]],[+[hasHusband,[flor]]],[],[],[0,0])]])],[],[]
+[[[rename(-marriedWoman,hasHusband,[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+An Optimal repaired theory with cost:1 and the fault state: [([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]],[[flor]/vble(x)],[-[hasHusband,[flor]]],[0,0]),([-[hasHusband,[flor]]],[+[hasHusband,[flor]]],[],[],[0,0])]])],[],[]
+[[[rename(-hadHusband,hasHusband,[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+An Optimal repaired theory with cost:1 and the fault state: [([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[flor]/vble(x)],[-[hadHusband,[flor]]],[0,0]),([-[hadHusband,[flor]]],[+[hadHusband,[flor]]],[],[],[0,0])]])],[],[]
+[[[rename([([leticia],[flor],[+[hadHusband,[leticia]]])])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[flor]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]
+--The number of Optimals: 3
+[[[rename(-marriedWoman,hasHusband,[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]],[[flor]/vble(x)],[-[hasHusband,[flor]]],[0,0]),([-[hasHusband,[flor]]],[+[hasHusband,[flor]]],[],[],[0,0])]])],[],[]
+[[[rename(-hadHusband,hasHusband,[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]],[[flor]/vble(x)],[-[hasHusband,[flor]]],[0,0]),([-[hasHusband,[flor]]],[+[hasHusband,[flor]]],[],[],[0,0])]])],[],[]
+[[[rename([([leticia],[flor],[+[hadHusband,[leticia]]])])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[flor]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[flor]/vble(x)],[-[hadHusband,[flor]]],[0,0]),([-[hadHusband,[flor]]],[+[hadHusband,[flor]]],[],[],[0,0])]])],[],[]
+
+The vitality of the repaired theory is :[[(0,0),[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[(0,0),[+[notDivorced,vble(x)],-[marriedWoman,vble(x),[dummy_Normal1]]]],[(0,0),[+[marriedWoman,vble(x),[dummy_Abnormal1]],-[hadHusband,vble(x)]]],[(0,0),[+[hasHusband,[flor]]]],[(0,0),[+[hadHusband,[leticia]]]]]
+ Vitality TotalScores are: 0,0
+
+The vitality of the repaired theory is :[[(0,0),[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[(0,0),[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]],[(0,0),[+[marriedWoman,vble(x)],-[hadHusband,vble(x),[dummy_Normal1]]]],[(0,0),[+[hasHusband,[flor]]]],[(0,0),[+[hadHusband,[leticia],[dummy_Abnormal1]]]]]
+ Vitality TotalScores are: 0,0
+
+The vitality of the repaired theory is :[[(0,0),[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[(1,0),[+[notDivorced,vble(x)],-[hasHusband,vble(x)]]],[(0,0),[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]],[(1,0),[+[hasHusband,[flor]]]],[(0,0),[+[hadHusband,[leticia]]]]]
+ Vitality TotalScores are: 2,0
+
+The vitality of the repaired theory is :[[(0,0),[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[(1,0),[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]],[(1,0),[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]]],[(1,0),[+[hasHusband,[flor]]]],[(0,0),[+[hadHusband,[leticia]]]]]
+ Vitality TotalScores are: 3,0
+
+The vitality of the repaired theory is :[[(0,0),[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[(0,0),[+[notDivorced,vble(x)],-[hasHusband,vble(x)]]],[(1,0),[+[hasHusband,[flor]]]],[(-1,0),[+[hasHusband,vble(x)],-[hadHusband,vble(x)]]],[(-1,0),[+[hadHusband,[leticia]]]]]
+ Vitality TotalScores are: -1,0
+
+The vitality of the repaired theory is :[[(0,0),[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[(1,0),[+[notDivorced,[flor]]]],[(-1,0),[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]],[(-1,0),[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]],[(-1,0),[+[hadHusband,[leticia]]]]]
+ Vitality TotalScores are: -2,0
+
+The vitality of the repaired theory is :[[(0,0),[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[(0,0),[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]],[(1,0),[+[marriedWoman,[flor]]]],[(-1,0),[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]],[(-1,0),[+[hadHusband,[leticia]]]]]
+ Vitality TotalScores are: -1,0
+
+The vitality of the repaired theory is :[[(0,0),[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[(0,0),[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]],[(0,0),[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]],[(-1,0),[+[hadHusband,[leticia]]]],[(1,0),[+[hadHusband,[flor]]]]]
+ Vitality TotalScores are: 0,0
+
+The vitality of the repaired theory is :[[(0,0),[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[(0,0),[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]],[(0,0),[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]]],[(-1,0),[+[hasHusband,[leticia]]]],[(1,0),[+[hasHusband,[flor]]]]]
+ Vitality TotalScores are: 0,0
+
+The vitality of the repaired theory is :[[(0,0),[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[(0,0),[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]],[(0,0),[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]],[(0,0),[+[hasHusband,[flor]]]],[(0,0),[+[hadHusband,[dummy_leticia_1]]]]]
+ Vitality TotalScores are: 0,0
+
+The vitality of the repaired theory is :[[(0,0),[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[(0,0),[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]],[(0,0),[+[marriedWoman,vble(x)],-[hadHusband,vble(x)],-[notDivorced,vble(x)]]],[(0,0),[+[hasHusband,[flor]]]],[(0,0),[+[hadHusband,[leticia]]]]]
+ Vitality TotalScores are: 0,0
+
+The vitality of the repaired theory is :[[(0,0),[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[(0,0),[+[notDivorced,vble(x)],-[hasHusband,vble(x)],-[marriedWoman,vble(x)]]],[(0,0),[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]],[(0,0),[+[hasHusband,[flor]]]],[(0,0),[+[hadHusband,[leticia]]]]]
+ Vitality TotalScores are: 0,0
+
+The vitality of the repaired theory is :[[(0,0),[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[(0,0),[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]],[(0,0),[+[marriedWoman,vble(x)],-[hadHusband,vble(x)],-[hasHusband,vble(x)]]],[(0,0),[+[hasHusband,[flor]]]],[(0,0),[+[hadHusband,[leticia]]]]]
+ Vitality TotalScores are: 0,0
+
+The vitality of the repaired theory is :[[(0,0),[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[(0,0),[+[notDivorced,vble(x)],-[dummyPred,vble(x)],-[marriedWoman,vble(x)]]],[(0,0),[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]],[(0,0),[+[hasHusband,[flor]]]],[(0,0),[+[hadHusband,[leticia]]]]]
+ Vitality TotalScores are: 0,0
+
+The vitality of the repaired theory is :[[(0,0),[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[(0,0),[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]],[(0,0),[+[marriedWoman,vble(x)],-[dummyPred,vble(x)],-[hadHusband,vble(x)]]],[(0,0),[+[hasHusband,[flor]]]],[(0,0),[+[hadHusband,[leticia]]]]]
+ Vitality TotalScores are: 0,0
+
+The vitality of the repaired theory is :[[(0,0),[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[(1,0),[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]],[(1,0),[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]],[(0,0),[+[hasHusband,[flor]]]],[(1,0),[+[hadHusband,[flor]]]]]
+ Vitality TotalScores are: 3,0
+
+The vitality of the repaired theory is :[[(0,0),[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[(1,0),[+[notDivorced,[flor]]]],[(-1,0),[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]],[(-1,0),[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]],[(0,0),[+[hasHusband,[flor]]]],[(-1,0),[+[hadHusband,[leticia]]]]]
+ Vitality TotalScores are: -2,0
+
+The vitality of the repaired theory is :[[(0,0),[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[(1,0),[+[notDivorced,vble(z)],-[hasHusband,vble(z)]]],[(-1,0),[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]],[(-1,0),[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]],[(1,0),[+[hasHusband,[flor]]]],[(-1,0),[+[hadHusband,[leticia]]]]]
+ Vitality TotalScores are: -1,0
+
+The vitality of the repaired theory is :[[(0,0),[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[(0,0),[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]],[(1,0),[+[marriedWoman,[flor]]]],[(-1,0),[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]],[(0,0),[+[hasHusband,[flor]]]],[(-1,0),[+[hadHusband,[leticia]]]]]
+ Vitality TotalScores are: -1,0
+
+The vitality of the repaired theory is :[[(0,0),[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[(0,0),[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]],[(0,0),[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]],[(0,0),[+[hasHusband,[flor]]]],[(-1,0),[+[hadHusband,[leticia]]]],[(1,0),[+[hadHusband,[flor]]]]]
+ Vitality TotalScores are: 0,0
+
+The vitality of the repaired theory is :[[(0,0),[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[(0,0),[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]],[(0,0),[+[hasHusband,[flor]]]],[(0,0),[+[hadHusband,[leticia]]]]]
+ Vitality TotalScores are: 0,0
+
+The vitality of the repaired theory is :[[(0,0),[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[(0,0),[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]],[(0,0),[+[hasHusband,[flor]]]],[(0,0),[+[hadHusband,[leticia]]]]]
+ Vitality TotalScores are: 0,0
+
+The vitality of the repaired theory is :[[(0,0),[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[(0,0),[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]]],[(0,0),[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]]],[(0,0),[+[hasHusband,[flor]]]]]
+ Vitality TotalScores are: 0,0
+
+--The number of Vitality Optimals: 2
+[[[rename([([leticia],[flor],[+[hadHusband,[leticia]]])])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[flor]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[[flor]/vble(x)],[-[hadHusband,[flor]]],[0,0]),([-[hadHusband,[flor]]],[+[hadHusband,[flor]]],[],[],[0,0])]])],[],[]
+[[[rename(-hadHusband,hasHusband,[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[[flor]/vble(x)],[-[marriedWoman,[flor]]],[0,0]),([-[marriedWoman,[flor]]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]],[[flor]/vble(x)],[-[hasHusband,[flor]]],[0,0]),([-[hasHusband,[flor]]],[+[hasHusband,[flor]]],[],[],[0,0])]])],[],[]
+
+--The solution in 1 not in 2 include: 1
+
+[[[rename(-marriedWoman,hasHusband,[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]],[([-[notDivorced,[flor]]],[[([-[notDivorced,[flor]]],[+[notDivorced,vble(x)],-[hasHusband,vble(x)]],[[flor]/vble(x)],[-[hasHusband,[flor]]],[0,0]),([-[hasHusband,[flor]]],[+[hasHusband,[flor]]],[],[],[0,0])]])],[],[]
+
+--The solution in 2 not in 1 include: 0
+
+
+******** A solution is reached. *******
+
+******** A solution is reached. *******
+
+--------------AllRepStates: [fault-free,1/1,[[[rename([([leticia],[flor],[+[hadHusband,[leticia]]])])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[flor]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]]
+[fault-free,1/1,[[[rename(-hadHusband,hasHusband,[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]]
+
+
+--------------executation time 2---
+time takes
+32
+
+------------- AllRepStates -------------
+[fault-free,1/1,[[[rename([([leticia],[flor],[+[hadHusband,[leticia]]])])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[flor]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]]
+[fault-free,1/1,[[[rename(-hadHusband,hasHusband,[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]])],[]],[[[flor]],[[leticia]]],[],[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]],[[+[notDivorced,[flor]]]],[[+[notDivorced,[leticia]]]]]]
+
+
+
+
+------------- TASS -------------
+FullyNumRaw is: 2
+FullyNum is: 2
+
+
+[[+[hadHusband,[flor]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hadHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+[[+[hadHusband,[leticia]]],[+[hasHusband,[flor]]],[+[marriedWoman,vble(x)],-[hasHusband,vble(x)]],[+[notDivorced,vble(x)],-[marriedWoman,vble(x)]],[-[divorced,vble(x)],-[notDivorced,vble(x)]]]
+
+
+
+------------- TBSS -------------
+SemiNumRaw is: 0
+SemiNum is: 0
+
+
+
+
+
