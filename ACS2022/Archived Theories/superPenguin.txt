@@ -1,0 +1,124 @@
+date(2022,11,3)
+----------------------------------------------------------------------------------
+Theory size: 7
+Faults Number: 0,2
+Cost Limit is: 50
+RoundLimit is: 0
+Running time: 67 ms.
+Heuristics applied:[]
+The protected item(s):[[arity(cannotFly)],[arity(fly)],[cannotFly],[fly]]
+Total Solution number is: 6
+Remaining semi-repaired theories: 0
+----------------------------------------------------------------------------------
+The original theory : 
+[+bird(\x),-penguin(\x)].
+[+brokenWing(opus)].
+[+cannotFly(\x),-bird(\x),-brokenWing(\x)].
+[+fly(\x),-bird(\x)].
+[+penguin(\x),-superPenguin(\x)].
+[+superPenguin(opus)].
+[-cannotFly(\x),-fly(\x)].
+
+The true set:
+fly(opus).
+
+The false set: 
+cannotFly(opus).
+
+All of 6 sorted repair plans are from: 
+[delete([+[brokenWing,[opus]]])].
+[delete([+[cannotFly,vble(x)],-[bird,vble(x)],-[brokenWing,vble(x)]])].
+[add_pre(-[dummyPred,vble(x)],[+[cannotFly,vble(x)],-[bird,vble(x)],-[brokenWing,vble(x)]])].
+[rename([opus],+[brokenWing,[opus]],[+[brokenWing,[opus]]])].
+[arityInc(bird,+[bird,vble(x)],[+[bird,vble(x)],-[penguin,vble(x)]],-[bird,vble(x)],[+[cannotFly,vble(x)],-[bird,vble(x)],-[brokenWing,vble(x)]])].
+[arityInc(brokenWing,+[brokenWing,[opus]],[+[brokenWing,[opus]]],-[brokenWing,vble(x)],[+[cannotFly,vble(x)],-[bird,vble(x)],-[brokenWing,vble(x)]])].
+
+------------------ Solution No. 1 as below------------------
+Repair plans found at Round 1/1 :
+rename([opus],+[brokenWing,[opus]],[+[brokenWing,[opus]]]).
+
+
+Repaired Theory: 
+[+bird(\x),-penguin(\x)].
+[+brokenWing(dummy_opus_1)].
+[+cannotFly(\x),-bird(\x),-brokenWing(\x)].
+[+fly(\x),-bird(\x)].
+[+penguin(\x),-superPenguin(\x)].
+[+superPenguin(opus)].
+[-cannotFly(\x),-fly(\x)].
+
+------------------ Solution No. 2 as below------------------
+Repair plans found at Round 1/1 :
+add_pre(-dummyPred(\x),[+cannotFly(\x),-bird(\x),-brokenWing(\x)]).
+
+
+Repaired Theory: 
+[+bird(\x),-penguin(\x)].
+[+brokenWing(opus)].
+[+cannotFly(\x),-bird(\x),-brokenWing(\x),-dummyPred(\x)].
+[+fly(\x),-bird(\x)].
+[+penguin(\x),-superPenguin(\x)].
+[+superPenguin(opus)].
+[-cannotFly(\x),-fly(\x)].
+
+------------------ Solution No. 3 as below------------------
+Repair plans found at Round 1/1 :
+delete([+cannotFly(\x),-bird(\x),-brokenWing(\x)]).
+
+
+Repaired Theory: 
+[+bird(\x),-penguin(\x)].
+[+brokenWing(opus)].
+[+fly(\x),-bird(\x)].
+[+penguin(\x),-superPenguin(\x)].
+[+superPenguin(opus)].
+[-cannotFly(\x),-fly(\x)].
+
+------------------ Solution No. 4 as below------------------
+Repair plans found at Round 1/1 :
+arityInc(brokenWing,+[brokenWing,[opus]],[+[brokenWing,[opus]]],-[brokenWing,vble(x)],[+[cannotFly,vble(x)],-[bird,vble(x)],-[brokenWing,vble(x)]]).
+
+
+Repaired Theory: 
+[+bird(\x),-penguin(\x)].
+[+brokenWing(opus,dummy_Abnormal1)].
+[+cannotFly(\x),-bird(\x),-brokenWing(\x,dummy_Normal1)].
+[+fly(\x),-bird(\x)].
+[+penguin(\x),-superPenguin(\x)].
+[+superPenguin(opus)].
+[-cannotFly(\x),-fly(\x)].
+
+------------------ Solution No. 5 as below------------------
+Repair plans found at Round 1/1 :
+delete([+brokenWing(opus)]).
+
+
+Repaired Theory: 
+[+bird(\x),-penguin(\x)].
+[+cannotFly(\x),-bird(\x),-brokenWing(\x)].
+[+fly(\x),-bird(\x)].
+[+penguin(\x),-superPenguin(\x)].
+[+superPenguin(opus)].
+[-cannotFly(\x),-fly(\x)].
+
+------------------ Solution No. 6 as below------------------
+Repair plans found at Round 1/1 :
+arityInc(bird,+[bird,vble(x)],[+[bird,vble(x)],-[penguin,vble(x)]],-[bird,vble(x)],[+[cannotFly,vble(x)],-[bird,vble(x)],-[brokenWing,vble(x)]]).
+
+Repair plans found at Round 1/1 :
+arityInc(bird,+[bird,vble(x)],[+[bird,vble(x)],-[penguin,vble(x)]],-[bird,vble(x)],[+[cannotFly,vble(x)],-[bird,vble(x)],-[brokenWing,vble(x)]]).
+
+Repair plans found at Round 1/1 :
+arityInc(bird,+[bird,vble(x)],[+[bird,vble(x)],-[penguin,vble(x)]],-[bird,vble(x)],[+[cannotFly,vble(x)],-[bird,vble(x)],-[brokenWing,vble(x)]]).
+
+
+Repaired Theory: 
+[+bird(\x,dummy_Abnormal1),-penguin(\x)].
+[+brokenWing(opus)].
+[+cannotFly(\x),-bird(\x,dummy_Normal1),-brokenWing(\x)].
+[+fly(\x),-bird(\x,\iv1)].
+[+penguin(\x),-superPenguin(\x)].
+[+superPenguin(opus)].
+[-cannotFly(\x),-fly(\x)].
+
+Solutions are found at rounds:[1/1]
