@@ -13,7 +13,7 @@
 ---------InsufGoals is------
 []
 ---------InComps are------
-[([-[employee,[ann]]],[+[employee,vble(x)],-[author,vble(x)]],[[ann]/vble(x)],[-[author,[ann]]],[0,0]),([-[author,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[[ann]/vble(x)],[-[writes,[ann],[papers]]],[0,0]),([-[writes,[ann],[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],[[ann]/vble(x)],[-[activeReasercher,[ann]]],[0,0]),([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]
+[-[employee,[ann]]],[[([-[employee,[ann]]],[+[employee,vble(x)],-[author,vble(x)]],[[ann]/vble(x)],[-[author,[ann]]],[0,0]),([-[author,[ann]]],[+[author,vble(x)],-[writes,vble(x),[papers]]],[[ann]/vble(x)],[-[writes,[ann],[papers]]],[0,0]),([-[writes,[ann],[papers]]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]],[[ann]/vble(x)],[-[activeReasercher,[ann]]],[0,0]),([-[activeReasercher,[ann]]],[+[activeReasercher,[ann]]],[],[],[0,0])]]
 
 ---------Violations are------
 
@@ -506,7 +506,7 @@ The vitality of the repaired theory is :[[(0,0),[+[writes,vble(x),[papers]],-[ac
 
 --------------executation time 2---
 time takes
-11
+9
 
 ------------- AllRepStates -------------
 [fault-free,1/1,[[[delete([+[author,vble(x)],-[writes,vble(x),[papers]]])],[]],[[[ann]],[[papers]]],[],[[+[activeReasercher,[ann]]],[+[employee,vble(x)],-[author,vble(x)]],[+[writes,vble(x),[papers]],-[activeReasercher,vble(x)]]],[[+[activeReasercher,[ann]]]],[[+[employee,[ann]]]]]]
