@@ -1,0 +1,103 @@
+date(2022,11,3)
+----------------------------------------------------------------------------------
+Theory size: 10
+Faults Number: 2,0
+Cost Limit is: 50
+RoundLimit is: 0
+Running time: 163 ms.
+Heuristics applied:[]
+The protected item(s):[[arity(father)],[arity(father)],[arity(mother)],[arity(mother)],[father],[father],[mother],[mother]]
+Total Solution number is: 3
+Remaining semi-repaired theories: 0
+----------------------------------------------------------------------------------
+The original theory : 
+[+female(b)].
+[+female(d)].
+[+male(a)].
+[+male(c)].
+[+male(f)].
+[+male(g)].
+[+father(\x,\y),-male(\x),-parent(\x,\y)].
+[+parent(a,b)].
+[+parent(a,c)].
+[+parent(d,b)].
+
+The true set:
+father(a,b).
+father(a,c).
+mother(d,b).
+father(f,a).
+
+The false set: 
+mother(a,b).
+mother(a,c).
+father(d,b).
+father(g,a).
+father(g,c).
+
+All of 3 sorted repair plans are from: 
+[expand([+[mother,vble(y),vble(z)],-[female,vble(y)],-[parent,vble(y),vble(z)]]),expand([+[father,[f],[a]]])].
+[expand([+[mother,[d],[b]]]),expand([+[parent,[f],[a]]])].
+[merge(female,mother,[[b]],inc),expand([+[parent,[f],[a]]])].
+
+------------------ Solution No. 1 as below------------------
+(BRT)
+Repair plans found at Round 1/1 :
+expand([+mother(\y,\z),-female(\y),-parent(\y,\z)]).
+expand([+father(f,a)]).
+
+
+Repaired Theory: 
+[+father(\x,\y),-male(\x),-parent(\x,\y)].
+[+father(f,a)].
+[+female(b)].
+[+female(d)].
+[+male(a)].
+[+male(c)].
+[+male(f)].
+[+male(g)].
+[+mother(\y,\z),-female(\y),-parent(\y,\z)].
+[+parent(a,b)].
+[+parent(a,c)].
+[+parent(d,b)].
+
+------------------ Solution No. 2 as below------------------
+Repair plans found at Round 1/1 :
+expand([+mother(d,b)]).
+expand([+parent(f,a)]).
+
+
+Repaired Theory: 
+[+father(\x,\y),-male(\x),-parent(\x,\y)].
+[+female(b)].
+[+female(d)].
+[+male(a)].
+[+male(c)].
+[+male(f)].
+[+male(g)].
+[+mother(d,b)].
+[+parent(a,b)].
+[+parent(a,c)].
+[+parent(d,b)].
+[+parent(f,a)].
+
+------------------ Solution No. 3 as below------------------
+Repair plans found at Round 1/1 :
+merge(female,mother,[[b]],inc).
+expand([+parent(f,a)]).
+
+
+Repaired Theory: 
+[+father(\x,\y),-male(\x),-parent(\x,\y)].
+[+male(a)].
+[+male(c)].
+[+male(f)].
+[+male(g)].
+[+mother(b,b)].
+[+mother(d,b)].
+[+parent(a,b)].
+[+parent(a,c)].
+[+parent(d,b)].
+[+parent(f,a)].
+
+Solutions are found at rounds:[1/1]
