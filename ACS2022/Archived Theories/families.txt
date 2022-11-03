@@ -1,13 +1,13 @@
-date(2022,11,2)
+date(2022,11,3)
 ----------------------------------------------------------------------------------
 Theory size: 4
 Faults Number: 1,0
 Cost Limit is: 50
 RoundLimit is: 0
-Running time: 64 ms.
+Running time: 191 ms.
 Heuristics applied:[minicost]
 The protected item(s):[-parent(\x,\y,step),-parent(\x,\y,birth),[arity(families)],[families]]
-Total Solution number is: 6
+Total Solution number is: 4
 Remaining semi-repaired theories: 0
 ----------------------------------------------------------------------------------
 The original theory : 
@@ -22,79 +22,56 @@ families(a,c).
 
 The false set: 
 []
-All of 6 sorted repair plans are from: 
+All of 4 sorted repair plans are from: 
 [expand([+[families,vble(z),vble(y)],-[parent,vble(z),vble(y),[step]]])].
 [extC2V([([birth],vble(z),[+[families,vble(x),vble(y)],-[parent,vble(x),vble(y),[birth]]])])].
 [rename([([step],[birth],[+[parent,[a],[c],[step]]])])].
 [analogy([+[families,vble(x),vble(y)],-[parent,vble(x),vble(y),[birth]]],[+[families,vble(z),vble(x)],-[parent,vble(z),vble(y),[birth]],-[\=,vble(y),vble(x)]])].
-[ass2rule([+[parent,[a],[c],[step]]],[+[parent,[a],[c],vble(x)],-[\=,[step],vble(x)]])].
-[arityDec(parent,[[-[parent,vble(x),vble(y),[birth]],-[parent,vble(x),vble(y),[step]]],[-[parent,vble(x),vble(y),[birth]],-[parent,vble(x),vble(y),[step]]],[+[families,vble(x),vble(y)],-[parent,vble(x),vble(y),[birth]]],[+[parent,[a],[c],[step]]],[+[parent,[a],[b],[birth]]]],[3])].
 
 ------------------ Solution No. 1 as below------------------
-Repair plans found at Round 1/4 :
-arityDec(parent,[[-[parent,vble(x),vble(y),[birth]],-[parent,vble(x),vble(y),[step]]],[-[parent,vble(x),vble(y),[birth]],-[parent,vble(x),vble(y),[step]]],[+[families,vble(x),vble(y)],-[parent,vble(x),vble(y),[birth]]],[+[parent,[a],[c],[step]]],[+[parent,[a],[b],[birth]]]],[3]).
-
-
-Repaired Theory: 
-[+families(\x,\y),-parent(\x,\y)].
-[+parent(a,c)].
-[+parent(a,b)].
-
------------------- Solution No. 2 as below------------------
-Repair plans found at Round 1/4 :
+Repair plans found at Round 1/14 :
 extC2V([([birth],vble(z),[+[families,vble(x),vble(y)],-[parent,vble(x),vble(y),[birth]]])]).
 
 
 Repaired Theory: 
-[-parent(\x,\y,birth),-parent(\x,\y,step)].
 [+families(\x,\y),-parent(\x,\y,\z)].
+[+parent(a,b,birth)].
 [+parent(a,c,step)].
-[+parent(a,b,birth)].
-
------------------- Solution No. 3 as below------------------
-Repair plans found at Round 1/4 :
-rename([([step],[birth],[+[parent,[a],[c],[step]]])]).
-
-
-Repaired Theory: 
 [-parent(\x,\y,birth),-parent(\x,\y,step)].
-[+families(\x,\y),-parent(\x,\y,birth)].
-[+parent(a,c,birth)].
-[+parent(a,b,birth)].
 
------------------- Solution No. 4 as below------------------
-Repair plans found at Round 1/4 :
+------------------ Solution No. 2 as below------------------
+Repair plans found at Round 1/14 :
 analogy([+families(\x,\y),-parent(\x,\y,birth)],[+families(\z,\x),-parent(\z,\y,birth),- (\y\= \x)]).
 
 
 Repaired Theory: 
-[-parent(\x,\y,birth),-parent(\x,\y,step)].
-[+families(\z,\x),-parent(\z,\y,birth),- (\y\= \x)].
 [+families(\x,\y),-parent(\x,\y,birth)].
-[+parent(a,c,step)].
+[+families(\z,\x),-parent(\z,\y,birth),- (\y\= \x)].
 [+parent(a,b,birth)].
+[+parent(a,c,step)].
+[-parent(\x,\y,birth),-parent(\x,\y,step)].
 
------------------- Solution No. 5 as below------------------
+------------------ Solution No. 3 as below------------------
 Repair plans found at Round 1/1 :
 expand([+families(\z,\y),-parent(\z,\y,step)]).
 
 
 Repaired Theory: 
-[-parent(\x,\y,birth),-parent(\x,\y,step)].
-[+families(\z,\y),-parent(\z,\y,step)].
 [+families(\x,\y),-parent(\x,\y,birth)].
-[+parent(a,c,step)].
+[+families(\z,\y),-parent(\z,\y,step)].
 [+parent(a,b,birth)].
+[+parent(a,c,step)].
+[-parent(\x,\y,birth),-parent(\x,\y,step)].
 
------------------- Solution No. 6 as below------------------
-Repair plans found at Round 2/4 :
-ass2rule([+parent(a,c,step)],[+parent(a,c,\x),- (step\= \x)]).
+------------------ Solution No. 4 as below------------------
+Repair plans found at Round 1/14 :
+rename([([step],[birth],[+[parent,[a],[c],[step]]])]).
 
 
 Repaired Theory: 
-[-parent(\x,\y,birth),-parent(\x,\y,step)].
-[+parent(a,c,\x),- (step\= \x)].
 [+families(\x,\y),-parent(\x,\y,birth)].
 [+parent(a,b,birth)].
+[+parent(a,c,birth)].
+[-parent(\x,\y,birth),-parent(\x,\y,step)].
 
-Solutions are found at rounds:[1/1,1/4,2/4]
+Solutions are found at rounds:[1/1,1/14]
