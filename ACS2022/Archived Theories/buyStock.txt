@@ -1,0 +1,185 @@
+date(2022,11,3)
+----------------------------------------------------------------------------------
+Theory size: 9
+Faults Number: 0,2
+Cost Limit is: 50
+RoundLimit is: 0
+Running time: 58 ms.
+Heuristics applied:[]
+The protected item(s):[eqq,arity(eqq),[arity(buyStock)],[arity(dontBuyStock)],[buyStock],[dontBuyStock]]
+Total Solution number is: 8
+Remaining semi-repaired theories: 0
+----------------------------------------------------------------------------------
+The original theory : 
+[+buyStock(\x),-goodPrice(\x)].
+[+dontBuyStock(\x),-goodPrice(\x),-riskyCompany(\y)].
+[+goodPrice(acme)].
+[+notRiskyCompany(\x),-stong(steel),-inFusion(\x,steel)].
+[+riskyCompany(\x),-closing(\x,\y)].
+[+riskyCompany(\x),-inFusion(\x,steel)].
+[+strong(steel)].
+[+inFusion(acme,steel)].
+[-buyStock(\x),-dontBuyStock(\x)].
+
+The true set:
+buyStock(acme).
+
+The false set: 
+dontBuyStock(acme).
+
+All of 8 sorted repair plans are from: 
+[delete([+[dontBuyStock,vble(x)],-[goodPrice,vble(x)],-[riskyCompany,vble(y)]])].
+[delete([+[inFusion,[acme],[steel]]])].
+[delete([+[riskyCompany,vble(x)],-[inFusion,vble(x),[steel]]])].
+[add_pre(-[dummyPred,vble(x)],[+[dontBuyStock,vble(x)],-[goodPrice,vble(x)],-[riskyCompany,vble(y)]])].
+[add_pre(-[dummyPred,vble(x)],[+[riskyCompany,vble(x)],-[inFusion,vble(x),[steel]]])].
+[arityInc(goodPrice,+[goodPrice,[acme]],[+[goodPrice,[acme]]],-[goodPrice,vble(x)],[+[dontBuyStock,vble(x)],-[goodPrice,vble(x)],-[riskyCompany,vble(y)]])].
+[arityInc(inFusion,+[inFusion,[acme],[steel]],[+[inFusion,[acme],[steel]]],-[inFusion,vble(x),[steel]],[+[riskyCompany,vble(x)],-[inFusion,vble(x),[steel]]])].
+[arityInc(riskyCompany,+[riskyCompany,vble(x)],[+[riskyCompany,vble(x)],-[inFusion,vble(x),[steel]]],-[riskyCompany,vble(y)],[+[dontBuyStock,vble(x)],-[goodPrice,vble(x)],-[riskyCompany,vble(y)]])].
+
+------------------ Solution No. 1 as below------------------
+(BRT. dummyPred Represent special risky company whose stock should be bought)
+Repair plans found at Round 1/1 :
+add_pre(-dummyPred(\x),[+dontBuyStock(\x),-goodPrice(\x),-riskyCompany(\y)]).
+
+
+Repaired Theory: 
+[+buyStock(\x),-goodPrice(\x)].
+[+dontBuyStock(\x),-dummyPred(\x),-goodPrice(\x),-riskyCompany(\y)].
+[+goodPrice(acme)].
+[+inFusion(acme,steel)].
+[+notRiskyCompany(\x),-inFusion(\x,steel),-stong(steel)].
+[+riskyCompany(\x),-closing(\x,\y)].
+[+riskyCompany(\x),-inFusion(\x,steel)].
+[+strong(steel)].
+[-buyStock(\x),-dontBuyStock(\x)].
+
+------------------ Solution No. 2 as below------------------
+Repair plans found at Round 1/1 :
+add_pre(-dummyPred(\x),[+riskyCompany(\x),-inFusion(\x,steel)]).
+
+
+Repaired Theory: 
+[+buyStock(\x),-goodPrice(\x)].
+[+dontBuyStock(\x),-goodPrice(\x),-riskyCompany(\y)].
+[+goodPrice(acme)].
+[+inFusion(acme,steel)].
+[+notRiskyCompany(\x),-inFusion(\x,steel),-stong(steel)].
+[+riskyCompany(\x),-closing(\x,\y)].
+[+riskyCompany(\x),-dummyPred(\x),-inFusion(\x,steel)].
+[+strong(steel)].
+[-buyStock(\x),-dontBuyStock(\x)].
+
+------------------ Solution No. 3 as below------------------
+Repair plans found at Round 1/1 :
+delete([+riskyCompany(\x),-inFusion(\x,steel)]).
+
+
+Repaired Theory: 
+[+buyStock(\x),-goodPrice(\x)].
+[+dontBuyStock(\x),-goodPrice(\x),-riskyCompany(\y)].
+[+goodPrice(acme)].
+[+inFusion(acme,steel)].
+[+notRiskyCompany(\x),-inFusion(\x,steel),-stong(steel)].
+[+riskyCompany(\x),-closing(\x,\y)].
+[+strong(steel)].
+[-buyStock(\x),-dontBuyStock(\x)].
+
+------------------ Solution No. 4 as below------------------
+Repair plans found at Round 1/1 :
+arityInc(inFusion,+[inFusion,[acme],[steel]],[+[inFusion,[acme],[steel]]],-[inFusion,vble(x),[steel]],[+[riskyCompany,vble(x)],-[inFusion,vble(x),[steel]]]).
+
+Repair plans found at Round 1/1 :
+arityInc(inFusion,+[inFusion,[acme],[steel]],[+[inFusion,[acme],[steel]]],-[inFusion,vble(x),[steel]],[+[riskyCompany,vble(x)],-[inFusion,vble(x),[steel]]]).
+
+Repair plans found at Round 1/1 :
+arityInc(inFusion,+[inFusion,[acme],[steel]],[+[inFusion,[acme],[steel]]],-[inFusion,vble(x),[steel]],[+[riskyCompany,vble(x)],-[inFusion,vble(x),[steel]]]).
+
+
+Repaired Theory: 
+[+buyStock(\x),-goodPrice(\x)].
+[+dontBuyStock(\x),-goodPrice(\x),-riskyCompany(\y)].
+[+goodPrice(acme)].
+[+inFusion(acme,steel,dummy_Abnormal1)].
+[+notRiskyCompany(\x),-inFusion(\x,steel,\iv1),-stong(steel)].
+[+riskyCompany(\x),-closing(\x,\y)].
+[+riskyCompany(\x),-inFusion(\x,steel,dummy_Normal1)].
+[+strong(steel)].
+[-buyStock(\x),-dontBuyStock(\x)].
+
+------------------ Solution No. 5 as below------------------
+Repair plans found at Round 1/1 :
+delete([+inFusion(acme,steel)]).
+
+
+Repaired Theory: 
+[+buyStock(\x),-goodPrice(\x)].
+[+dontBuyStock(\x),-goodPrice(\x),-riskyCompany(\y)].
+[+goodPrice(acme)].
+[+notRiskyCompany(\x),-inFusion(\x,steel),-stong(steel)].
+[+riskyCompany(\x),-closing(\x,\y)].
+[+riskyCompany(\x),-inFusion(\x,steel)].
+[+strong(steel)].
+[-buyStock(\x),-dontBuyStock(\x)].
+
+------------------ Solution No. 6 as below------------------
+Repair plans found at Round 1/1 :
+arityInc(riskyCompany,+[riskyCompany,vble(x)],[+[riskyCompany,vble(x)],-[inFusion,vble(x),[steel]]],-[riskyCompany,vble(y)],[+[dontBuyStock,vble(x)],-[goodPrice,vble(x)],-[riskyCompany,vble(y)]]).
+
+Repair plans found at Round 1/1 :
+arityInc(riskyCompany,+[riskyCompany,vble(x)],[+[riskyCompany,vble(x)],-[inFusion,vble(x),[steel]]],-[riskyCompany,vble(y)],[+[dontBuyStock,vble(x)],-[goodPrice,vble(x)],-[riskyCompany,vble(y)]]).
+
+Repair plans found at Round 1/1 :
+arityInc(riskyCompany,+[riskyCompany,vble(x)],[+[riskyCompany,vble(x)],-[inFusion,vble(x),[steel]]],-[riskyCompany,vble(y)],[+[dontBuyStock,vble(x)],-[goodPrice,vble(x)],-[riskyCompany,vble(y)]]).
+
+
+Repaired Theory: 
+[+buyStock(\x),-goodPrice(\x)].
+[+dontBuyStock(\x),-goodPrice(\x),-riskyCompany(\y,dummy_Normal1)].
+[+goodPrice(acme)].
+[+inFusion(acme,steel)].
+[+notRiskyCompany(\x),-inFusion(\x,steel),-stong(steel)].
+[+riskyCompany(\x,\iv1),-closing(\x,\y,\iv1)].
+[+riskyCompany(\x,dummy_Abnormal1),-inFusion(\x,steel)].
+[+strong(steel)].
+[-buyStock(\x),-dontBuyStock(\x)].
+
+------------------ Solution No. 7 as below------------------
+Repair plans found at Round 1/1 :
+delete([+dontBuyStock(\x),-goodPrice(\x),-riskyCompany(\y)]).
+
+
+Repaired Theory: 
+[+buyStock(\x),-goodPrice(\x)].
+[+goodPrice(acme)].
+[+inFusion(acme,steel)].
+[+notRiskyCompany(\x),-inFusion(\x,steel),-stong(steel)].
+[+riskyCompany(\x),-closing(\x,\y)].
+[+riskyCompany(\x),-inFusion(\x,steel)].
+[+strong(steel)].
+[-buyStock(\x),-dontBuyStock(\x)].
+
+------------------ Solution No. 8 as below------------------
+(BRT. Buy acme's stock when it is of extremely good price)
+Repair plans found at Round 1/1 :
+arityInc(goodPrice,+[goodPrice,[acme]],[+[goodPrice,[acme]]],-[goodPrice,vble(x)],[+[dontBuyStock,vble(x)],-[goodPrice,vble(x)],-[riskyCompany,vble(y)]]).
+
+Repair plans found at Round 1/1 :
+arityInc(goodPrice,+[goodPrice,[acme]],[+[goodPrice,[acme]]],-[goodPrice,vble(x)],[+[dontBuyStock,vble(x)],-[goodPrice,vble(x)],-[riskyCompany,vble(y)]]).
+
+Repair plans found at Round 1/1 :
+arityInc(goodPrice,+[goodPrice,[acme]],[+[goodPrice,[acme]]],-[goodPrice,vble(x)],[+[dontBuyStock,vble(x)],-[goodPrice,vble(x)],-[riskyCompany,vble(y)]]).
+
+
+Repaired Theory: 
+[+buyStock(\x),-goodPrice(\x,\iv1)].
+[+dontBuyStock(\x),-goodPrice(\x,dummy_Normal1),-riskyCompany(\y)].
+[+goodPrice(acme,dummy_Abnormal1)].
+[+inFusion(acme,steel)].
+[+notRiskyCompany(\x),-inFusion(\x,steel),-stong(steel)].
+[+riskyCompany(\x),-closing(\x,\y)].
+[+riskyCompany(\x),-inFusion(\x,steel)].
+[+strong(steel)].
+[-buyStock(\x),-dontBuyStock(\x)].
+
+Solutions are found at rounds:[1/1]
