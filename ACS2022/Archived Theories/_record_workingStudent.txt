@@ -1,0 +1,746 @@
+
+---------Start detInsInc, Input theory is:------
+
+[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]]
+[+[adult,vble(x)],-[undstudent,vble(x)]]
+[+[notworking,vble(x)],-[student,vble(x)]]
+[+[student,vble(x)],-[undstudent,vble(x)]]
+[+[undstudent,[lily]]]
+[+[working,vble(x)],-[adult,vble(x)]]
+[-[notworking,vble(x)],-[working,vble(x)]]
+
+
+---------SufGoals is------
+[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+
+---------Violations are------
+[-[notworking,vble(x)],-[working,vble(x)]],[[([-[notworking,vble(x)],-[working,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[vble(x)/vble(x)],[-[student,vble(x1)],-[working,vble(x1)]],[0,0]),([-[student,vble(x1)],-[working,vble(x1)]],[+[student,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,vble(x)],-[working,vble(x)]],[0,0]),([-[undstudent,vble(x)],-[working,vble(x)]],[+[undstudent,[lily]]],[],[-[working,[lily]]],[0,0]),([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]
+
+--------- Start repInsInc round: 1
+
+-------- Start blockProof1: -------- 
+[-[notworking,vble(x)],-[working,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[vble(x)/vble(x)],[-[student,vble(x1)],-[working,vble(x1)]],[0,0]
+[-[student,vble(x1)],-[working,vble(x1)]],[+[student,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,vble(x)],-[working,vble(x)]],[0,0]
+[-[undstudent,vble(x)],-[working,vble(x)]],[+[undstudent,[lily]]],[],[-[working,[lily]]],[0,0]
+[-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]
+[-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]
+[-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0]
+
+TheoryIn is: [[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]]
+
+[+[adult,vble(x)],-[undstudent,vble(x)]]
+[+[notworking,vble(x)],-[student,vble(x)]]
+[+[student,vble(x)],-[undstudent,vble(x)]]
+[+[undstudent,[lily]]]
+[+[working,vble(x)],-[adult,vble(x)]]
+[-[notworking,vble(x)],-[working,vble(x)]]
+
+Original Axiom is: [+[notworking,vble(x)],-[student,vble(x)]]
+
+-------- getAdjCond for  Rule: [+[notworking,vble(x)],-[student,vble(x)]]
+
+ PreCands are: [adult,undstudent]
+
+-------- start to find unprovable precondition candidates based on: adult
+-- The theorems of Predicate -adult-- are:
+[([+[adult,[lily]]],[[([-[undstudent,vble(x)],+[adult,vble(x)]],[+[undstudent,[lily]]],[],[+[adult,[lily]]],[0,0])]])]
+Found TSAll for: adult
+[[+[adult,[lily]]],[+[adult,vble(x)]]]
+
+ upArg ArgsV is 
+[[lily]]
+
+******** Warning: No adjustment precondition candidates found
+
+-------- start to find unprovable precondition candidates based on: undstudent
+-- The theorems of Predicate -undstudent-- are:
+[([+[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])]
+Found TSAll for: undstudent
+[[+[undstudent,[lily]]],[+[undstudent,[lily]]],[+[undstudent,vble(x)]],[+[undstudent,vble(x)]]]
+
+ upArg ArgsV is 
+[[lily]]
+
+******** Warning: No adjustment precondition candidates found
+
+ Found unprovable precondition : add_pre(-[dummyPred,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])
+
+ All found unprovable preconditions: [add_pre(-[dummyPred,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])]
+
+Original Axiom is: [+[student,vble(x)],-[undstudent,vble(x)]]
+
+-------- getAdjCond for  Rule: [+[student,vble(x)],-[undstudent,vble(x)]]
+
+ PreCands are: [adult,notworking,working]
+
+-------- start to find unprovable precondition candidates based on: adult
+-- The theorems of Predicate -adult-- are:
+[([+[adult,[lily]]],[[([-[undstudent,vble(x)],+[adult,vble(x)]],[+[undstudent,[lily]]],[],[+[adult,[lily]]],[0,0])]])]
+Found TSAll for: adult
+[[+[adult,[lily]]],[+[adult,vble(x)]]]
+
+ upArg ArgsV is 
+[[lily]]
+
+******** Warning: No adjustment precondition candidates found
+
+-------- start to find unprovable precondition candidates based on: notworking
+-- The theorems of Predicate -notworking-- are:
+[]
+Found TSAll for: notworking
+[[+[notworking,vble(x)]]]
+
+******** Warning: No adjustment precondition candidates found
+
+-------- start to find unprovable precondition candidates based on: working
+-- The theorems of Predicate -working-- are:
+[([+[working,[lily]]],[[([-[adult,vble(x)],+[working,vble(x)]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,vble(x1)],+[working,vble(x1)]],[0,0]),([-[undstudent,vble(x1)],+[working,vble(x1)]],[+[undstudent,[lily]]],[],[+[working,[lily]]],[0,0])]])]
+Found TSAll for: working
+[[+[working,[lily]]],[+[working,[lily]]],[+[working,vble(x)]]]
+
+ upArg ArgsV is 
+[[lily]]
+
+******** Warning: No adjustment precondition candidates found
+
+ Found unprovable precondition : add_pre(-[dummyPred,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]])
+
+ All found unprovable preconditions: [add_pre(-[dummyPred,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]])]
+
+Original Axiom is: [+[undstudent,[lily]]]
+
+-------- start asser2rule to find unprovable precondition
+
+-- SuffGoals=[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])]
+
+-- Theory=[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]]
+
+
+[+[adult,vble(x)],-[undstudent,vble(x)]]
+[+[notworking,vble(x)],-[student,vble(x)]]
+[+[student,vble(x)],-[undstudent,vble(x)]]
+[+[undstudent,[lily]]]
+[+[working,vble(x)],-[adult,vble(x)]]
+[-[notworking,vble(x)],-[working,vble(x)]]
+
+
+Original Axiom is: [+[working,vble(x)],-[adult,vble(x)]]
+
+-------- getAdjCond for  Rule: [+[working,vble(x)],-[adult,vble(x)]]
+
+ PreCands are: [student,undstudent]
+
+-------- start to find unprovable precondition candidates based on: student
+-- The theorems of Predicate -student-- are:
+[([+[student,[lily]]],[[([-[undstudent,vble(x)],+[student,vble(x)]],[+[undstudent,[lily]]],[],[+[student,[lily]]],[0,0])]])]
+Found TSAll for: student
+[[+[student,[lily]]],[+[student,vble(x)]]]
+
+ upArg ArgsV is 
+[vble(x)]
+
+******** Warning: No adjustment precondition candidates found
+
+-------- start to find unprovable precondition candidates based on: undstudent
+-- The theorems of Predicate -undstudent-- are:
+[([+[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])]
+Found TSAll for: undstudent
+[[+[undstudent,[lily]]],[+[undstudent,[lily]]],[+[undstudent,vble(x)]],[+[undstudent,vble(x)]]]
+
+ upArg ArgsV is 
+[vble(x)]
+
+******** Warning: No adjustment precondition candidates found
+
+ Found unprovable precondition : add_pre(-[dummyPred,vble(x)],[+[working,vble(x)],-[adult,vble(x)]])
+
+ All found unprovable preconditions: [add_pre(-[dummyPred,vble(x)],[+[working,vble(x)],-[adult,vble(x)]])]
+
+Original Axiom is: [+[adult,vble(x)],-[undstudent,vble(x)]]
+
+-------- getAdjCond for  Rule: [+[adult,vble(x)],-[undstudent,vble(x)]]
+
+ PreCands are: [notworking,student,working]
+
+-------- start to find unprovable precondition candidates based on: notworking
+-- The theorems of Predicate -notworking-- are:
+[([+[notworking,[lily]]],[[([-[student,vble(x)],+[notworking,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,vble(x1)],+[notworking,vble(x1)]],[0,0]),([-[undstudent,vble(x1)],+[notworking,vble(x1)]],[+[undstudent,[lily]]],[],[+[notworking,[lily]]],[0,0])]])]
+Found TSAll for: notworking
+[[+[notworking,[lily]]],[+[notworking,vble(x)]]]
+
+ upArg ArgsV is 
+[vble(x)]
+
+******** Warning: No adjustment precondition candidates found
+
+-------- start to find unprovable precondition candidates based on: student
+-- The theorems of Predicate -student-- are:
+[([+[student,[lily]]],[[([-[undstudent,vble(x)],+[student,vble(x)]],[+[undstudent,[lily]]],[],[+[student,[lily]]],[0,0])]])]
+Found TSAll for: student
+[[+[student,[lily]]],[+[student,vble(x)]]]
+
+ upArg ArgsV is 
+[vble(x)]
+
+******** Warning: No adjustment precondition candidates found
+
+-------- start to find unprovable precondition candidates based on: working
+-- The theorems of Predicate -working-- are:
+[]
+Found TSAll for: working
+[[+[working,vble(x)]]]
+
+******** Warning: No adjustment precondition candidates found
+
+ Found unprovable precondition : add_pre(-[dummyPred,vble(x)],[+[adult,vble(x)],-[undstudent,vble(x)]])
+
+ All found unprovable preconditions: [add_pre(-[dummyPred,vble(x)],[+[adult,vble(x)],-[undstudent,vble(x)]])]
+
+Original Axiom is: [+[undstudent,[lily]]]
+
+-------- start asser2rule to find unprovable precondition
+
+-- SuffGoals=[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])]
+
+-- Theory=[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]]
+
+
+[+[adult,vble(x)],-[undstudent,vble(x)]]
+[+[notworking,vble(x)],-[student,vble(x)]]
+[+[student,vble(x)],-[undstudent,vble(x)]]
+[+[undstudent,[lily]]]
+[+[working,vble(x)],-[adult,vble(x)]]
+[-[notworking,vble(x)],-[working,vble(x)]]
+
+
+-------- Start blockProof2: reformation -------- 
+-------- Proof is:
+[([-[notworking,vble(x)],-[working,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[vble(x)/vble(x)],[-[student,vble(x1)],-[working,vble(x1)]],[0,0]),([-[student,vble(x1)],-[working,vble(x1)]],[+[student,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,vble(x)],-[working,vble(x)]],[0,0]),([-[undstudent,vble(x)],-[working,vble(x)]],[+[undstudent,[lily]]],[],[-[working,[lily]]],[0,0]),([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]
+
+
+-------- SuffGoals is:
+[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])]
+
+
+--Blocking Repair Plan11 InpClause:
+[+[notworking,vble(x)],-[student,vble(x)]]
+
+arityInc(notworking,+[notworking,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]],-[notworking,vble(x)],[-[notworking,vble(x)],-[working,vble(x)]])
+
+--Blocking Repair Plan11 InpClause:
+[+[student,vble(x)],-[undstudent,vble(x)]]
+
+arityInc(student,+[student,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]],-[student,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])
+
+--Blocking Repair Plan11 InpClause:
+[+[working,vble(x)],-[adult,vble(x)]]
+
+weaken(vble(x),[lily],[+[working,vble(x)],-[adult,vble(x)]])
+
+--Blocking Repair Plan11 InpClause:
+[-[notworking,vble(x)],-[working,vble(x)]]
+
+rename([lily],-[working,[lily]],[-[notworking,vble(x)],-[working,vble(x)]])
+
+--Blocking Repair Plan11 InpClause:
+[+[adult,vble(x)],-[undstudent,vble(x)]]
+
+arityInc(adult,+[adult,vble(x)],[+[adult,vble(x)],-[undstudent,vble(x)]],-[adult,vble(x)],[+[working,vble(x)],-[adult,vble(x)]])
+
+--Blocking Repair Plan11 InpClause:
+[+[adult,vble(x)],-[undstudent,vble(x)]]
+
+weaken(vble(x),[lily],[+[adult,vble(x)],-[undstudent,vble(x)]])
+
+--Blocking Repair Plan11 InpClause:
+[+[adult,vble(x)],-[undstudent,vble(x)]]
+
+weaken(vble(x),[lily],[+[adult,vble(x)],-[undstudent,vble(x)]])
+
+12 repair plans for blockP:[([-[notworking,vble(x)],-[working,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[vble(x)/vble(x)],[-[student,vble(x1)],-[working,vble(x1)]],[0,0]),([-[student,vble(x1)],-[working,vble(x1)]],[+[student,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,vble(x)],-[working,vble(x)]],[0,0]),([-[undstudent,vble(x)],-[working,vble(x)]],[+[undstudent,[lily]]],[],[-[working,[lily]]],[0,0]),([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]
+
+
+[incomp,([delete([+[notworking,vble(x)],-[student,vble(x)]])],[[+[notworking,vble(x)],-[student,vble(x)]]]),[[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[+[adult,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]]]]
+[incomp,([delete([+[student,vble(x)],-[undstudent,vble(x)]])],[[+[student,vble(x)],-[undstudent,vble(x)]]]),[[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[+[adult,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]]]]
+[incomp,([add_pre(-[dummyPred,vble(x)],[+[adult,vble(x)],-[undstudent,vble(x)]])],[[+[adult,vble(x)],-[undstudent,vble(x)]]]),[[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[+[adult,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]]]]
+[incomp,([add_pre(-[dummyPred,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])],[[+[notworking,vble(x)],-[student,vble(x)]]]),[[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[+[adult,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]]]]
+[incomp,([add_pre(-[dummyPred,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]])],[[+[student,vble(x)],-[undstudent,vble(x)]]]),[[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[+[adult,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]]]]
+[incomp,([add_pre(-[dummyPred,vble(x)],[+[working,vble(x)],-[adult,vble(x)]])],[[+[working,vble(x)],-[adult,vble(x)]]]),[[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[+[adult,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]]]]
+[incomp,([rename([lily],-[working,[lily]],[-[notworking,vble(x)],-[working,vble(x)]])],[[-[notworking,vble(x)],-[working,vble(x)]]]),[[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[+[adult,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]]]]
+[incomp,([weaken(vble(x),[lily],[+[adult,vble(x)],-[undstudent,vble(x)]])],[[+[adult,vble(x)],-[undstudent,vble(x)]]]),[[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[+[adult,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]]]]
+[incomp,([weaken(vble(x),[lily],[+[working,vble(x)],-[adult,vble(x)]])],[[+[working,vble(x)],-[adult,vble(x)]]]),[[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[+[adult,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]]]]
+[incomp,([arityInc(adult,+[adult,vble(x)],[+[adult,vble(x)],-[undstudent,vble(x)]],-[adult,vble(x)],[+[working,vble(x)],-[adult,vble(x)]])],[[+[adult,vble(x)],-[undstudent,vble(x)]]]),[[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[+[adult,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]]]]
+[incomp,([arityInc(notworking,+[notworking,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]],-[notworking,vble(x)],[-[notworking,vble(x)],-[working,vble(x)]])],[[+[notworking,vble(x)],-[student,vble(x)]]]),[[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[+[adult,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]]]]
+[incomp,([arityInc(student,+[student,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]],-[student,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])],[[+[student,vble(x)],-[undstudent,vble(x)]]]),[[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[+[adult,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]]]]
+
+
+1 fault's new repair plans found: [[[incomp,([delete([+[notworking,vble(x)],-[student,vble(x)]])],[[+[notworking,vble(x)],-[student,vble(x)]]]),[[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[+[adult,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]]]],[incomp,([delete([+[student,vble(x)],-[undstudent,vble(x)]])],[[+[student,vble(x)],-[undstudent,vble(x)]]]),[[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[+[adult,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]]]],[incomp,([add_pre(-[dummyPred,vble(x)],[+[adult,vble(x)],-[undstudent,vble(x)]])],[[+[adult,vble(x)],-[undstudent,vble(x)]]]),[[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[+[adult,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]]]],[incomp,([add_pre(-[dummyPred,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])],[[+[notworking,vble(x)],-[student,vble(x)]]]),[[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[+[adult,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]]]],[incomp,([add_pre(-[dummyPred,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]])],[[+[student,vble(x)],-[undstudent,vble(x)]]]),[[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[+[adult,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]]]],[incomp,([add_pre(-[dummyPred,vble(x)],[+[working,vble(x)],-[adult,vble(x)]])],[[+[working,vble(x)],-[adult,vble(x)]]]),[[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[+[adult,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]]]],[incomp,([rename([lily],-[working,[lily]],[-[notworking,vble(x)],-[working,vble(x)]])],[[-[notworking,vble(x)],-[working,vble(x)]]]),[[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[+[adult,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]]]],[incomp,([weaken(vble(x),[lily],[+[adult,vble(x)],-[undstudent,vble(x)]])],[[+[adult,vble(x)],-[undstudent,vble(x)]]]),[[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[+[adult,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]]]],[incomp,([weaken(vble(x),[lily],[+[working,vble(x)],-[adult,vble(x)]])],[[+[working,vble(x)],-[adult,vble(x)]]]),[[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[+[adult,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]]]],[incomp,([arityInc(adult,+[adult,vble(x)],[+[adult,vble(x)],-[undstudent,vble(x)]],-[adult,vble(x)],[+[working,vble(x)],-[adult,vble(x)]])],[[+[adult,vble(x)],-[undstudent,vble(x)]]]),[[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[+[adult,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]]]],[incomp,([arityInc(notworking,+[notworking,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]],-[notworking,vble(x)],[-[notworking,vble(x)],-[working,vble(x)]])],[[+[notworking,vble(x)],-[student,vble(x)]]]),[[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[+[adult,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]]]],[incomp,([arityInc(student,+[student,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]],-[student,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])],[[+[student,vble(x)],-[undstudent,vble(x)]]]),[[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[+[adult,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]]]]]]
+
+
+[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]]
+
+All collections of repair plans are: 
+[delete([+[notworking,vble(x)],-[student,vble(x)]])]
+[delete([+[student,vble(x)],-[undstudent,vble(x)]])]
+[add_pre(-[dummyPred,vble(x)],[+[adult,vble(x)],-[undstudent,vble(x)]])]
+[add_pre(-[dummyPred,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])]
+[add_pre(-[dummyPred,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]])]
+[add_pre(-[dummyPred,vble(x)],[+[working,vble(x)],-[adult,vble(x)]])]
+[rename([lily],-[working,[lily]],[-[notworking,vble(x)],-[working,vble(x)]])]
+[weaken(vble(x),[lily],[+[adult,vble(x)],-[undstudent,vble(x)]])]
+[weaken(vble(x),[lily],[+[working,vble(x)],-[adult,vble(x)]])]
+[arityInc(adult,+[adult,vble(x)],[+[adult,vble(x)],-[undstudent,vble(x)]],-[adult,vble(x)],[+[working,vble(x)],-[adult,vble(x)]])]
+[arityInc(notworking,+[notworking,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]],-[notworking,vble(x)],[-[notworking,vble(x)],-[working,vble(x)]])]
+[arityInc(student,+[student,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]],-[student,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])]
+
+
+-------- Start to apply repair plans:
+delete([+[notworking,vble(x)],-[student,vble(x)]])
+
+
+******** RepPlan: delete([+[notworking,vble(x)],-[student,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+delete([+[student,vble(x)],-[undstudent,vble(x)]])
+
+
+******** RepPlan: delete([+[student,vble(x)],-[undstudent,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+add_pre(-[dummyPred,vble(x)],[+[adult,vble(x)],-[undstudent,vble(x)]])
+
+
+******** RepPlan: add_pre(-[dummyPred,vble(x)],[+[adult,vble(x)],-[undstudent,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+add_pre(-[dummyPred,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])
+
+
+******** RepPlan: add_pre(-[dummyPred,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+add_pre(-[dummyPred,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]])
+
+
+******** RepPlan: add_pre(-[dummyPred,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+add_pre(-[dummyPred,vble(x)],[+[working,vble(x)],-[adult,vble(x)]])
+
+
+******** RepPlan: add_pre(-[dummyPred,vble(x)],[+[working,vble(x)],-[adult,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+rename([lily],-[working,[lily]],[-[notworking,vble(x)],-[working,vble(x)]])
+
+
+******** Finish renaming.
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+weaken(vble(x),[lily],[+[adult,vble(x)],-[undstudent,vble(x)]])
+
+
+********  Warning : a rule without variables is resulted, so refuse the repair: 
+weaken(vble(x),[lily],[+[adult,vble(x)],-[undstudent,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+weaken(vble(x),[lily],[+[working,vble(x)],-[adult,vble(x)]])
+
+
+********  Warning : a rule without variables is resulted, so refuse the repair: 
+weaken(vble(x),[lily],[+[working,vble(x)],-[adult,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+arityInc(adult,+[adult,vble(x)],[+[adult,vble(x)],-[undstudent,vble(x)]],-[adult,vble(x)],[+[working,vble(x)],-[adult,vble(x)]])
+
+
+-------- Start apply arityInc-------- 
+arityInc(adult,+[adult,vble(x)],[+[adult,vble(x)],-[undstudent,vble(x)]])
+******** RepPlan: arityInc(adult,+[adult,vble(x)],[+[adult,vble(x)],-[undstudent,vble(x)]],-[adult,vble(x)],[+[working,vble(x)],-[adult,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+arityInc(notworking,+[notworking,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]],-[notworking,vble(x)],[-[notworking,vble(x)],-[working,vble(x)]])
+
+
+-------- Start apply arityInc-------- 
+arityInc(notworking,+[notworking,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])
+******** RepPlan: arityInc(notworking,+[notworking,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]],-[notworking,vble(x)],[-[notworking,vble(x)],-[working,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-------- Start to apply repair plans:
+arityInc(student,+[student,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]],-[student,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])
+
+
+-------- Start apply arityInc-------- 
+arityInc(student,+[student,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]])
+******** RepPlan: arityInc(student,+[student,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]],-[student,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])
+
+-------- Finish applying repair plans.
+
+-- There are 12 repaired states: 
+[[[],[rename([lily],-[working,[lily]],[-[notworking,vble(x)],-[working,vble(x)]])]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]
+[[[],[weaken(vble(x),[lily],[+[adult,vble(x)],-[undstudent,vble(x)]])]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]
+[[[],[weaken(vble(x),[lily],[+[working,vble(x)],-[adult,vble(x)]])]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]
+[[[delete([+[notworking,vble(x)],-[student,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]
+[[[delete([+[student,vble(x)],-[undstudent,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]
+[[[add_pre(-[dummyPred,vble(x)],[+[adult,vble(x)],-[undstudent,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[dummyPred,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]
+[[[add_pre(-[dummyPred,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[dummyPred,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]
+[[[add_pre(-[dummyPred,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[dummyPred,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]
+[[[add_pre(-[dummyPred,vble(x)],[+[working,vble(x)],-[adult,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)],-[dummyPred,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]
+[[[arityInc(adult,+[adult,vble(x)],[+[adult,vble(x)],-[undstudent,vble(x)]],-[adult,vble(x)],[+[working,vble(x)],-[adult,vble(x)]])],[delete([+[adult,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]]),deleArg(adult,2)]],[[[lily]]],[],[[+[adult,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x),[dummy_Normal1]]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]
+[[[arityInc(notworking,+[notworking,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]],-[notworking,vble(x)],[-[notworking,vble(x)],-[working,vble(x)]])],[delete([+[notworking,vble(x),[dummy_Abnormal1]],-[student,vble(x)]]),deleArg(notworking,2)]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x),[dummy_Abnormal1]],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x),[dummy_Normal1]],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]
+[[[arityInc(student,+[student,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]],-[student,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])],[delete([+[student,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]]),deleArg(student,2)]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x),[dummy_Normal1]]],[+[student,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]
+
+
+-- RepStatesFine [[[[arityInc(student,+[student,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]],-[student,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])],[delete([+[student,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]]),deleArg(student,2)]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x),[dummy_Normal1]]],[+[student,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[[[arityInc(notworking,+[notworking,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]],-[notworking,vble(x)],[-[notworking,vble(x)],-[working,vble(x)]])],[delete([+[notworking,vble(x),[dummy_Abnormal1]],-[student,vble(x)]]),deleArg(notworking,2)]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x),[dummy_Abnormal1]],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x),[dummy_Normal1]],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[[[arityInc(adult,+[adult,vble(x)],[+[adult,vble(x)],-[undstudent,vble(x)]],-[adult,vble(x)],[+[working,vble(x)],-[adult,vble(x)]])],[delete([+[adult,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]]),deleArg(adult,2)]],[[[lily]]],[],[[+[adult,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x),[dummy_Normal1]]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[[[add_pre(-[dummyPred,vble(x)],[+[working,vble(x)],-[adult,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)],-[dummyPred,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[[[add_pre(-[dummyPred,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[dummyPred,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[[[add_pre(-[dummyPred,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[dummyPred,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[[[add_pre(-[dummyPred,vble(x)],[+[adult,vble(x)],-[undstudent,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[dummyPred,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[[[delete([+[student,vble(x)],-[undstudent,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[[[delete([+[notworking,vble(x)],-[student,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[[[],[rename([lily],-[working,[lily]],[-[notworking,vble(x)],-[working,vble(x)]])]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]]
+
+---------Start detInsInc, Input theory is:------
+
+[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x),[dummy_Normal1]]],[+[student,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]]
+[+[adult,vble(x)],-[undstudent,vble(x)]]
+[+[notworking,vble(x)],-[student,vble(x),[dummy_Normal1]]]
+[+[student,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]]
+[+[undstudent,[lily]]]
+[+[working,vble(x)],-[adult,vble(x)]]
+[-[notworking,vble(x)],-[working,vble(x)]]
+
+
+---------SufGoals is------
+[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x),[dummy_Abnormal1]],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x),[dummy_Normal1]],-[working,vble(x)]]]
+[+[adult,vble(x)],-[undstudent,vble(x)]]
+[+[notworking,vble(x),[dummy_Abnormal1]],-[student,vble(x)]]
+[+[student,vble(x)],-[undstudent,vble(x)]]
+[+[undstudent,[lily]]]
+[+[working,vble(x)],-[adult,vble(x)]]
+[-[notworking,vble(x),[dummy_Normal1]],-[working,vble(x)]]
+
+
+---------SufGoals is------
+[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[adult,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x),[dummy_Normal1]]],[-[notworking,vble(x)],-[working,vble(x)]]]
+[+[adult,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]]
+[+[notworking,vble(x)],-[student,vble(x)]]
+[+[student,vble(x)],-[undstudent,vble(x)]]
+[+[undstudent,[lily]]]
+[+[working,vble(x)],-[adult,vble(x),[dummy_Normal1]]]
+[-[notworking,vble(x)],-[working,vble(x)]]
+
+
+---------SufGoals is------
+[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x),[dummy_Normal1]]],[[lily]/vble(x)],[-[adult,[lily],[dummy_Normal1]]],[1,0])]])]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)],-[dummyPred,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]]
+[+[adult,vble(x)],-[undstudent,vble(x)]]
+[+[notworking,vble(x)],-[student,vble(x)]]
+[+[student,vble(x)],-[undstudent,vble(x)]]
+[+[undstudent,[lily]]]
+[+[working,vble(x)],-[adult,vble(x)],-[dummyPred,vble(x)]]
+[-[notworking,vble(x)],-[working,vble(x)]]
+
+
+---------SufGoals is------
+[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)],-[dummyPred,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]],-[dummyPred,[lily]]],[1,0]),([-[adult,[lily]],-[dummyPred,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]],-[dummyPred,[lily]]],[0,0]),([-[undstudent,[lily]],-[dummyPred,[lily]]],[+[undstudent,[lily]]],[],[-[dummyPred,[lily]]],[0,0])],[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)],-[dummyPred,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]],-[dummyPred,[lily]]],[1,0]),([-[adult,[lily]],-[dummyPred,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]],-[dummyPred,[lily]]],[1,0])]])]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[dummyPred,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]]
+[+[adult,vble(x)],-[undstudent,vble(x)]]
+[+[notworking,vble(x)],-[student,vble(x)]]
+[+[student,vble(x)],-[dummyPred,vble(x)],-[undstudent,vble(x)]]
+[+[undstudent,[lily]]]
+[+[working,vble(x)],-[adult,vble(x)]]
+[-[notworking,vble(x)],-[working,vble(x)]]
+
+
+---------SufGoals is------
+[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[dummyPred,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]]
+[+[adult,vble(x)],-[undstudent,vble(x)]]
+[+[notworking,vble(x)],-[dummyPred,vble(x)],-[student,vble(x)]]
+[+[student,vble(x)],-[undstudent,vble(x)]]
+[+[undstudent,[lily]]]
+[+[working,vble(x)],-[adult,vble(x)]]
+[-[notworking,vble(x)],-[working,vble(x)]]
+
+
+---------SufGoals is------
+[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[adult,vble(x)],-[dummyPred,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]]
+[+[adult,vble(x)],-[dummyPred,vble(x)],-[undstudent,vble(x)]]
+[+[notworking,vble(x)],-[student,vble(x)]]
+[+[student,vble(x)],-[undstudent,vble(x)]]
+[+[undstudent,[lily]]]
+[+[working,vble(x)],-[adult,vble(x)]]
+[-[notworking,vble(x)],-[working,vble(x)]]
+
+
+---------SufGoals is------
+[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[dummyPred,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[dummyPred,[lily]],-[undstudent,[lily]]],[2,0])]])]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]]
+[+[adult,vble(x)],-[undstudent,vble(x)]]
+[+[notworking,vble(x)],-[student,vble(x)]]
+[+[undstudent,[lily]]]
+[+[working,vble(x)],-[adult,vble(x)]]
+[-[notworking,vble(x)],-[working,vble(x)]]
+
+
+---------SufGoals is------
+[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]]
+[+[adult,vble(x)],-[undstudent,vble(x)]]
+[+[student,vble(x)],-[undstudent,vble(x)]]
+[+[undstudent,[lily]]]
+[+[working,vble(x)],-[adult,vble(x)]]
+[-[notworking,vble(x)],-[working,vble(x)]]
+
+
+---------SufGoals is------
+[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+
+---------Violations are------
+
+---------Start detInsInc, Input theory is:------
+
+[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]]
+[+[adult,vble(x)],-[undstudent,vble(x)]]
+[+[notworking,vble(x)],-[student,vble(x)]]
+[+[student,vble(x)],-[undstudent,vble(x)]]
+[+[undstudent,[lily]]]
+[+[working,vble(x)],-[adult,vble(x)]]
+[-[notworking,vble(x)],-[working,vble(x)]]
+
+
+---------SufGoals is------
+[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])]
+---------InsufGoals is------
+[]
+---------InComps are------
+
+---------Violations are------
+[-[notworking,vble(x)],-[working,vble(x)]],[[([-[notworking,vble(x)],-[working,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[vble(x)/vble(x)],[-[student,vble(x1)],-[working,vble(x1)]],[0,0]),([-[student,vble(x1)],-[working,vble(x1)]],[+[student,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,vble(x)],-[working,vble(x)]],[0,0]),([-[undstudent,vble(x)],-[working,vble(x)]],[+[undstudent,[lily]]],[],[-[working,[lily]]],[0,0]),([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]
+
+-- All faulty states: 10
+0,0,[[[arityInc(student,+[student,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]],-[student,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])],[delete([+[student,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]]),deleArg(student,2)]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x),[dummy_Normal1]]],[+[student,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[]
+0,0,[[[arityInc(notworking,+[notworking,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]],-[notworking,vble(x)],[-[notworking,vble(x)],-[working,vble(x)]])],[delete([+[notworking,vble(x),[dummy_Abnormal1]],-[student,vble(x)]]),deleArg(notworking,2)]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x),[dummy_Abnormal1]],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x),[dummy_Normal1]],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[]
+1,0,[[[arityInc(adult,+[adult,vble(x)],[+[adult,vble(x)],-[undstudent,vble(x)]],-[adult,vble(x)],[+[working,vble(x)],-[adult,vble(x)]])],[delete([+[adult,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]]),deleArg(adult,2)]],[[[lily]]],[],[[+[adult,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x),[dummy_Normal1]]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x),[dummy_Normal1]]],[[lily]/vble(x)],[-[adult,[lily],[dummy_Normal1]]],[1,0])]])],[]
+1,0,[[[add_pre(-[dummyPred,vble(x)],[+[working,vble(x)],-[adult,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)],-[dummyPred,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)],-[dummyPred,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]],-[dummyPred,[lily]]],[1,0]),([-[adult,[lily]],-[dummyPred,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]],-[dummyPred,[lily]]],[0,0]),([-[undstudent,[lily]],-[dummyPred,[lily]]],[+[undstudent,[lily]]],[],[-[dummyPred,[lily]]],[0,0])],[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)],-[dummyPred,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]],-[dummyPred,[lily]]],[1,0]),([-[adult,[lily]],-[dummyPred,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]],-[dummyPred,[lily]]],[1,0])]])],[]
+0,0,[[[add_pre(-[dummyPred,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[dummyPred,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[]
+0,0,[[[add_pre(-[dummyPred,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[dummyPred,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[]
+1,0,[[[add_pre(-[dummyPred,vble(x)],[+[adult,vble(x)],-[undstudent,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[dummyPred,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[dummyPred,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[dummyPred,[lily]],-[undstudent,[lily]]],[2,0])]])],[]
+0,0,[[[delete([+[student,vble(x)],-[undstudent,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[]
+0,0,[[[delete([+[notworking,vble(x)],-[student,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[]
+0,1,[[[],[rename([lily],-[working,[lily]],[-[notworking,vble(x)],-[working,vble(x)]])]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[([-[notworking,vble(x)],-[working,vble(x)]],[[([-[notworking,vble(x)],-[working,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[vble(x)/vble(x)],[-[student,vble(x1)],-[working,vble(x1)]],[0,0]),([-[student,vble(x1)],-[working,vble(x1)]],[+[student,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,vble(x)],-[working,vble(x)]],[0,0]),([-[undstudent,vble(x)],-[working,vble(x)]],[+[undstudent,[lily]]],[],[-[working,[lily]]],[0,0]),([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])]
+
+An Optimal repaired theory with cost:1 and the fault state: [([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[]
+[[[arityInc(student,+[student,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]],-[student,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])],[delete([+[student,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]]),deleArg(student,2)]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x),[dummy_Normal1]]],[+[student,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]
+An Optimal repaired theory with cost:1 and the fault state: [([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[]
+[[[arityInc(notworking,+[notworking,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]],-[notworking,vble(x)],[-[notworking,vble(x)],-[working,vble(x)]])],[delete([+[notworking,vble(x),[dummy_Abnormal1]],-[student,vble(x)]]),deleArg(notworking,2)]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x),[dummy_Abnormal1]],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x),[dummy_Normal1]],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]
+An Optimal repaired theory with cost:1 and the fault state: [([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[]
+[[[add_pre(-[dummyPred,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[dummyPred,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]
+An Optimal repaired theory with cost:1 and the fault state: [([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[]
+[[[add_pre(-[dummyPred,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[dummyPred,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]
+An Optimal repaired theory with cost:1 and the fault state: [([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[]
+[[[delete([+[student,vble(x)],-[undstudent,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]
+An Optimal repaired theory with cost:1 and the fault state: [([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[]
+[[[delete([+[notworking,vble(x)],-[student,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]
+An Optimal repaired theory with cost:1 and the fault state: [([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[([-[notworking,vble(x)],-[working,vble(x)]],[[([-[notworking,vble(x)],-[working,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[vble(x)/vble(x)],[-[student,vble(x1)],-[working,vble(x1)]],[0,0]),([-[student,vble(x1)],-[working,vble(x1)]],[+[student,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,vble(x)],-[working,vble(x)]],[0,0]),([-[undstudent,vble(x)],-[working,vble(x)]],[+[undstudent,[lily]]],[],[-[working,[lily]]],[0,0]),([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])]
+[[[],[rename([lily],-[working,[lily]],[-[notworking,vble(x)],-[working,vble(x)]])]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]
+--The number of Optimals: 7
+[[[arityInc(student,+[student,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]],-[student,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])],[delete([+[student,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]]),deleArg(student,2)]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x),[dummy_Normal1]]],[+[student,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[]
+[[[arityInc(notworking,+[notworking,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]],-[notworking,vble(x)],[-[notworking,vble(x)],-[working,vble(x)]])],[delete([+[notworking,vble(x),[dummy_Abnormal1]],-[student,vble(x)]]),deleArg(notworking,2)]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x),[dummy_Abnormal1]],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x),[dummy_Normal1]],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[]
+[[[add_pre(-[dummyPred,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[dummyPred,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[]
+[[[add_pre(-[dummyPred,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[dummyPred,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[]
+[[[delete([+[student,vble(x)],-[undstudent,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[]
+[[[delete([+[notworking,vble(x)],-[student,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[]
+[[[],[rename([lily],-[working,[lily]],[-[notworking,vble(x)],-[working,vble(x)]])]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[([-[notworking,vble(x)],-[working,vble(x)]],[[([-[notworking,vble(x)],-[working,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[vble(x)/vble(x)],[-[student,vble(x1)],-[working,vble(x1)]],[0,0]),([-[student,vble(x1)],-[working,vble(x1)]],[+[student,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,vble(x)],-[working,vble(x)]],[0,0]),([-[undstudent,vble(x)],-[working,vble(x)]],[+[undstudent,[lily]]],[],[-[working,[lily]]],[0,0]),([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])]
+
+The vitality of the repaired theory is :[[(0,0),[-[notworking,vble(x)],-[working,vble(x)]]],[(1,0),[+[working,vble(x)],-[adult,vble(x)]]],[(2,0),[+[undstudent,[lily]]]],[(0,0),[+[student,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]]],[(0,0),[+[notworking,vble(x)],-[student,vble(x),[dummy_Normal1]]]],[(1,0),[+[adult,vble(x)],-[undstudent,vble(x)]]]]
+ Vitality TotalScores are: 4,0
+
+The vitality of the repaired theory is :[[(0,0),[-[notworking,vble(x),[dummy_Normal1]],-[working,vble(x)]]],[(1,0),[+[working,vble(x)],-[adult,vble(x)]]],[(2,0),[+[undstudent,[lily]]]],[(0,0),[+[student,vble(x)],-[undstudent,vble(x)]]],[(0,0),[+[notworking,vble(x),[dummy_Abnormal1]],-[student,vble(x)]]],[(1,0),[+[adult,vble(x)],-[undstudent,vble(x)]]]]
+ Vitality TotalScores are: 4,0
+
+The vitality of the repaired theory is :[[(0,0),[-[notworking,vble(x)],-[working,vble(x)]]],[(0,0),[+[working,vble(x)],-[adult,vble(x),[dummy_Normal1]]]],[(1,0),[+[undstudent,[lily]]]],[(0,0),[+[student,vble(x)],-[undstudent,vble(x)]]],[(0,0),[+[notworking,vble(x)],-[student,vble(x)]]],[(0,0),[+[adult,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]]]]
+ Vitality TotalScores are: 1,0
+
+The vitality of the repaired theory is :[[(0,0),[-[notworking,vble(x)],-[working,vble(x)]]],[(0,0),[+[working,vble(x)],-[adult,vble(x)],-[dummyPred,vble(x)]]],[(1,0),[+[undstudent,[lily]]]],[(0,0),[+[student,vble(x)],-[undstudent,vble(x)]]],[(0,0),[+[notworking,vble(x)],-[student,vble(x)]]],[(0,0),[+[adult,vble(x)],-[undstudent,vble(x)]]]]
+ Vitality TotalScores are: 1,0
+
+The vitality of the repaired theory is :[[(0,0),[-[notworking,vble(x)],-[working,vble(x)]]],[(1,0),[+[working,vble(x)],-[adult,vble(x)]]],[(2,0),[+[undstudent,[lily]]]],[(0,0),[+[student,vble(x)],-[dummyPred,vble(x)],-[undstudent,vble(x)]]],[(0,0),[+[notworking,vble(x)],-[student,vble(x)]]],[(1,0),[+[adult,vble(x)],-[undstudent,vble(x)]]]]
+ Vitality TotalScores are: 4,0
+
+The vitality of the repaired theory is :[[(0,0),[-[notworking,vble(x)],-[working,vble(x)]]],[(1,0),[+[working,vble(x)],-[adult,vble(x)]]],[(2,0),[+[undstudent,[lily]]]],[(0,0),[+[student,vble(x)],-[undstudent,vble(x)]]],[(0,0),[+[notworking,vble(x)],-[dummyPred,vble(x)],-[student,vble(x)]]],[(1,0),[+[adult,vble(x)],-[undstudent,vble(x)]]]]
+ Vitality TotalScores are: 4,0
+
+The vitality of the repaired theory is :[[(0,0),[-[notworking,vble(x)],-[working,vble(x)]]],[(0,0),[+[working,vble(x)],-[adult,vble(x)]]],[(1,0),[+[undstudent,[lily]]]],[(0,0),[+[student,vble(x)],-[undstudent,vble(x)]]],[(0,0),[+[notworking,vble(x)],-[student,vble(x)]]],[(0,0),[+[adult,vble(x)],-[dummyPred,vble(x)],-[undstudent,vble(x)]]]]
+ Vitality TotalScores are: 1,0
+
+The vitality of the repaired theory is :[[(0,0),[-[notworking,vble(x)],-[working,vble(x)]]],[(1,0),[+[working,vble(x)],-[adult,vble(x)]]],[(2,0),[+[undstudent,[lily]]]],[(0,0),[+[notworking,vble(x)],-[student,vble(x)]]],[(1,0),[+[adult,vble(x)],-[undstudent,vble(x)]]]]
+ Vitality TotalScores are: 4,0
+
+The vitality of the repaired theory is :[[(0,0),[-[notworking,vble(x)],-[working,vble(x)]]],[(1,0),[+[working,vble(x)],-[adult,vble(x)]]],[(2,0),[+[undstudent,[lily]]]],[(0,0),[+[student,vble(x)],-[undstudent,vble(x)]]],[(1,0),[+[adult,vble(x)],-[undstudent,vble(x)]]]]
+ Vitality TotalScores are: 4,0
+
+The vitality of the repaired theory is :[[(0,0),[-[notworking,vble(x)],-[working,vble(x)]]],[(0,0),[+[working,vble(x)],-[adult,vble(x)]]],[(1,0),[+[undstudent,[lily]]]],[(-1,0),[+[student,vble(x)],-[undstudent,vble(x)]]],[(-1,0),[+[notworking,vble(x)],-[student,vble(x)]]],[(0,0),[+[adult,vble(x)],-[undstudent,vble(x)]]]]
+ Vitality TotalScores are: -1,0
+
+--The number of Vitality Optimals: 6
+[[[delete([+[notworking,vble(x)],-[student,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[]
+[[[delete([+[student,vble(x)],-[undstudent,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[]
+[[[add_pre(-[dummyPred,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[dummyPred,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[]
+[[[add_pre(-[dummyPred,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[dummyPred,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[]
+[[[arityInc(notworking,+[notworking,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]],-[notworking,vble(x)],[-[notworking,vble(x)],-[working,vble(x)]])],[delete([+[notworking,vble(x),[dummy_Abnormal1]],-[student,vble(x)]]),deleArg(notworking,2)]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x),[dummy_Abnormal1]],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x),[dummy_Normal1]],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[]
+[[[arityInc(student,+[student,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]],-[student,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])],[delete([+[student,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]]),deleArg(student,2)]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x),[dummy_Normal1]]],[+[student,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[]
+
+--The solution in 1 not in 2 include: 1
+
+[[[],[rename([lily],-[working,[lily]],[-[notworking,vble(x)],-[working,vble(x)]])]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]],[([-[undstudent,[lily]]],[[([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]]),([-[working,[lily]]],[[([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])],[],[([-[notworking,vble(x)],-[working,vble(x)]],[[([-[notworking,vble(x)],-[working,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[vble(x)/vble(x)],[-[student,vble(x1)],-[working,vble(x1)]],[0,0]),([-[student,vble(x1)],-[working,vble(x1)]],[+[student,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,vble(x)],-[working,vble(x)]],[0,0]),([-[undstudent,vble(x)],-[working,vble(x)]],[+[undstudent,[lily]]],[],[-[working,[lily]]],[0,0]),([-[working,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[[lily]/vble(x)],[-[adult,[lily]]],[0,0]),([-[adult,[lily]]],[+[adult,vble(x)],-[undstudent,vble(x)]],[[lily]/vble(x)],[-[undstudent,[lily]]],[0,0]),([-[undstudent,[lily]]],[+[undstudent,[lily]]],[],[],[0,0])]])]
+
+--The solution in 2 not in 1 include: 0
+
+
+******** A solution is reached. *******
+
+******** A solution is reached. *******
+
+******** A solution is reached. *******
+
+******** A solution is reached. *******
+
+******** A solution is reached. *******
+
+******** A solution is reached. *******
+
+--------------AllRepStates: [fault-free,1/1,[[[delete([+[notworking,vble(x)],-[student,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]]
+[fault-free,1/1,[[[delete([+[student,vble(x)],-[undstudent,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]]
+[fault-free,1/1,[[[add_pre(-[dummyPred,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[dummyPred,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]]
+[fault-free,1/1,[[[add_pre(-[dummyPred,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[dummyPred,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]]
+[fault-free,1/1,[[[arityInc(notworking,+[notworking,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]],-[notworking,vble(x)],[-[notworking,vble(x)],-[working,vble(x)]])],[delete([+[notworking,vble(x),[dummy_Abnormal1]],-[student,vble(x)]]),deleArg(notworking,2)]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x),[dummy_Abnormal1]],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x),[dummy_Normal1]],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]]
+[fault-free,1/1,[[[arityInc(student,+[student,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]],-[student,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])],[delete([+[student,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]]),deleArg(student,2)]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x),[dummy_Normal1]]],[+[student,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]]
+
+
+--------------executation time 2---
+time takes
+20
+
+------------- AllRepStates -------------
+[fault-free,1/1,[[[delete([+[notworking,vble(x)],-[student,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]]
+[fault-free,1/1,[[[delete([+[student,vble(x)],-[undstudent,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]]
+[fault-free,1/1,[[[add_pre(-[dummyPred,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[dummyPred,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]]
+[fault-free,1/1,[[[add_pre(-[dummyPred,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]])],[]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[dummyPred,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]]
+[fault-free,1/1,[[[arityInc(notworking,+[notworking,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]],-[notworking,vble(x)],[-[notworking,vble(x)],-[working,vble(x)]])],[delete([+[notworking,vble(x),[dummy_Abnormal1]],-[student,vble(x)]]),deleArg(notworking,2)]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x),[dummy_Abnormal1]],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x),[dummy_Normal1]],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]]
+[fault-free,1/1,[[[arityInc(student,+[student,vble(x)],[+[student,vble(x)],-[undstudent,vble(x)]],-[student,vble(x)],[+[notworking,vble(x)],-[student,vble(x)]])],[delete([+[student,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]]),deleArg(student,2)]],[[[lily]]],[],[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x),[dummy_Normal1]]],[+[student,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]],[[+[undstudent,[lily]]],[+[working,[lily]]]],[]]]
+
+
+
+
+------------- TASS -------------
+FullyNumRaw is: 6
+FullyNum is: 6
+
+
+[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[dummyPred,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]]
+[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[student,vble(x)],-[dummyPred,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]]
+[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]]
+[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x)],-[student,vble(x),[dummy_Normal1]]],[+[student,vble(x),[dummy_Abnormal1]],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]]
+[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[notworking,vble(x),[dummy_Abnormal1]],-[student,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x),[dummy_Normal1]],-[working,vble(x)]]]
+[[+[adult,vble(x)],-[undstudent,vble(x)]],[+[student,vble(x)],-[undstudent,vble(x)]],[+[undstudent,[lily]]],[+[working,vble(x)],-[adult,vble(x)]],[-[notworking,vble(x)],-[working,vble(x)]]]
+
+
+
+------------- TBSS -------------
+SemiNumRaw is: 0
+SemiNum is: 0
+
+
+
+
+
